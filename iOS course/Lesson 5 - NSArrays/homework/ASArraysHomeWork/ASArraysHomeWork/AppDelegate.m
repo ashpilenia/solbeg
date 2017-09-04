@@ -132,6 +132,7 @@
                 NSLog(@"Object Type = Human");
                 ASHuman* human = (ASHuman*) obj;
             NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", human.name, human.gender, human.weight, human.height);
+                [human movement];
                 
                 if ([obj isKindOfClass: [ASSchoolboy class]]){
                     ASSchoolboy* boy = (ASSchoolboy*) obj;
@@ -143,7 +144,9 @@
                 NSLog(@"Object Type = Animal");
                 ASAnimal* animal = (ASAnimal*) obj;
                 NSLog(@"name = %@, gender = %@, age = %ld", animal.a_name, animal.a_gender, animal.age);
+                [animal movement];
             }
+            
         }
             
         
