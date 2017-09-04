@@ -6,11 +6,14 @@
 //  Copyright © 2017 Alex Shpilenia. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
 #import "ASHuman.h"
 #import "ASSwimmer.h"
 #import "ASRunner.h"
 #import "ASCyclist.h"
+#import "ASSchoolboy.h"
+#import "ASAnimal.h"
 
 
 @interface AppDelegate ()
@@ -23,10 +26,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    /*
+     1. Создать класс "человек", который будет содержать в себе базовые качества - "имя", "рост", "вес", "пол", а также будет иметь метод "передвижение".
+     2. Создать дочерние классы (наследники) "велосипедист", "бегун", "пловец" и переопределить метод "передвижение" в каждом из этих классов.
+     3. При старте программы создать по одному объекту каждого класса и объединить их в массив.
+     4. В цикле пройти по всем элементам массива и вывести на экран все характеристики каждого объекта (имя, рост и тд) и у каждого вызвать метод "передвижение".
+     5. Создать еще одного наследника от класса человек, добавить в него пару новых свойств, добавить в массив и в цикле вывода вывести его свойства как дополнение к свойствам человека
+     6. Метод "передвижение" реализовать таким образом, чтобы перед тем как выполнить свое собственное передвижение, он выполнял передвижение реализованное в классе человек
+     7. Массив выводить в обратном порядке.
+     
+     */
+
+    
     ASHuman* humanObj = [[ASHuman alloc] init];
     ASCyclist* cyclistObj = [[ASCyclist alloc] init];
     ASRunner* runnerObj = [[ASRunner alloc] init];
     ASSwimmer* swimmerObj = [[ASSwimmer alloc] init];
+    ASSchoolboy* schBoyObj =[[ASSchoolboy alloc]init];
     
     humanObj.height = 180;
     humanObj.weight = 82.2f;
@@ -48,15 +64,47 @@
     cyclistObj.name = @"Michael Sch.";
     cyclistObj.gender = @"male";
     
+    schBoyObj.height = 120;
+    schBoyObj.weight = 66.2f;
+    schBoyObj.name = @"Petrashkevich";
+    schBoyObj.gender = @"male";
+    schBoyObj.grade = 3;
+    schBoyObj.shift = @"second";
     
-    NSArray* array = [[NSArray alloc] initWithObjects:humanObj, cyclistObj, runnerObj, swimmerObj, nil];
-    for (ASHuman* obj in array) {
-        NSLog(@"name = %@ gender = %@ weight = %lf height = %ld", obj.name, obj.gender, obj.weight, obj.height);
-        /*NSLog(@"gender =%@", obj.gender);
-        NSLog(@"height =%ld", obj.height);
-        NSLog(@"weight =%lf", obj.weight);
-        */
+    
+    
+    NSArray* array = [[NSArray alloc] initWithObjects:humanObj, cyclistObj, runnerObj, swimmerObj, schBoyObj,  nil];
+   /* for (ASHuman* obj in array) {
+        NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", obj.name, obj.gender, obj.weight, obj.height);
+        
+        
+        if ([obj isKindOfClass:[ASSchoolboy class]]){
+            ASSchoolboy* boy = (ASSchoolboy*) obj;
+            NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
+        } */
+        
+    for (int i = [array count] -1; i >= 0; i--) { //чего это оно тут ругается ?
+        ASHuman* obj = [array objectAtIndex:i];
+        NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", obj.name, obj.gender, obj.weight, obj.height);
+        
+        if ([obj isKindOfClass:[ASSchoolboy class]]) {
+            ASSchoolboy* boy = (ASSchoolboy*) obj;
+            NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
+        
+        }
+        
         [obj movement];
+        
+/*
+ 8. Создать класс "животное" (не наследник класса человек!) со своими собственными базовыми свойствами (отличными от человеческих) и методом "передвижение".
+ 9. Унаследоваться от него и создать пару других классов с переопределенным передвижением.
+ 10. Объединить всех людей и животных в один массив.
+ 11. В цикле выводить тип объекта (человек или животное) перед тем как выводить его свойства и вызывать метод
+ 
+ */
+        NSLog(@"--------------8 to 11---------------");
+        
+        
         
     }
 

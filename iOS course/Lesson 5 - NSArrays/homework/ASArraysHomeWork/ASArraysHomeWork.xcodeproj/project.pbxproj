@@ -19,6 +19,10 @@
 		FA1629511F5D54DF00B1768B /* ASCyclist.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629501F5D54DF00B1768B /* ASCyclist.m */; };
 		FA1629541F5D571A00B1768B /* ASRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629531F5D571A00B1768B /* ASRunner.m */; };
 		FA1629571F5D588200B1768B /* ASSwimmer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629561F5D588200B1768B /* ASSwimmer.m */; };
+		FA16295A1F5D731700B1768B /* ASSchoolboy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629591F5D731700B1768B /* ASSchoolboy.m */; };
+		FA16295D1F5D967900B1768B /* ASAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16295C1F5D967900B1768B /* ASAnimal.m */; };
+		FA1629601F5D989400B1768B /* ASRat.m in Sources */ = {isa = PBXBuildFile; fileRef = FA16295F1F5D989400B1768B /* ASRat.m */; };
+		FA1629631F5D98B600B1768B /* ASSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1629621F5D98B600B1768B /* ASSnake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,14 @@
 		FA1629531F5D571A00B1768B /* ASRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRunner.m; sourceTree = "<group>"; };
 		FA1629551F5D583600B1768B /* ASSwimmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSwimmer.h; sourceTree = "<group>"; };
 		FA1629561F5D588200B1768B /* ASSwimmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSwimmer.m; sourceTree = "<group>"; };
+		FA1629581F5D731700B1768B /* ASSchoolboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSchoolboy.h; sourceTree = "<group>"; };
+		FA1629591F5D731700B1768B /* ASSchoolboy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSchoolboy.m; sourceTree = "<group>"; };
+		FA16295B1F5D967900B1768B /* ASAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASAnimal.h; sourceTree = "<group>"; };
+		FA16295C1F5D967900B1768B /* ASAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASAnimal.m; sourceTree = "<group>"; };
+		FA16295E1F5D989400B1768B /* ASRat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRat.h; sourceTree = "<group>"; };
+		FA16295F1F5D989400B1768B /* ASRat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRat.m; sourceTree = "<group>"; };
+		FA1629611F5D98B600B1768B /* ASSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSnake.h; sourceTree = "<group>"; };
+		FA1629621F5D98B600B1768B /* ASSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSnake.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,14 @@
 			children = (
 				FA16199A1F5D4456009D333F /* AppDelegate.h */,
 				FA16199B1F5D4456009D333F /* AppDelegate.m */,
+				FA16295E1F5D989400B1768B /* ASRat.h */,
+				FA16295F1F5D989400B1768B /* ASRat.m */,
+				FA1629611F5D98B600B1768B /* ASSnake.h */,
+				FA1629621F5D98B600B1768B /* ASSnake.m */,
+				FA16295B1F5D967900B1768B /* ASAnimal.h */,
+				FA16295C1F5D967900B1768B /* ASAnimal.m */,
+				FA1629581F5D731700B1768B /* ASSchoolboy.h */,
+				FA1629591F5D731700B1768B /* ASSchoolboy.m */,
 				FA1619CC1F5D4554009D333F /* ASHuman.h */,
 				FA1619CA1F5D4540009D333F /* ASHuman.m */,
 				FA16294F1F5D54B700B1768B /* ASCyclist.h */,
@@ -294,11 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1629571F5D588200B1768B /* ASSwimmer.m in Sources */,
+				FA1629601F5D989400B1768B /* ASRat.m in Sources */,
 				FA16199F1F5D4456009D333F /* ViewController.m in Sources */,
 				FA1629541F5D571A00B1768B /* ASRunner.m in Sources */,
+				FA16295D1F5D967900B1768B /* ASAnimal.m in Sources */,
 				FA1619CB1F5D4540009D333F /* ASHuman.m in Sources */,
 				FA1629511F5D54DF00B1768B /* ASCyclist.m in Sources */,
 				FA16199C1F5D4456009D333F /* AppDelegate.m in Sources */,
+				FA16295A1F5D731700B1768B /* ASSchoolboy.m in Sources */,
+				FA1629631F5D98B600B1768B /* ASSnake.m in Sources */,
 				FA1619991F5D4456009D333F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
