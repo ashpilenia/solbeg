@@ -10,4 +10,6 @@
 
 @interface ASSnake : ASAnimal
 
+- (void) movement;
+
 @end

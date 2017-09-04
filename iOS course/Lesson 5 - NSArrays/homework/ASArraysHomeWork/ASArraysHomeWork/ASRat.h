@@ -10,4 +10,6 @@
 
 @interface ASRat : ASAnimal
 
+- (void) movement;
+
 @end

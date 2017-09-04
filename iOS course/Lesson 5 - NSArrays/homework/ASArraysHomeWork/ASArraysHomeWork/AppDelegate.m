@@ -14,7 +14,8 @@
 #import "ASCyclist.h"
 #import "ASSchoolboy.h"
 #import "ASAnimal.h"
-
+#import "ASRat.h"
+#import "ASSnake.h"
 
 @interface AppDelegate ()
 
@@ -70,20 +71,20 @@
     schBoyObj.gender = @"male";
     schBoyObj.grade = 3;
     schBoyObj.shift = @"second";
-    
-    
+
     
     NSArray* array = [[NSArray alloc] initWithObjects:humanObj, cyclistObj, runnerObj, swimmerObj, schBoyObj,  nil];
-   /* for (ASHuman* obj in array) {
+    for (ASHuman* obj in array) {
         NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", obj.name, obj.gender, obj.weight, obj.height);
         
         
         if ([obj isKindOfClass:[ASSchoolboy class]]){
             ASSchoolboy* boy = (ASSchoolboy*) obj;
             NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
-        } */
-        
-    for (int i = [array count] -1; i >= 0; i--) { //чего это оно тут ругается ?
+        }
+    }
+    
+     /* for (int i = [array count] -1; i >= 0; i--) {
         ASHuman* obj = [array objectAtIndex:i];
         NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", obj.name, obj.gender, obj.weight, obj.height);
         
@@ -92,8 +93,9 @@
             NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
         
         }
-        
-        [obj movement];
+        */
+        //[obj movement];
+     
         
 /*
  8. Создать класс "животное" (не наследник класса человек!) со своими собственными базовыми свойствами (отличными от человеческих) и методом "передвижение".
@@ -104,12 +106,51 @@
  */
         NSLog(@"--------------8 to 11---------------");
         
+        ASAnimal* animalObj = [[ASAnimal alloc] init];
+        ASSnake* snakeObj = [[ASSnake alloc] init];
+        ASRat* ratObj = [[ASRat alloc] init];
+        
+        animalObj.a_name = @"monkey";
+        animalObj.age = 10;
+        animalObj.a_gender = @"female";
+        
+        snakeObj.a_name = @"cobra";
+        snakeObj.age = 3;
+        snakeObj.a_gender = @"male";
+        
+        ratObj.a_name = @"white rat";
+        ratObj.age = 1;
+        ratObj.a_gender = @"female";
         
         
-    }
+        
+        NSArray* mergedArray = [[NSArray alloc] initWithObjects:humanObj, schBoyObj, cyclistObj, runnerObj, swimmerObj, animalObj, ratObj, snakeObj, nil];
+        
+        for (NSObject* obj in mergedArray) {
+        
+            if ([obj isKindOfClass: [ASHuman  class]]) {
+                NSLog(@"Object Type = Human");
+                ASHuman* human = (ASHuman*) obj;
+            NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", human.name, human.gender, human.weight, human.height);
+                
+                if ([obj isKindOfClass: [ASSchoolboy class]]){
+                    ASSchoolboy* boy = (ASSchoolboy*) obj;
+                    NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
+                }
+                
+                }
+            else {
+                NSLog(@"Object Type = Animal");
+                ASAnimal* animal = (ASAnimal*) obj;
+                NSLog(@"name = %@, gender = %@, age = %ld", animal.a_name, animal.a_gender, animal.age);
+            }
+        }
+            
+        
+    
 
     
-    
+
     return YES;
 }
 

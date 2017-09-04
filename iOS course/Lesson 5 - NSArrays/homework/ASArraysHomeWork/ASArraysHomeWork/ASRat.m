@@ -10,4 +10,9 @@
 
 @implementation ASRat
 
+- (void) movement
+  {
+      NSLog(@"Running rat");
+  }
+
 @end

@@ -10,4 +10,8 @@
 
 @implementation ASSnake
 
+- (void) movement {
+    NSLog(@"Sneaking snake.");
+}
+
 @end
