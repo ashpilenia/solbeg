@@ -128,19 +128,22 @@
         
         for (NSObject* obj in mergedArray) {
         
-            if ([obj isKindOfClass: [ASHuman  class]]) {
+            if ([obj isKindOfClass: [ASHuman  class]])
+            {
                 NSLog(@"Object Type = Human");
                 ASHuman* human = (ASHuman*) obj;
             NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", human.name, human.gender, human.weight, human.height);
                 [human movement];
                 
-                if ([obj isKindOfClass: [ASSchoolboy class]]){
+                if ([obj isKindOfClass: [ASSchoolboy class]])
+                {
                     ASSchoolboy* boy = (ASSchoolboy*) obj;
                     NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
                 }
                 
-                }
-            else {
+            }
+            else
+            {
                 NSLog(@"Object Type = Animal");
                 ASAnimal* animal = (ASAnimal*) obj;
                 NSLog(@"name = %@, gender = %@, age = %ld", animal.a_name, animal.a_gender, animal.age);
@@ -149,11 +152,49 @@
             
         }
             
+    /*
+     12. Поместить всех людей в один массив, а животных в другой массив (количество людей и животных должно быть разное)
+     13. В одном цикле выводить сначала человека а потом животное, доставая данные поочередно из двух разных массивов, если в одном из массивов объектов больше, то в конце должны выводиться только объекты этого массива (так как других уже нет)
+     */
+    
+    NSLog(@"--------------------12 to 13---------------------");
+    
+    NSArray* animalArray = [[NSArray alloc] initWithObjects: animalObj, ratObj, snakeObj, nil];
+    
+    NSInteger maxCount = 0;
+    
+    if ([array count] > [animalArray count])
+    {
+        maxCount = [array count];
+    }
+
+    else
+    {
+        maxCount = [animalArray count];
+    }
+    
+    for (int i = 0; i < maxCount; i++)
+    {
+        if (i <= ([array count] -1 ))
+        {
+        ASHuman* humObj = [array objectAtIndex:i];
+        NSLog(@"name = %@, gender = %@, weight = %lf, height = %ld", humObj.name, humObj.gender, humObj.weight, humObj.height);
+        [humObj movement];
         
-    
-
-    
-
+        if ([humObj isKindOfClass: [ASSchoolboy class]])
+          {
+            ASSchoolboy* boy = (ASSchoolboy*) humObj;
+            NSLog(@"grade =%ld, shift =%@", boy.grade, boy.shift);
+          }
+        }
+        
+        if (i <= ([animalArray count] -1 ))
+        {
+        ASAnimal* aniObj = [animalArray objectAtIndex:i];
+        NSLog(@"name = %@, gender = %@, age = %ld", aniObj.a_name, aniObj.a_gender, aniObj.age);
+        [aniObj movement];
+        }
+    }
     return YES;
 }
 
