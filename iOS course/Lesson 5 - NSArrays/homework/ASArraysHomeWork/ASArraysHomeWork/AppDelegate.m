@@ -195,7 +195,65 @@
         [aniObj movement];
         }
     }
-    return YES;
+    
+    /*
+     14. Соединить животных и людей в одном массиве.
+     15. Используя нужный метод класса NSArray отсортировать массив (как результат будет другой массив). 
+     16. Сортировать так: сначала люди, а потом животные, люди отсортированы по имени, а животные по кличкам
+     17. Реально требует разобраться с сортировкой самому, тяжело, но достойно уважения
+     */
+    
+    
+    NSLog(@"-------------------14 to 17-------------------" );
+ 
+    NSArray* mixedArray = [[NSArray alloc] initWithObjects:cyclistObj, snakeObj, ratObj, swimmerObj, runnerObj, animalObj, humanObj, nil];
+    
+    NSMutableArray* humanMuArray = [[NSMutableArray alloc] init];
+    NSMutableArray* animalMuArray = [[NSMutableArray alloc] init];
+    
+    for (id obj in mixedArray)
+    {
+        if ([obj isKindOfClass:[ASHuman class]])
+        {
+            [humanMuArray addObject:obj];
+        }
+        else if ([obj isKindOfClass:[ASAnimal class]])
+        {
+            [animalMuArray addObject:obj];
+        }
+    }
+    
+    NSArray* humanSortedArray = [humanMuArray sortedArrayUsingSelector:@selector(compare:)];
+    NSArray* animalSortedArray = [animalMuArray sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSMutableArray* finalArray = [[NSMutableArray alloc] init];
+    
+    for (ASHuman* obj in humanSortedArray)
+    {
+        [finalArray addObject:obj];
+    }
+    
+    for (ASAnimal* obj in animalSortedArray)
+    {
+        [finalArray addObject:obj];
+    }
+    
+ 
+    for (NSObject* obj in finalArray)
+    {
+        if ([obj isKindOfClass: [ASHuman class]])
+        {
+            ASHuman* human = (ASHuman*) obj;
+            NSLog(@"name = %@", human.name);
+        }
+        if ([obj isKindOfClass:[ASAnimal class]])
+        {
+            ASAnimal* animal = (ASAnimal*) obj;
+            NSLog(@"name = %@", animal.a_name);
+        }
+    }
+   
+        return YES;
 }
 
 

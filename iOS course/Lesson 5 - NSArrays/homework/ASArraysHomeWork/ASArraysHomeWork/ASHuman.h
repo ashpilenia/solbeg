@@ -21,5 +21,6 @@
 @property (nonatomic, strong) NSString* gender;
 
 - (void) movement;
+- (NSComparisonResult) compare;
 
 @end

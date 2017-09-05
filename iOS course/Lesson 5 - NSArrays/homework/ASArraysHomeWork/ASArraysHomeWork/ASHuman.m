@@ -16,4 +16,9 @@
     NSLog(@"Moving forward.");
     }
 
+- (NSComparisonResult) compare: (ASHuman*) newObj {
+return [self.name compare:newObj.name];
+}
+
+
 @end
