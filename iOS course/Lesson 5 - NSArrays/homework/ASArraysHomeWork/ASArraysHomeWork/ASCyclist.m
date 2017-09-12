@@ -16,4 +16,23 @@
     NSLog(@"Moving on bicycle.");
 }
 
+- (NSString*) run
+{
+    return @"Even cyclists can run.";
+}
+
+- (BOOL) record
+{
+    NSLog(@"Was it a new record?");
+    BOOL boolVar = arc4random() % 2;
+    return boolVar;
+}
+
+- (NSInteger) averageSpeed
+{
+    NSInteger distVar = arc4random();
+    NSInteger timeVar = arc4random();
+    return distVar / timeVar;
+}
+
 @end

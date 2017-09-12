@@ -12,8 +12,13 @@
 
 #endif /* ASCyclist_h */
 #import "ASHuman.h"
+#import "ASRunners.h"
 
-@interface ASCyclist : ASHuman
+@interface ASCyclist : ASHuman <ASRunners>
+
+@property (nonatomic, strong) NSString* p_name;
+@property (nonatomic, assign) CGFloat speed;
+@property (nonatomic, assign) NSInteger distance;
 
 - (void) movement;
 

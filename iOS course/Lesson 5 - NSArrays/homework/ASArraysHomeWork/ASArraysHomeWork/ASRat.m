@@ -15,4 +15,17 @@
       NSLog(@"Running rat");
   }
 
+#pragma mark - ASSwimmers
+
+- (void) swimming
+{
+    NSLog(@"Swimming rats");
+}
+
+- (NSInteger) distance
+{
+    NSInteger dist = arc4random();
+    return dist;
+}
+
 @end

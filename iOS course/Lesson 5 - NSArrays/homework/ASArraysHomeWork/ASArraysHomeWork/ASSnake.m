@@ -14,4 +14,14 @@
     NSLog(@"Sneaking snake.");
 }
 
+#pragma mark - ASJumpers
+
+- (void) jumping {
+    NSLog(@"Snake makes a jump!");
+}
+- (NSInteger) numberOfTries {
+    NSInteger tryNumber = arc4random();
+    return tryNumber;
+}
+
 @end

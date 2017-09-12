@@ -12,12 +12,38 @@
 
 @implementation ASHuman
 
-- (void) movement {
+- (void) movement
+{
     NSLog(@"Moving forward.");
-    }
+}
 
-- (NSComparisonResult) compare: (ASHuman*) newObj {
+- (NSComparisonResult) compare: (ASHuman*) newObj
+{
 return [self.name compare:newObj.name];
+}
+
+#pragma mark - ASJumpers
+- (void) jumping
+{
+    NSLog(@"Some people love jumping!");
+}
+
+- (NSInteger) numberOfTries
+{
+    NSInteger jumpsNbr = arc4random();
+    return jumpsNbr;
+}
+
+- (NSString*) landing
+{
+    if (self.balance)
+    {
+        return @"Landing was successful.";
+    }
+               else
+               {
+                   return @"Landing is failed.";
+               }
 }
 
 

@@ -12,15 +12,23 @@
 
 #endif /* ASHuman_h */
 #import <UIKit/UIKit.h>
+#import "ASJumpers.h"
 
-@interface ASHuman : NSObject
+@interface ASHuman : NSObject <ASJumpers>
 
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, assign) NSInteger height;
 @property (nonatomic, assign) CGFloat weight;
 @property (nonatomic, strong) NSString* gender;
 
+
+@property (nonatomic, assign) NSInteger p_height;
+@property (nonatomic, strong) NSString* p_name;
+@property (nonatomic, assign) BOOL balance;
+
 - (void) movement;
 - (NSComparisonResult) compare;
+
+
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "ASAnimal.h"
+#import "ASJumpers.h"
 
-@interface ASSnake : ASAnimal
+@interface ASSnake : ASAnimal  <ASJumpers>
+
+@property (nonatomic, assign) NSInteger p_height;
+@property (nonatomic, strong) NSString* p_name;
 
 - (void) movement;
 

@@ -7,9 +7,14 @@
 //
 
 #import "ASAnimal.h"
+#import "ASSwimmers.h"
 
-@interface ASRat : ASAnimal
+@interface ASRat : ASAnimal <ASSwimmers>
+
+@property (nonatomic, strong) NSString* p_name;
+@property (nonatomic, assign) NSInteger age;
 
 - (void) movement;
+
 
 @end
