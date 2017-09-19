@@ -150,9 +150,9 @@
     NSLog(@"------------------TASK #5------------------");
     
     NSArray* array = [[studentsDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    for (NSString* key in array)
+    for (NSString* obj in array)
     {
-        NSLog(@"%@, %@", key,[[studentsDic objectForKey:key] greetings]);
+        NSLog(@"%@, %@", obj,[[studentsDic objectForKey:obj] greetings]);
     }
     
     return YES;
