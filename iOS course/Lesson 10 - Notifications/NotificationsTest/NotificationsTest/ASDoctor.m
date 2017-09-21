@@ -37,7 +37,7 @@
         
         [nc addObserver:self
                selector:@selector(enteredBackgroundNotification)
-                   name:UIApplicationWillEnterForegroundNotification
+                   name:UIApplicationDidEnterBackgroundNotification
                  object:nil];
         
         [nc addObserver:self

@@ -11,6 +11,7 @@
 #import "ASDoctor.h"
 #import "ASBusinessman.h"
 #import "ASPensioner.h"
+#import "ASAppNotification.h"
 
 /*
  
@@ -41,17 +42,14 @@
  
  11. Сворачивая и разварачивая приложение добивайтесь вызовов определенный методов делегата и тех же нотификаций и посмотрите что вызывается раньше - метод делегата или нотификация :)
  
- UIKIT_EXTERN NSNotificationName const UIApplicationDidEnterBackgroundNotification 
- 
- UIKIT_EXTERN NSNotificationName const UIApplicationDidBecomeActiveNotification;
- 
  
  
  */
 
 @interface AppDelegate ()
 
-@property (nonatomic, strong) ASGovernment* government;
+@property (nonatomic, strong) ASGovernment *government;
+@property (nonatomic, strong) NSArray *objectholder;
 
 @end
 
@@ -78,6 +76,12 @@
     ASPensioner *pensioner = [[ASPensioner alloc] init];
     
     ASBusinessman *businessman = [[ASBusinessman alloc] init];
+    
+    ASAppNotification *testobject = [[ASAppNotification alloc] init];
+    
+    NSArray *safeArray = [NSArray arrayWithObjects:doctor1, doctor2, doctor3, doctor4, doctor5, pensioner, businessman, testobject, nil];
+    self.objectholder = safeArray;
+    
     
     doctor1.salary = doctor2.salary = doctor3.salary = doctor4.salary = doctor5.salary = self.government.salary;
     doctor1.averagePrice = doctor2.averagePrice = doctor3.averagePrice = doctor4.averagePrice = doctor5.averagePrice = self.government.averagePrice;
@@ -122,12 +126,14 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    NSLog(@"APPDelegate applicationWillResignActive  method is called");
+    
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
-    
+    NSLog(@"APPDelegate applicationDidEnterBackground  method is called");
     
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -136,16 +142,22 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    NSLog(@"APPDelegate applicationWillEnterForeground  method is called");
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    NSLog(@"APPDelegate applicationDidBecomeActive  method is called");
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    NSLog(@"APPDelegate applicationWillTerminate  method is called");
 }
 
 

@@ -35,6 +35,16 @@
                    name:ASGovernmentInflationDidChangeNotification
                  object:nil];
         
+        [nc addObserver:self
+               selector:@selector(enteredBackgroundNotification)
+                   name:UIApplicationDidEnterBackgroundNotification
+                 object:nil];
+        
+        [nc addObserver:self
+               selector:@selector(becameActiveNotification)
+                   name:UIApplicationDidBecomeActiveNotification
+                 object:nil];
+        
     }
     return self;
 }
@@ -111,5 +121,14 @@
     }
 }
 
+- (void) enteredBackgroundNotification
+{
+    NSLog(@"Pensioner is going to sleep");
+}
+
+- (void) becameActiveNotification
+{
+    NSLog(@"Pensioner is awake");
+}
 
 @end

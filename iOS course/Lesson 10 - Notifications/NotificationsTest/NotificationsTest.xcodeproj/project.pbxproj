@@ -10,6 +10,7 @@
 		FA541C3B1F727F8A006636E1 /* ASDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = FA541C3A1F727F8A006636E1 /* ASDoctor.m */; };
 		FA541C7D1F729733006636E1 /* ASPensioner.m in Sources */ = {isa = PBXBuildFile; fileRef = FA541C7C1F729733006636E1 /* ASPensioner.m */; };
 		FA541C801F729794006636E1 /* ASBusinessman.m in Sources */ = {isa = PBXBuildFile; fileRef = FA541C7F1F729794006636E1 /* ASBusinessman.m */; };
+		FA5A63891F74024B00237893 /* ASAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5A63881F74024B00237893 /* ASAppNotification.m */; };
 		FA84A7181F714D0700A10715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84A7171F714D0700A10715 /* main.m */; };
 		FA84A71B1F714D0700A10715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84A71A1F714D0700A10715 /* AppDelegate.m */; };
 		FA84A71E1F714D0700A10715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA84A71D1F714D0700A10715 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		FA541C7C1F729733006636E1 /* ASPensioner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPensioner.m; sourceTree = "<group>"; };
 		FA541C7E1F729794006636E1 /* ASBusinessman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASBusinessman.h; sourceTree = "<group>"; };
 		FA541C7F1F729794006636E1 /* ASBusinessman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASBusinessman.m; sourceTree = "<group>"; };
+		FA5A63871F74024B00237893 /* ASAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASAppNotification.h; sourceTree = "<group>"; };
+		FA5A63881F74024B00237893 /* ASAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASAppNotification.m; sourceTree = "<group>"; };
 		FA84A7131F714D0700A10715 /* NotificationsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA84A7171F714D0700A10715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA84A7191F714D0700A10715 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 			children = (
 				FA84A7191F714D0700A10715 /* AppDelegate.h */,
 				FA84A71A1F714D0700A10715 /* AppDelegate.m */,
+				FA5A63871F74024B00237893 /* ASAppNotification.h */,
+				FA5A63881F74024B00237893 /* ASAppNotification.m */,
 				FA84A7491F715EBB00A10715 /* ASGovernment.h */,
 				FA84A74A1F715EBB00A10715 /* ASGovernment.m */,
 				FA541C391F727F8A006636E1 /* ASDoctor.h */,
@@ -295,6 +300,7 @@
 			files = (
 				FA541C801F729794006636E1 /* ASBusinessman.m in Sources */,
 				FA84A71E1F714D0700A10715 /* ViewController.m in Sources */,
+				FA5A63891F74024B00237893 /* ASAppNotification.m in Sources */,
 				FA541C7D1F729733006636E1 /* ASPensioner.m in Sources */,
 				FA84A71B1F714D0700A10715 /* AppDelegate.m in Sources */,
 				FA84A74B1F715EBB00A10715 /* ASGovernment.m in Sources */,
