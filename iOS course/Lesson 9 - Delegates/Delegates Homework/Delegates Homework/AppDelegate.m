@@ -339,6 +339,8 @@
     ASDoctor* doctor5 = [[ASDoctor alloc] init];
     
     
+    
+    
     patient16.name = @"John";
     patient16.temperature = 36.6f;
     patient16.analysisAreOk = TRUE;

@@ -12,5 +12,4 @@
 @interface ASDoctor : NSObject <ASPatientDelegate>
 
 
-
 @end

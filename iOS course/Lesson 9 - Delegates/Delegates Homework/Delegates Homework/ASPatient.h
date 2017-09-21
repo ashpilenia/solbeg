@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef enum {
+typedef  NS_ENUM(NSInteger, ASOrgan){
     stomach = 0,
     head = 1,
     back = 2,
     ass = 3
-} ASOrgan;
+};
 
 @protocol ASPatientDelegate;
 
