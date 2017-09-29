@@ -430,6 +430,8 @@ void (^blockTwo)(ASPatient *) = ^(ASPatient *obj){
 - (void) setArrayAppDel:(NSArray *)arrayAppDel
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gettingWorseNotification) name:ASPatientGettingWorseNotifiaction object:nil];
+    _arrayAppDel = arrayAppDel;
+
 }
 
 - (void) gettingWorseNotification
