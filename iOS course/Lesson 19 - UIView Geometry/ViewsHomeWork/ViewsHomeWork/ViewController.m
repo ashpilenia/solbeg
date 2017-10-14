@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableArray *viewsArray;
+@property (nonatomic, strong) NSMutableArray *shashki;
 
 @end
 
@@ -48,6 +49,7 @@
     // Do any additional setup after loading the view, typically from a nib.
 
     self.viewsArray = [[NSMutableArray alloc] init];
+    self.shashki = [[NSMutableArray alloc] init];
     
     [self.view setBackgroundColor:[UIColor grayColor]];
     
@@ -107,12 +109,11 @@
                 
                 if (x%2)
                 {
-                    if (y%2) {}
-                    
-                    else
+                    if (!(y%2))
                     {
                         [view setBackgroundColor:[UIColor redColor]];
                         [boardView addSubview:view];
+                        [self.shashki addObject:view];
                     }
                 }
                 else
@@ -121,9 +122,8 @@
                     {
                         [view setBackgroundColor:[UIColor redColor]];
                         [boardView addSubview:view];
+                        [self.shashki addObject:view];
                     }
-                    
-                    else {}
                 }
             }
         }
@@ -141,32 +141,25 @@
                 {
                     [view setBackgroundColor:[UIColor greenColor]];
                     [boardView addSubview:view];
-                }
-                
-                else
-                {
-                    
+                    [self.shashki addObject:view];
                 }
             }
             else
             {
-                if (y%2)
-                {
-                   
-                }
-                
-                else
+                if (!(y%2))
                 {
                     [view setBackgroundColor:[UIColor greenColor]];
                     [boardView addSubview:view];
+                    [self.shashki addObject:view];
                 }
+                
             }
         }
     }
     
     boardView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     
-    UIView
+    
     
 
 }
@@ -179,6 +172,15 @@
         
             obj.backgroundColor = color;
     
+    }
+//    [self.shashki objectAtIndex:arc4random_uniform([self.shashki count] - 1)]
+    for (int i = 0; i < [self.shashki count] - 1; i++)
+    {
+        UIView *view = [self.shashki objectAtIndex:arc4random_uniform([self.shashki count] - 1)];
+        UIView *obj = [self.shashki objectAtIndex:i];
+        CGPoint hello = obj.center;
+        obj.center = view.center;
+        view.center = hello;
     }
 }
 
