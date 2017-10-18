@@ -511,6 +511,7 @@
 				FA661F501F90D94C00B6AF72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA661F511F90D94C00B6AF72 /* Build configuration list for PBXNativeTarget "AnimationsTestTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +520,7 @@
 				FA661F531F90D94C00B6AF72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA661F541F90D94C00B6AF72 /* Build configuration list for PBXNativeTarget "AnimationsTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +529,7 @@
 				FA661F561F90D94C00B6AF72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
