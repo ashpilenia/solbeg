@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA26166F1F978A8C00C7F238 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26166C1F9784AB00C7F238 /* 1.png */; };
+		FA2616701F978A8F00C7F238 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26166D1F9784AB00C7F238 /* 2.png */; };
+		FA2616711F978A9200C7F238 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = FA26166E1F9784AB00C7F238 /* 3.png */; };
 		FA46D9111F94F096007A0576 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA46D9101F94F096007A0576 /* main.m */; };
 		FA46D9141F94F096007A0576 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA46D9131F94F096007A0576 /* AppDelegate.m */; };
 		FA46D9171F94F096007A0576 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA46D9161F94F096007A0576 /* ViewController.m */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA26166C1F9784AB00C7F238 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		FA26166D1F9784AB00C7F238 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		FA26166E1F9784AB00C7F238 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		FA46D90C1F94F096007A0576 /* Animations HomewWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animations HomewWork.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA46D9101F94F096007A0576 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA46D9121F94F096007A0576 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA26166B1F9784AB00C7F238 /* imageFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FA26166C1F9784AB00C7F238 /* 1.png */,
+				FA26166D1F9784AB00C7F238 /* 2.png */,
+				FA26166E1F9784AB00C7F238 /* 3.png */,
+			);
+			name = imageFiles;
+			path = "Animations HomewWork/imageFiles";
+			sourceTree = "<group>";
+		};
 		FA46D9031F94F096007A0576 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +102,7 @@
 				FA46D9281F94F096007A0576 /* Animations HomewWorkTests */,
 				FA46D9331F94F096007A0576 /* Animations HomewWorkUITests */,
 				FA46D90D1F94F096007A0576 /* Products */,
+				FA26166B1F9784AB00C7F238 /* imageFiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA46D91F1F94F096007A0576 /* LaunchScreen.storyboard in Resources */,
+				FA26166F1F978A8C00C7F238 /* 1.png in Resources */,
+				FA2616701F978A8F00C7F238 /* 2.png in Resources */,
+				FA2616711F978A9200C7F238 /* 3.png in Resources */,
 				FA46D91C1F94F096007A0576 /* Assets.xcassets in Resources */,
 				FA46D91A1F94F096007A0576 /* Main.storyboard in Resources */,
 			);

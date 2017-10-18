@@ -27,10 +27,16 @@
  7. Когда анимация закончиться повторите все опять: выберите направление и передвиньте всех :)
  8. Вьюха должна принимать в новом углу цвет той вьюхи, что была здесь до него ;)
  
+ Мастер.
+ 
+ 8. Нарисуйте несколько анимационных картинок человечка, который ходит.
+ 9. Добавьте несколько человечков на эту композицию и заставьте их ходить
+ 
  */
 
 @property (nonatomic, strong) NSMutableArray *viewHolder;
 @property (nonatomic, strong) NSMutableArray *viewsFromStudent;
+
 
 @end
 
@@ -42,6 +48,54 @@
     
     self.viewHolder = [[NSMutableArray alloc] init];
     self.viewsFromStudent = [[NSMutableArray alloc] init];
+    
+    CGRect rectForImage = CGRectMake(200, 200, 400, 400);
+    UIImageView *viewIM = [[UIImageView alloc] initWithFrame:rectForImage];
+    viewIM.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:viewIM];
+    
+    UIImage *image1 = [UIImage imageNamed:@"1.png"];
+    UIImage *image2 = [UIImage imageNamed:@"2.png"];
+    UIImage *image3 = [UIImage imageNamed:@"3.png"];
+    
+    NSArray *imageArray = [NSArray arrayWithObjects:image1, image2, image3, nil];
+    viewIM.animationImages = imageArray;
+    viewIM.animationDuration = 0.3;
+    
+    CGRect rectForImage2 = CGRectMake(400, 200, 400, 400);
+    UIImageView *viewIM2 = [[UIImageView alloc] initWithFrame:rectForImage2];
+    viewIM.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:viewIM2];
+    
+    viewIM2.animationImages = imageArray;
+    viewIM2.animationDuration = 0.2;
+    
+    CGRect rectForImage3 = CGRectMake(400, 600, 400, 400);
+    UIImageView *viewIM3 = [[UIImageView alloc] initWithFrame:rectForImage3];
+    viewIM.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:viewIM3];
+    
+    viewIM3.animationImages = imageArray;
+    viewIM3.animationDuration = 0.5;
+    
+    CGRect rectForImage4 = CGRectMake(200, 600, 400, 400);
+    UIImageView *viewIM4 = [[UIImageView alloc] initWithFrame:rectForImage4];
+    viewIM.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:viewIM4];
+    
+    viewIM4.animationImages = imageArray;
+    viewIM4.animationDuration = 0.165;
+    
+    
+
+    [viewIM startAnimating];
+    [viewIM2 startAnimating];
+    [viewIM3 startAnimating];
+    [viewIM4 startAnimating];
+    
+    
+    
+    
 
 }
 
@@ -113,21 +167,25 @@
     UIView *topLeft = [[UIView alloc] initWithFrame:rectTopLeft];
     topLeft.backgroundColor = [UIColor redColor];
     [self.viewsFromStudent addObject:topLeft];
+    topLeft.alpha = 0.66;
     
     CGRect rectTopRight =  CGRectMake(CGRectGetMaxX(self.view.bounds), 0, -100, 100);
     UIView *topRight = [[UIView alloc] initWithFrame:rectTopRight];
     topRight.backgroundColor = [UIColor yellowColor];
     [self.viewsFromStudent addObject:topRight];
+    topRight.alpha = 0.66;
     
     CGRect rectBottomLeft = CGRectMake(0, CGRectGetMaxY(self.view.bounds), 100, -100);
     UIView *bottomLeft = [[UIView alloc] initWithFrame:rectBottomLeft];
     bottomLeft.backgroundColor = [UIColor blueColor];
     [self.viewsFromStudent addObject:bottomLeft];
+    bottomLeft.alpha = 0.66;
     
     CGRect rectBottomRight = CGRectMake(CGRectGetMaxX(self.view.bounds), CGRectGetMaxY(self.view.bounds), -100, -100);
     UIView *bottomRight = [[UIView alloc] initWithFrame:rectBottomRight];
     bottomRight.backgroundColor = [UIColor greenColor];
     [self.viewsFromStudent addObject:bottomRight];
+    bottomRight.alpha = 0.66;
     
     [self.view addSubview:topLeft];
     [self.view addSubview:topRight];
@@ -136,31 +194,8 @@
     
     [self move:topLeft];
     [self move:topRight];
-    [self move:bottomLeft];
     [self move:bottomRight];
-    
-
-    
-   
-    
-//    typedef NS_OPTIONS(NSUInteger, UIViewAnimationOptions) {
-//        UIViewAnimationOptionLayoutSubviews            = 1 <<  0,
-//        UIViewAnimationOptionAllowUserInteraction      = 1 <<  1, // turn on user interaction while animating
-//        UIViewAnimationOptionBeginFromCurrentState     = 1 <<  2, // start all views from current value, not initial value
-//        UIViewAnimationOptionRepeat                    = 1 <<  3, // repeat animation indefinitely
-//        UIViewAnimationOptionAutoreverse               = 1 <<  4, // if repeat, run animation back and forth
-//        UIViewAnimationOptionOverrideInheritedDuration = 1 <<  5, // ignore nested duration
-//        UIViewAnimationOptionOverrideInheritedCurve    = 1 <<  6, // ignore nested curve
-//        UIViewAnimationOptionAllowAnimatedContent      = 1 <<  7, // animate contents (applies to transitions only)
-//        UIViewAnimationOptionShowHideTransitionViews   = 1 <<  8, // flip to/from hidden state instead of adding/removing
-//        UIViewAnimationOptionOverrideInheritedOptions  = 1 <<  9, // do not inherit any options or animation type
-//
-//        UIViewAnimationOptionCurveEaseInOut            = 0 << 16, // default
-//        UIViewAnimationOptionCurveEaseIn               = 1 << 16,
-//        UIViewAnimationOptionCurveEaseOut              = 2 << 16,
-//        UIViewAnimationOptionCurveLinear
-    
-    
+    [self move:bottomLeft];
     
 
     
@@ -183,31 +218,71 @@
     
 
     CGPoint cent;
+    UIColor *col;
+
     
-    switch ([self cornerDetector:tView]) {
+    switch ([self cornerDetector:tView])
+         {
         case 1:
-            cent = topRight.center;
+                 if (arc4random()%2)
+                 {
+                     cent = topRight.center;
+                     col = [UIColor yellowColor];
+                 }
+                 else
+                 {
+                     cent = bottomLeft.center;
+                     col = [UIColor blueColor];
+                 }
             
             break;
         case 2:
-            
-            cent = bottomRight.center;
+                 if (arc4random()%2)
+                 {
+                     cent = bottomRight.center;
+                     col = [UIColor greenColor];
+                 }
+                 else
+                 {
+                     cent = topLeft.center;
+                     col = [UIColor redColor];
+                 }
+           
             
             break;
         case 3:
+                 if (arc4random()%2)
+                 {
+                     cent = topRight.center;
+                     col = [UIColor yellowColor];
+                 }
+                 else
+                 {
+                     cent = bottomLeft.center;
+                     col = [UIColor blueColor];
+                 }
             
-            cent = bottomLeft.center;
+          
             
             break;
         case 4:
+                 if (arc4random()%2)
+                 {
+                     cent = topLeft.center;
+                     col = [UIColor redColor];
+                 }
+                 else
+                 {
+                     cent = bottomRight.center;
+                     col = [UIColor greenColor];
+                 }
             
-            cent = topLeft.center;
+      
             
             break;
-    }
     
-//    CGFloat x = arc4random_uniform(1000);
-//    CGFloat y = arc4random_uniform(1000);
+     }
+    
     
     [UIView animateKeyframesWithDuration:5
                                 delay:1
@@ -215,6 +290,7 @@
                                 animations:^{
                                     
                                     tView.center = cent;
+                                    tView.backgroundColor = col;
                                     
                                 }
                             
@@ -229,22 +305,28 @@
 - (NSInteger) cornerDetector:(UIView *) vieweD
 {
     NSInteger index = 0;
-    if (vieweD.frame.origin.x == 0 & vieweD.frame.origin.y == 0)
+   
+    if (vieweD.frame.origin.x == 0 && vieweD.frame.origin.y == 0)
     {
         index = 1; //topLeft
     }
-    if (vieweD.frame.origin.x == 0 & vieweD.frame.origin.y == CGRectGetHeight(self.view.bounds))
-    {
-        index = 3; //bottomLeft
-    }
-    if (vieweD.frame.origin.x == CGRectGetMaxX(self.view.bounds) & vieweD.frame.origin.y == 0)
+    
+    if (vieweD.frame.origin.x == CGRectGetWidth(self.view.bounds) - CGRectGetWidth(vieweD.bounds) && vieweD.frame.origin.y == 0)
     {
         index = 2; //topRight
     }
-    if (vieweD.frame.origin.x == CGRectGetMaxX(self.view.bounds) & vieweD.frame.origin.y == CGRectGetMaxY(self.view.bounds))
+    
+    if (vieweD.frame.origin.x == CGRectGetWidth(self.view.bounds) - CGRectGetWidth(vieweD.bounds) && vieweD.frame.origin.y == CGRectGetHeight(self.view.bounds) - CGRectGetHeight(vieweD.bounds))
     {
-        index = 4; //bottomRight
+        index = 3; //bottomRight
     }
+    
+    if (vieweD.frame.origin.x == 0 && vieweD.frame.origin.y == CGRectGetHeight(self.view.bounds) - CGRectGetHeight(vieweD.bounds))
+    {
+        index = 4; //bottomLeft
+    }
+    
+
     
     return index;
 }
