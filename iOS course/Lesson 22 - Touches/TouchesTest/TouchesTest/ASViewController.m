@@ -29,8 +29,40 @@
         
         [self.view addSubview:view];
     }
+    
+    
  
     //self.view.multipleTouchEnabled = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    CGRect rect1 = CGRectMake(100, 100, 100, 100);
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:rect1];
+    UIColor *color = [UIColor blackColor];
+    label.backgroundColor = color;
+    label.text = @"asd";
+    label.textColor = [UIColor whiteColor];
+    [self.view addSubview:label];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionCopy:)];
+    
+    [self.view addGestureRecognizer:longPress];
+    
+}
+
+- (void) actionCopy:(UILongPressGestureRecognizer *) gestureRec
+{
+    if ([gestureRec.view isKindOfClass:[UILabel class]])
+    {
+    UILabel *label = (UILabel *)gestureRec.view;
+    UILabel *label2 = [[UILabel alloc] init];
+    label2.text = label.text;
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    [pasteboard setString:label2.text];
+    }
 }
 
 - (void)didReceiveMemoryWarning

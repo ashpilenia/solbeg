@@ -203,6 +203,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Alex Skutarenko";
 				TargetAttributes = {
+					49C9203D182B4D9600DD6F97 = {
+						DevelopmentTeam = SRHNCNXVQ9;
+					};
 					49C92061182B4D9700DD6F97 = {
 						TestTargetID = 49C9203D182B4D9600DD6F97;
 					};
@@ -393,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = SRHNCNXVQ9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ViewControllersTest/ViewControllersTest-Prefix.pch";
 				INFOPLIST_FILE = "ViewControllersTest/ViewControllersTest-Info.plist";
@@ -407,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = SRHNCNXVQ9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ViewControllersTest/ViewControllersTest-Prefix.pch";
 				INFOPLIST_FILE = "ViewControllersTest/ViewControllersTest-Info.plist";
@@ -477,6 +482,7 @@
 				49C92075182B4D9700DD6F97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49C92076182B4D9700DD6F97 /* Build configuration list for PBXNativeTarget "ViewControllersTestTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +491,7 @@
 				49C92078182B4D9700DD6F97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
