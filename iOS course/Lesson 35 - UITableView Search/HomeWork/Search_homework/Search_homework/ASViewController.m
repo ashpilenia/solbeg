@@ -11,6 +11,12 @@
 #import "ASSection.h"
 #import "ASDateFormatter.h"
 
+typedef NS_ENUM(NSInteger, FilterType) {
+    FitlerByMonth,
+    FilterByFirstName,
+    FilterByLastName
+};
+
 static NSString * const kStudId = @"kStudId";
 
 @interface ASViewController ()
@@ -153,34 +159,36 @@ static NSString * const kStudId = @"kStudId";
     student.birthDateString = dateString;
 }
 
-- (NSArray <ASSection *>*) generateSectionsWithFilter:(NSString *)searchString
+- (NSArray <ASSection *>*) generateSectionsWithFilter:(NSString *)searchString andFilterType:(FilterType)filterType
 {
     NSMutableArray *sectionsArray = [NSMutableArray array];
-    ASSection *currentSection = nil;
-    for (ASStudent *obj in self.studentsArray)
-    {
-        if ([obj.name rangeOfString:searchString].location == NSNotFound && [obj.lastName rangeOfString:searchString].location == NSNotFound && searchString.length)
-        {
-            continue;
-        }
-        NSString *sectionName = [self cutDateComponent:obj.birthDateString];
-        if (![sectionName isEqualToString:currentSection.name])
-        {
-            ASSection *section = [ASSection new];
-            section.name = sectionName;
-            section.sectionItems = [NSMutableArray array];
-            [section.sectionItems addObject:obj];
-            currentSection = section;
-            
-            [sectionsArray addObject:section];
-        }
-        else
-        {
-            [currentSection.sectionItems addObject:obj];
-        }
-    }
+    ASSection *currentSection;
+    NSArray *retValue;
     
-    NSArray *retValue = sectionsArray;
+        for (ASStudent *obj in self.studentsArray)
+        {
+            if ([obj.name rangeOfString:searchString].location == NSNotFound && [obj.lastName rangeOfString:searchString].location == NSNotFound && searchString.length)
+            {
+                continue;
+            }
+            NSString *sectionName = [self cutDateComponent:obj.birthDateString];
+            if (![sectionName isEqualToString:currentSection.name])
+            {
+                ASSection *section = [ASSection new];
+                section.name = sectionName;
+                section.sectionItems = [NSMutableArray array];
+                [section.sectionItems addObject:obj];
+                currentSection = section;
+                
+                [sectionsArray addObject:section];
+            }
+            else
+            {
+                [currentSection.sectionItems addObject:obj];
+            }
+        }
+    retValue = sectionsArray;
+    
     return retValue;
 }
 
@@ -189,9 +197,31 @@ static NSString * const kStudId = @"kStudId";
     NSSortDescriptor *birthDesctiptor = [NSSortDescriptor sortDescriptorWithKey:@"month" ascending:YES];
     NSSortDescriptor *nameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     NSSortDescriptor *lastNameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:YES];
-    NSArray <NSSortDescriptor *>* descriptorArray = [NSArray arrayWithObjects:birthDesctiptor, nameDescriptor, lastNameDescriptor, nil];
+    NSArray <NSSortDescriptor *>* descriptorArray;
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case 0:
+        {
+            descriptorArray = [NSArray arrayWithObjects:birthDesctiptor, nameDescriptor, lastNameDescriptor, nil];
+        }
+        break;
+            
+        case 1:
+        {
+            descriptorArray = [NSArray arrayWithObjects:nameDescriptor, birthDesctiptor, lastNameDescriptor, nil];
+        }
+        break;
+            
+        case 2:
+        {
+            descriptorArray = [NSArray arrayWithObjects:lastNameDescriptor, birthDesctiptor, nameDescriptor, nil];
+        }
+        break;
+        default:
+            break;
+    }
     
     self.studentsArray = [studentsArray sortedArrayUsingDescriptors:descriptorArray];
+    
 }
 
 - (NSString *) cutDateComponent:(NSString *) dateString {
