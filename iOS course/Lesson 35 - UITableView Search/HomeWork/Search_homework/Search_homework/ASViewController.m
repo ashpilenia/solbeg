@@ -47,9 +47,7 @@ static NSString * const kStudId = @"kStudId";
     NSInteger randomNumber = arc4random() % 20 + 50;
     self.studentsArray = [self createStudentClass:randomNumber];
     
-    [self sorting:self.studentsArray];
-    
-    self.sectionsArray = [self generateSectionsWithFilter:self.searchBar.text];
+    [self processData];
     
     [super viewDidLoad];
 }
@@ -97,7 +95,8 @@ static NSString * const kStudId = @"kStudId";
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
-    self.sectionsArray = [self generateSectionsWithFilter:searchText];
+    self.sectionsArray = [self generateSectionsWithFilter:searchText
+                                            andFilterType:self.segmentedControl.selectedSegmentIndex];
     [self.tableView reloadData];
 }
 
@@ -114,6 +113,14 @@ static NSString * const kStudId = @"kStudId";
 
 
 #pragma mark - Custom Methods
+
+- (void)processData {
+    
+    [self sorting:self.studentsArray];
+    
+    self.sectionsArray = [self generateSectionsWithFilter:self.searchBar.text
+                                            andFilterType:self.segmentedControl.selectedSegmentIndex];
+}
 
 - (NSArray <ASStudent *>*) createStudentClass:(NSInteger) classSize
 {
@@ -163,7 +170,6 @@ static NSString * const kStudId = @"kStudId";
 {
     NSMutableArray *sectionsArray = [NSMutableArray array];
     ASSection *currentSection;
-    NSArray *retValue;
     
         for (ASStudent *obj in self.studentsArray)
         {
@@ -171,7 +177,19 @@ static NSString * const kStudId = @"kStudId";
             {
                 continue;
             }
-            NSString *sectionName = [self cutDateComponent:obj.birthDateString];
+            NSString *sectionName;
+            switch (self.segmentedControl.selectedSegmentIndex) {
+                case 0:
+                    sectionName = [self cutDateComponent:obj.birthDateString];
+                    break;
+                case 1:
+                    sectionName = [obj.name substringToIndex:1];
+                    break;
+                    case 2:
+                    sectionName = [obj.lastName substringToIndex:1];
+                default:
+                    break;
+            }
             if (![sectionName isEqualToString:currentSection.name])
             {
                 ASSection *section = [ASSection new];
@@ -187,7 +205,7 @@ static NSString * const kStudId = @"kStudId";
                 [currentSection.sectionItems addObject:obj];
             }
         }
-    retValue = sectionsArray;
+    NSArray *retValue = sectionsArray;
     
     return retValue;
 }
@@ -235,5 +253,12 @@ static NSString * const kStudId = @"kStudId";
     return retValue;
 }
 
+#pragma mark - Segmented Control
+
+- (IBAction)segmentedControlValueChangedAction:(UISegmentedControl *)sender {
+    
+    [self processData];
+    [self.tableView reloadData];
+}
 
 @end
