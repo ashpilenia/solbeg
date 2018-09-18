@@ -6,43 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Omega Search-->
-        <scene sceneID="dbu-eH-3uH">
-            <objects>
-                <tableViewController id="aJP-It-rH7" customClass="ASViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XfN-xd-OgD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="kvt-zn-jGW">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="phQ-FE-mMy">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phQ-FE-mMy" id="j0H-OD-3Zb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="aJP-It-rH7" id="bJ0-oq-nvE"/>
-                            <outlet property="delegate" destination="aJP-It-rH7" id="ToO-1w-gmX"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Omega Search" id="7rk-8j-aWu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HAN-6Q-M9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="92" y="-226"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gus-4P-G31">
             <objects>
@@ -52,12 +19,74 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aJP-It-rH7" kind="relationship" relationship="rootViewController" id="uga-u4-amR"/>
+                        <segue destination="q1i-IZ-71F" kind="relationship" relationship="rootViewController" id="4hE-fV-cI1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yao-bu-qif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-860" y="-226"/>
+        </scene>
+        <!--Omega Search-->
+        <scene sceneID="SxZ-Am-a2W">
+            <objects>
+                <viewController id="q1i-IZ-71F" customClass="ASViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnF-Tm-0k2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-hB-meU">
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="FVx-AE-v2N">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hI8-ol-u4L">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hI8-ol-u4L" id="NDP-sn-6rr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fjf-uz-xXt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fN0-w5-gey"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Birthday"/>
+                                    <segment title="Name"/>
+                                    <segment title="Last Name"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GBr-t1-qSf" firstAttribute="trailing" secondItem="Fjf-uz-xXt" secondAttribute="trailing" id="A5Z-UY-4Ko"/>
+                            <constraint firstItem="Fjf-uz-xXt" firstAttribute="leading" secondItem="GBr-t1-qSf" secondAttribute="leading" id="CHl-PA-Kvb"/>
+                            <constraint firstItem="Fjf-uz-xXt" firstAttribute="top" secondItem="GBr-t1-qSf" secondAttribute="top" id="Iuk-La-2Kr"/>
+                            <constraint firstItem="GBr-t1-qSf" firstAttribute="trailing" secondItem="0A0-hB-meU" secondAttribute="trailing" id="Lcu-0C-tcy"/>
+                            <constraint firstItem="GBr-t1-qSf" firstAttribute="bottom" secondItem="0A0-hB-meU" secondAttribute="bottom" id="OJZ-ik-H1n"/>
+                            <constraint firstItem="0A0-hB-meU" firstAttribute="top" secondItem="Fjf-uz-xXt" secondAttribute="bottom" id="b0W-CR-K7D"/>
+                            <constraint firstItem="0A0-hB-meU" firstAttribute="leading" secondItem="GBr-t1-qSf" secondAttribute="leading" id="vTX-WL-oLi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GBr-t1-qSf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Omega Search" id="No2-LV-YBT"/>
+                    <connections>
+                        <outlet property="searchBar" destination="FVx-AE-v2N" id="bII-kC-dfH"/>
+                        <outlet property="segmentedControl" destination="Fjf-uz-xXt" id="5Fs-bF-3HN"/>
+                        <outlet property="tableView" destination="0A0-hB-meU" id="Hv0-tQ-iYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4Z-3L-MIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="-226"/>
         </scene>
     </scenes>
 </document>

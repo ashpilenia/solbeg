@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *lastName;
-@property (strong, nonatomic) NSString *birthDate;
+@property (strong, nonatomic) NSString *birthDateString;
+@property (strong, nonatomic) NSDate *birthDate;
+@property (assign, nonatomic) NSInteger month;
 
 @end

@@ -16,6 +16,8 @@
 		FA2375FF2092198700532121 /* Search_homeworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2375FE2092198700532121 /* Search_homeworkUITests.m */; };
 		FA23760E20921A5500532121 /* ASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23760D20921A5500532121 /* ASViewController.m */; };
 		FA23761120921EB200532121 /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23761020921EB200532121 /* ASStudent.m */; };
+		FA8B8677209359A10042E207 /* ASSection.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B8676209359A10042E207 /* ASSection.m */; };
+		FA8B867A2093738F0042E207 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B86792093738F0042E207 /* ASDateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		FA23760D20921A5500532121 /* ASViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASViewController.m; sourceTree = "<group>"; };
 		FA23760F20921EB200532121 /* ASStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
 		FA23761020921EB200532121 /* ASStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
+		FA8B8675209359A10042E207 /* ASSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSection.h; sourceTree = "<group>"; };
+		FA8B8676209359A10042E207 /* ASSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSection.m; sourceTree = "<group>"; };
+		FA8B86782093738F0042E207 /* ASDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDateFormatter.h; sourceTree = "<group>"; };
+		FA8B86792093738F0042E207 /* ASDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASDateFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				FA23760D20921A5500532121 /* ASViewController.m */,
 				FA23760F20921EB200532121 /* ASStudent.h */,
 				FA23761020921EB200532121 /* ASStudent.m */,
+				FA8B8675209359A10042E207 /* ASSection.h */,
+				FA8B8676209359A10042E207 /* ASSection.m */,
+				FA8B86782093738F0042E207 /* ASDateFormatter.h */,
+				FA8B86792093738F0042E207 /* ASDateFormatter.m */,
 			);
 			path = Search_homework;
 			sourceTree = "<group>";
@@ -267,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8B867A2093738F0042E207 /* ASDateFormatter.m in Sources */,
 				FA2375EA2092198700532121 /* main.m in Sources */,
+				FA8B8677209359A10042E207 /* ASSection.m in Sources */,
 				FA23761120921EB200532121 /* ASStudent.m in Sources */,
 				FA23760E20921A5500532121 /* ASViewController.m in Sources */,
 				FA2375DC2092198500532121 /* AppDelegate.m in Sources */,
