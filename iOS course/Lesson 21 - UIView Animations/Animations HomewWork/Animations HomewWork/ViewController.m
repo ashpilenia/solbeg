@@ -44,8 +44,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+
     self.viewHolder = [[NSMutableArray alloc] init];
     self.viewsFromStudent = [[NSMutableArray alloc] init];
     
@@ -85,24 +84,15 @@
     
     viewIM4.animationImages = imageArray;
     viewIM4.animationDuration = 0.165;
-    
-    
 
     [viewIM startAnimating];
     [viewIM2 startAnimating];
     [viewIM3 startAnimating];
     [viewIM4 startAnimating];
-    
-    
-    
-    
-
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    
-    
     for (int i = 0; i < 4; i++) // создаем вьюхи из Ученика
     {
         CGRect rect = CGRectMake(0, 250 + ((i+1) * 150), 100, 100);
@@ -115,7 +105,7 @@
         [self.viewHolder addObject:view];
     }
  
-    UIViewAnimationOptions (^curveBlock)(NSInteger) = ^(NSInteger index){
+    UIViewAnimationOptions (^curveBlock)(NSInteger) = ^(NSInteger index) {
         
         UIViewAnimationOptions option;
         switch (index) {
@@ -140,12 +130,10 @@
         return option;
 
     };
-    
 
     //анимируем вьюхи из Ученка
     for (UIView *obj in self.viewHolder)
     {
-        
         [UIView animateWithDuration:5
                               delay:1
                             options:curveBlock([self.viewHolder indexOfObject:obj]) | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse
@@ -155,12 +143,8 @@
                              
                              obj.backgroundColor = [self randomColor];
                          }
-                         completion:^(BOOL finished) {
-                            
-                         }];
+                         completion:^(BOOL finished) {}];
     }
-
-    
     
     //создаем вьюхи из Студента
     CGRect rectTopLeft = CGRectMake(0, 0, 100, 100);
@@ -196,9 +180,6 @@
     [self move:topRight];
     [self move:bottomRight];
     [self move:bottomLeft];
-    
-
-    
 }
 
 
@@ -215,15 +196,13 @@
     
     CGRect rectBottomRight = CGRectMake(CGRectGetMaxX(self.view.bounds), CGRectGetMaxY(self.view.bounds), -100, -100);
     UIView *bottomRight = [[UIView alloc] initWithFrame:rectBottomRight];
-    
 
     CGPoint cent;
     UIColor *col;
-
     
     switch ([self cornerDetector:tView])
          {
-        case 1:
+         case 1:
                  if (arc4random()%2)
                  {
                      cent = topRight.center;
@@ -236,7 +215,7 @@
                  }
             
             break;
-        case 2:
+         case 2:
                  if (arc4random()%2)
                  {
                      cent = bottomRight.center;
@@ -250,7 +229,7 @@
            
             
             break;
-        case 3:
+         case 3:
                  if (arc4random()%2)
                  {
                      cent = topRight.center;
@@ -261,10 +240,8 @@
                      cent = bottomLeft.center;
                      col = [UIColor blueColor];
                  }
-            
-          
-            
             break;
+                 
         case 4:
                  if (arc4random()%2)
                  {
@@ -276,13 +253,8 @@
                      cent = bottomRight.center;
                      col = [UIColor greenColor];
                  }
-            
-      
-            
             break;
-    
      }
-    
     
     [UIView animateKeyframesWithDuration:5
                                 delay:1
@@ -291,14 +263,12 @@
                                     
                                     tView.center = cent;
                                     tView.backgroundColor = col;
-                                    
                                 }
                             
                               completion:^(BOOL finished) {
                                             __weak UIView *weakView = tView;
                                             [self move:weakView];
                               }];
-    
 }
 
 
@@ -326,8 +296,6 @@
         index = 4; //bottomLeft
     }
     
-
-    
     return index;
 }
 
@@ -341,11 +309,5 @@
     
     return color;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
