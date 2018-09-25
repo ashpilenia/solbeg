@@ -19,14 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //creating the board
+    [self createChessBoard];
+    
+   
+    
+}
+
+#pragma mark - prepare UI
+
+- (void)createChessBoard {
+    
     UIView *boardView = [[UIView alloc] init];
     boardView.backgroundColor = [UIColor lightGrayColor];
     
     self.boardView = boardView;
     self.boardView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.boardView];
- 
+    
     NSLayoutConstraint *centreHorizontallyConstraint = [NSLayoutConstraint
                                                         constraintWithItem:self.boardView
                                                         attribute:NSLayoutAttributeCenterX
@@ -37,13 +46,13 @@
                                                         constant:0];
     
     NSLayoutConstraint *centreVerticallyConstraint = [NSLayoutConstraint
-                                                        constraintWithItem:self.boardView
-                                                        attribute:NSLayoutAttributeCenterY
-                                                        relatedBy:NSLayoutRelationEqual
-                                                        toItem:self.view
-                                                        attribute:NSLayoutAttributeCenterY
-                                                        multiplier:1.0
-                                                        constant:0];
+                                                      constraintWithItem:self.boardView
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      relatedBy:NSLayoutRelationEqual
+                                                      toItem:self.view
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      multiplier:1.0
+                                                      constant:0];
     
     /* Fixed width */
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.boardView
@@ -66,6 +75,10 @@
                                 centreVerticallyConstraint,
                                 widthConstraint,
                                 heightConstraint]];
+}
+
+- (void)createChessCells {
+    
     
 }
 
