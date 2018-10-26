@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChessLike/ViewController.m"
-            timestampString = "559753315.5937361"
+            timestampString = "562252316.709308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-createChessCells"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "-calculateClosestAvailableView:inView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChessLike/ViewController.m"
-            timestampString = "559753315.594143"
+            timestampString = "562252316.709784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-colorDetector:andColumnNumber:"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-calculateClosestAvailableView:inView:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChessLike/ViewController.m"
+            timestampString = "562252316.710055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "-calculateClosestAvailableView:inView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

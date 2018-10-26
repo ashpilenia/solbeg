@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface ASChessView : UIView
 
+@property (assign, nonatomic) NSInteger row;
+@property (assign, nonatomic) NSInteger column;
+@property (assign, nonatomic) BOOL isBlack;
+@property (assign, nonatomic) BOOL isOccupied;
+
 @end
 
-NS_ASSUME_NONNULL_END
+

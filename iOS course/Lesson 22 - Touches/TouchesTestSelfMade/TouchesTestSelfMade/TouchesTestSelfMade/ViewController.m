@@ -126,6 +126,7 @@
         self.draggingView.transform = CGAffineTransformIdentity;
         self.draggingView.alpha = 1.f;
     }];
+    
     self.draggingView = nil;
 }
 

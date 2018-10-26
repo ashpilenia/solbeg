@@ -13,6 +13,7 @@
 		FA04E91A2152F56000557802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA04E9192152F56000557802 /* Assets.xcassets */; };
 		FA04E91D2152F56000557802 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA04E91B2152F56000557802 /* LaunchScreen.storyboard */; };
 		FA04E9202152F56000557802 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA04E91F2152F56000557802 /* main.m */; };
+		FA23D9272181C870008AD2BB /* ASChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23D9262181C870008AD2BB /* ASChessView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		FA04E91C2152F56000557802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA04E91E2152F56000557802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA04E91F2152F56000557802 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA23D9252181C870008AD2BB /* ASChessView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASChessView.h; sourceTree = "<group>"; };
+		FA23D9262181C870008AD2BB /* ASChessView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASChessView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		FA04E90F2152F55F00557802 /* ChessLike */ = {
 			isa = PBXGroup;
 			children = (
+				FA23D9242181C83B008AD2BB /* Views */,
 				FA04E9102152F55F00557802 /* AppDelegate.h */,
 				FA04E9112152F55F00557802 /* AppDelegate.m */,
 				FA04E9132152F55F00557802 /* ViewController.h */,
@@ -69,6 +73,15 @@
 				FA04E91F2152F56000557802 /* main.m */,
 			);
 			path = ChessLike;
+			sourceTree = "<group>";
+		};
+		FA23D9242181C83B008AD2BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA23D9252181C870008AD2BB /* ASChessView.h */,
+				FA23D9262181C870008AD2BB /* ASChessView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA04E9152152F55F00557802 /* ViewController.m in Sources */,
+				FA23D9272181C870008AD2BB /* ASChessView.m in Sources */,
 				FA04E9202152F56000557802 /* main.m in Sources */,
 				FA04E9122152F55F00557802 /* AppDelegate.m in Sources */,
 			);
