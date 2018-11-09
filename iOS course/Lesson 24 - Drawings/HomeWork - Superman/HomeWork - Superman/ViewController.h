@@ -15,6 +15,19 @@
 
 - (IBAction)pencilPressed:(UIButton *)sender;
 - (IBAction)eraserPressed:(UIButton *)sender;
+- (IBAction)reset:(UIButton *)sender;
+- (IBAction)settings:(UIButton *)sender;
+- (IBAction)save:(UIButton *)sender;
+
+@property (nonatomic, assign) CGPoint lastPoint;
+@property (nonatomic, assign) CGFloat red;
+@property (nonatomic, assign) CGFloat green;
+@property (nonatomic, assign) CGFloat blue;
+@property (nonatomic, assign) CGFloat brush;
+@property (nonatomic, assign) CGFloat opacity;
+@property (nonatomic, assign) BOOL mouseSwiped;
+
+
 
 
 @end
