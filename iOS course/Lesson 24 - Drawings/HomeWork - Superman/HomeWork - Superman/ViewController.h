@@ -11,7 +11,6 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *tempDrawImage;
-@property (nonatomic, weak) IBOutlet UIImageView *mainImage;
 
 - (IBAction)pencilPressed:(UIButton *)sender;
 - (IBAction)eraserPressed:(UIButton *)sender;

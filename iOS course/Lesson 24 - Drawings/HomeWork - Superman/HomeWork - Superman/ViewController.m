@@ -78,34 +78,87 @@
         UIGraphicsEndImageContext();
     }
 
-    UIGraphicsBeginImageContext(self.mainImage.frame.size);
-    
-    [self.mainImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-                           blendMode:kCGBlendModeNormal
-                               alpha:1.f];
-   
-    
+    UIGraphicsBeginImageContext(self.tempDrawImage.frame.size);
 
     [self.tempDrawImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
                                blendMode:kCGBlendModeNormal
                                    alpha:self.opacity];
     
-
-
-    self.mainImage.image = UIGraphicsGetImageFromCurrentImageContext();
-    self.tempDrawImage.image = nil;
     UIGraphicsEndImageContext();
 }
 
 #pragma mark - Actions
 
 - (IBAction)pencilPressed:(UIButton *)sender {
+    
+    UIButton * PressedButton = (UIButton*)sender;
+    
+    switch(PressedButton.tag)
+    {
+        case 0:
+            self.red = 0.0/255.0;
+            self.green = 0.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+        case 1:
+            self.red = 105.0/255.0;
+            self.green = 105.0/255.0;
+            self.blue = 105.0/255.0;
+            break;
+        case 2:
+            self.red = 255.0/255.0;
+            self.green = 0.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+        case 3:
+            self.red = 0.0/255.0;
+            self.green = 0.0/255.0;
+            self.blue = 255.0/255.0;
+            break;
+        case 4:
+            self.red = 102.0/255.0;
+            self.green = 204.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+        case 5:
+            self.red = 102.0/255.0;
+            self.green = 255.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+        case 6:
+            self.red = 51.0/255.0;
+            self.green = 204.0/255.0;
+            self.blue = 255.0/255.0;
+            break;
+        case 7:
+            self.red = 160.0/255.0;
+            self.green = 82.0/255.0;
+            self.blue = 45.0/255.0;
+            break;
+        case 8:
+            self.red = 255.0/255.0;
+            self.green = 102.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+        case 9:
+            self.red = 255.0/255.0;
+            self.green = 255.0/255.0;
+            self.blue = 0.0/255.0;
+            break;
+    }
 }
 
 - (IBAction)eraserPressed:(UIButton *)sender {
+    
+    self.red = 255.0/255.0;
+    self.green = 255.0/255.0;
+    self.blue = 255.0/255.0;
+    self.opacity = 1.0;
 }
 
 - (IBAction)reset:(UIButton *)sender {
+    
+    self.tempDrawImage.image = nil;
 }
 
 - (IBAction)settings:(UIButton *)sender {
