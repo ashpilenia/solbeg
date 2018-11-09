@@ -20,4 +20,9 @@
 }
 
 
+- (IBAction)pencilPressed:(UIButton *)sender {
+}
+
+- (IBAction)eraserPressed:(UIButton *)sender {
+}
 @end
