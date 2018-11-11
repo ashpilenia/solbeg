@@ -36,6 +36,7 @@
 		FA49C4BE2195BD5B000B1738 /* g.png in Resources */ = {isa = PBXBuildFile; fileRef = FA49C4A82195BD5B000B1738 /* g.png */; };
 		FA49C4BF2195BD5B000B1738 /* Opacity.png in Resources */ = {isa = PBXBuildFile; fileRef = FA49C4A92195BD5B000B1738 /* Opacity.png */; };
 		FA49C4C02195BD5B000B1738 /* Red.png in Resources */ = {isa = PBXBuildFile; fileRef = FA49C4AA2195BD5B000B1738 /* Red.png */; };
+		FA5C8FA421984A3D0042BD98 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5C8FA321984A3D0042BD98 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		FA49C4A82195BD5B000B1738 /* g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = g.png; sourceTree = "<group>"; };
 		FA49C4A92195BD5B000B1738 /* Opacity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Opacity.png; sourceTree = "<group>"; };
 		FA49C4AA2195BD5B000B1738 /* Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Red.png; sourceTree = "<group>"; };
+		FA5C8FA221984A3D0042BD98 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FA5C8FA321984A3D0042BD98 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				FA49C47C2195B9EC000B1738 /* AppDelegate.m */,
 				FA49C47E2195B9EC000B1738 /* ViewController.h */,
 				FA49C47F2195B9EC000B1738 /* ViewController.m */,
+				FA5C8FA221984A3D0042BD98 /* SettingsViewController.h */,
+				FA5C8FA321984A3D0042BD98 /* SettingsViewController.m */,
 				FA49C4812195B9EC000B1738 /* Main.storyboard */,
 				FA49C4842195B9ED000B1738 /* Assets.xcassets */,
 				FA49C4862195B9ED000B1738 /* LaunchScreen.storyboard */,
@@ -252,6 +257,7 @@
 				FA49C4802195B9EC000B1738 /* ViewController.m in Sources */,
 				FA49C48B2195B9ED000B1738 /* main.m in Sources */,
 				FA49C47D2195B9EC000B1738 /* AppDelegate.m in Sources */,
+				FA5C8FA421984A3D0042BD98 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

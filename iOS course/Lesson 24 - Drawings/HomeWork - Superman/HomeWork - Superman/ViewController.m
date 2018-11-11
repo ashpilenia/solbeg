@@ -24,6 +24,17 @@
     self.opacity = 1.0;
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SettingsViewController *settingsController = (SettingsViewController *)segue.destinationViewController;
+    
+    settingsController.delegate = self;
+    settingsController.brush = self.brush;
+    settingsController.opacity = self.opacity;
+}
+
 
 #pragma mark - Touches
 
@@ -166,4 +177,16 @@
 
 - (IBAction)save:(UIButton *)sender {
 }
+
+#pragma mark - Settings Delegate
+
+- (void)closeSettings:(id)sender
+{
+    SettingsViewController *controller = (SettingsViewController *)sender;
+    self.brush = controller.brush;
+    self.opacity = controller.opacity;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 @end

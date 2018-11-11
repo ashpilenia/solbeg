@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SettingsViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *tempDrawImage;
 
