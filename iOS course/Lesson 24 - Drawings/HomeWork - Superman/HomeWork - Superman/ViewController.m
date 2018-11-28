@@ -24,6 +24,24 @@
     self.opacity = 1.0;
 }
 
+#pragma mark - Private Methods
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (error != NULL)
+    {
+        UIAlertController *failController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Image could not be saved.Please try again" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:failController animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertController *successController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Image was successfully saved in photoalbum" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:successController animated:YES completion:nil];
+    }
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -33,6 +51,9 @@
     settingsController.delegate = self;
     settingsController.brush = self.brush;
     settingsController.opacity = self.opacity;
+    settingsController.red = self.red;
+    settingsController.green = self.green;
+    settingsController.blue = self.blue;
 }
 
 
@@ -176,6 +197,35 @@
 }
 
 - (IBAction)save:(UIButton *)sender {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *saveToCameraRollAction = [UIAlertAction actionWithTitle:@"Save to Camera Roll" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIGraphicsBeginImageContextWithOptions(self.tempDrawImage.bounds.size, NO, 0);
+        [self.tempDrawImage.image drawInRect:CGRectMake(0,
+                                                        0,
+                                                        self.tempDrawImage.frame.size.width,
+                                                        self.tempDrawImage.frame.size.height)];
+        UIImage *saveImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIImageWriteToSavedPhotosAlbum(saveImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        
+    }];
+    
+    UIAlertAction *tweetIt = [UIAlertAction actionWithTitle:@"Tweet it!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alertController addAction:saveToCameraRollAction];
+    [alertController addAction:tweetIt];
+    [alertController addAction:cancel];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - Settings Delegate
@@ -185,6 +235,9 @@
     SettingsViewController *controller = (SettingsViewController *)sender;
     self.brush = controller.brush;
     self.opacity = controller.opacity;
+    self.red = controller.red;
+    self.green = controller.green;
+    self.blue = controller.blue;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
