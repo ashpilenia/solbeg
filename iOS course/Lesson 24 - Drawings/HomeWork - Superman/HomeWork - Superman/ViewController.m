@@ -214,15 +214,9 @@
         
     }];
     
-    UIAlertAction *tweetIt = [UIAlertAction actionWithTitle:@"Tweet it!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        
-    }];
-    
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {}];
     
     [alertController addAction:saveToCameraRollAction];
-    [alertController addAction:tweetIt];
     [alertController addAction:cancel];
     
     [self presentViewController:alertController animated:YES completion:nil];
