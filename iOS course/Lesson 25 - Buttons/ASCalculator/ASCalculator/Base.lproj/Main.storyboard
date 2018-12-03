@@ -289,6 +289,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="changeSignButton" destination="3ad-ZX-BDw" id="OBs-b1-ESU"/>
+                        <outlet property="clearButton" destination="AFl-Lu-m1V" id="Tiz-hu-Rd6"/>
+                        <outlet property="divisionButton" destination="dUT-I3-mhu" id="gIY-H6-iyv"/>
+                        <outlet property="dotButton" destination="QiA-Dt-NNe" id="3pB-h5-9qW"/>
+                        <outlet property="eightButton" destination="W3C-lN-URK" id="f3e-A0-r1k"/>
+                        <outlet property="equalButton" destination="jhX-cw-eNK" id="3FJ-iK-ofI"/>
+                        <outlet property="fiveButton" destination="Iun-kQ-Kjf" id="3aV-D6-Zw8"/>
+                        <outlet property="fourButton" destination="FhS-6F-Nzv" id="oRZ-Mf-3RS"/>
+                        <outlet property="minusButton" destination="XdW-Pc-aRU" id="d9J-ac-J8w"/>
+                        <outlet property="multiplierButton" destination="Hty-vE-D8m" id="Rh6-rX-l7G"/>
+                        <outlet property="nineButton" destination="7lS-zC-B61" id="Fai-qo-gQe"/>
+                        <outlet property="oneButton" destination="8hO-he-TGG" id="6w6-2A-h9h"/>
+                        <outlet property="percantageButton" destination="H5T-OE-z53" id="CZy-Cw-46J"/>
+                        <outlet property="plusButton" destination="ACW-3f-CvK" id="G4K-i1-dLt"/>
+                        <outlet property="sevenButton" destination="fch-dq-G6u" id="Udq-g3-nh1"/>
+                        <outlet property="sixButton" destination="Wgy-NB-PTz" id="gCm-OT-Sy8"/>
+                        <outlet property="threeButton" destination="lW4-4H-gz8" id="Zhb-hX-9Xq"/>
+                        <outlet property="twoButton" destination="D9b-LL-7Ov" id="J9Q-pj-YrT"/>
+                        <outlet property="zeroButton" destination="XJJ-wd-0Tv" id="wGw-NB-skW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
