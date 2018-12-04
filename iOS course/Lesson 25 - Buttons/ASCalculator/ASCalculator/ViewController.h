@@ -31,6 +31,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *threeButton;
 @property (weak, nonatomic) IBOutlet UIButton *zeroButton;
 
+- (IBAction)numericAction:(UIButton *)sender;
+- (IBAction)operationAction:(UIButton *)sender;
+- (IBAction)equalAction:(UIButton *)sender;
+- (IBAction)singleTargetAction:(UIButton *)sender;
+- (IBAction)clearAction:(UIButton *)sender;
+
 
 @end
 

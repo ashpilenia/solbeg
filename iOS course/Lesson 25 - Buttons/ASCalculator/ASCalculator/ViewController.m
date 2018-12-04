@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+#pragma mark - View Controller
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -75,9 +77,23 @@
     self.equalButton.layer.borderWidth = 0.5f;
     self.equalButton.layer.borderColor = [UIColor blackColor].CGColor;
     
- 
-
 }
 
 
+#pragma mark - Actions
+
+- (IBAction)numericAction:(UIButton *)sender {
+}
+
+- (IBAction)operationAction:(UIButton *)sender {
+}
+
+- (IBAction)equalAction:(UIButton *)sender {
+}
+
+- (IBAction)singleTargetAction:(UIButton *)sender {
+}
+
+- (IBAction)clearAction:(UIButton *)sender {
+}
 @end
