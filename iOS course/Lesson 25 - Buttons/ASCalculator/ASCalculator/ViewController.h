@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 @property (weak, nonatomic) IBOutlet UIButton *changeSignButton;
 @property (weak, nonatomic) IBOutlet UIButton *percantageButton;
@@ -36,6 +38,7 @@
 - (IBAction)equalAction:(UIButton *)sender;
 - (IBAction)singleTargetAction:(UIButton *)sender;
 - (IBAction)clearAction:(UIButton *)sender;
+- (IBAction)dotAction:(UIButton *)sender;
 
 
 @end

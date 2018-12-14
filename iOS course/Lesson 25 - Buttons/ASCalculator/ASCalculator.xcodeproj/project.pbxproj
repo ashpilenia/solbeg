@@ -13,6 +13,7 @@
 		FA4DE32E21B53BA700D83531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4DE32D21B53BA700D83531 /* Assets.xcassets */; };
 		FA4DE33121B53BA700D83531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4DE32F21B53BA700D83531 /* LaunchScreen.storyboard */; };
 		FA4DE33421B53BA700D83531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4DE33321B53BA700D83531 /* main.m */; };
+		FAFA0CB121B6B4A10039FD34 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFA0CB021B6B4A10039FD34 /* UIButton+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		FA4DE33021B53BA700D83531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4DE33221B53BA700D83531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA4DE33321B53BA700D83531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAFA0CAF21B6B4A10039FD34 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		FAFA0CB021B6B4A10039FD34 /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				FA4DE32F21B53BA700D83531 /* LaunchScreen.storyboard */,
 				FA4DE33221B53BA700D83531 /* Info.plist */,
 				FA4DE33321B53BA700D83531 /* main.m */,
+				FAFA0CAF21B6B4A10039FD34 /* UIButton+Extension.h */,
+				FAFA0CB021B6B4A10039FD34 /* UIButton+Extension.m */,
 			);
 			path = ASCalculator;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4DE32921B53BA400D83531 /* ViewController.m in Sources */,
+				FAFA0CB121B6B4A10039FD34 /* UIButton+Extension.m in Sources */,
 				FA4DE33421B53BA700D83531 /* main.m in Sources */,
 				FA4DE32621B53BA400D83531 /* AppDelegate.m in Sources */,
 			);
