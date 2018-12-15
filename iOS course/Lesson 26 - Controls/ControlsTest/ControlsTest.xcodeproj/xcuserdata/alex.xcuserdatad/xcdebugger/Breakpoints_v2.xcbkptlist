@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ASCalculator/UIButton+Extension.m"
-            timestampString = "566554003.58143"
+            filePath = "ControlsTest/ViewController.m"
+            timestampString = "566567230.680765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-setSelected:"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-refreshScreen"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
