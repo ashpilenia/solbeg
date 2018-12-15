@@ -183,7 +183,7 @@
 }
 
 
-- (void) move:(UIView *) tView
+- (void)move:(UIView *)tView
 {
     CGRect rectTopLeft = CGRectMake(0, 0, 100, 100);
     UIView *topLeft = [[UIView alloc] initWithFrame:rectTopLeft];
