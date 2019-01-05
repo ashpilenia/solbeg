@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="KGk-i7-Jjw" customClass="ASSegmentedTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E33-YE-seb">
+                        <rect key="frame" x="15" y="5" width="140" height="56.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OWP-gC-vN0">
+                        <rect key="frame" x="165" y="5" width="140" height="57.5"/>
+                        <segments>
+                            <segment title="Male"/>
+                            <segment title="Female"/>
+                        </segments>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OWP-gC-vN0" firstAttribute="width" secondItem="E33-YE-seb" secondAttribute="width" id="3w7-Jr-dWW"/>
+                    <constraint firstAttribute="trailing" secondItem="OWP-gC-vN0" secondAttribute="trailing" constant="15" id="6Zf-18-n4j"/>
+                    <constraint firstItem="E33-YE-seb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7ue-cH-fVx"/>
+                    <constraint firstAttribute="bottom" secondItem="OWP-gC-vN0" secondAttribute="bottom" constant="5" id="AUA-Z2-qC8"/>
+                    <constraint firstItem="OWP-gC-vN0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Fgq-Dl-T2L"/>
+                    <constraint firstAttribute="bottom" secondItem="E33-YE-seb" secondAttribute="bottom" constant="5" id="H2U-Os-Zbb"/>
+                    <constraint firstItem="E33-YE-seb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="VMO-ZB-Kxy"/>
+                    <constraint firstItem="OWP-gC-vN0" firstAttribute="leading" secondItem="E33-YE-seb" secondAttribute="trailing" constant="10" id="kAg-MC-Gu6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="mainLabel" destination="E33-YE-seb" id="prr-kK-mjm"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="164.16791604197903"/>
+        </tableViewCell>
+    </objects>
+</document>

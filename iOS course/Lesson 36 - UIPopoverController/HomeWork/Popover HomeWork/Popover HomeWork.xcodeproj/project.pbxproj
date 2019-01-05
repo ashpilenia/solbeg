@@ -14,6 +14,11 @@
 		FA6A933121DD43DB00E05750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA6A932F21DD43DB00E05750 /* LaunchScreen.storyboard */; };
 		FA6A933421DD43DB00E05750 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A933321DD43DB00E05750 /* main.m */; };
 		FA6A933C21DD4D3100E05750 /* ApplicationInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A933B21DD4D3100E05750 /* ApplicationInfoController.m */; };
+		FA6A934021E0D41400E05750 /* ASTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A933E21E0D41400E05750 /* ASTableViewCell.m */; };
+		FA6A934121E0D41400E05750 /* ASTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6A933F21E0D41400E05750 /* ASTableViewCell.xib */; };
+		FA6A934521E0DE8100E05750 /* ASSegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A934321E0DE8100E05750 /* ASSegmentedTableViewCell.m */; };
+		FA6A934621E0DE8100E05750 /* ASSegmentedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */; };
+		FA6A934921E156CE00E05750 /* DatePickerModalConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,14 @@
 		FA6A933321DD43DB00E05750 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA6A933A21DD4D3100E05750 /* ApplicationInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationInfoController.h; sourceTree = "<group>"; };
 		FA6A933B21DD4D3100E05750 /* ApplicationInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationInfoController.m; sourceTree = "<group>"; };
+		FA6A933D21E0D41400E05750 /* ASTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTableViewCell.h; sourceTree = "<group>"; };
+		FA6A933E21E0D41400E05750 /* ASTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTableViewCell.m; sourceTree = "<group>"; };
+		FA6A933F21E0D41400E05750 /* ASTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASTableViewCell.xib; sourceTree = "<group>"; };
+		FA6A934221E0DE8100E05750 /* ASSegmentedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSegmentedTableViewCell.h; sourceTree = "<group>"; };
+		FA6A934321E0DE8100E05750 /* ASSegmentedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSegmentedTableViewCell.m; sourceTree = "<group>"; };
+		FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASSegmentedTableViewCell.xib; sourceTree = "<group>"; };
+		FA6A934721E156CE00E05750 /* DatePickerModalConroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerModalConroller.h; sourceTree = "<group>"; };
+		FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerModalConroller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,14 @@
 				FA6A932821DD43DA00E05750 /* ViewController.m */,
 				FA6A933A21DD4D3100E05750 /* ApplicationInfoController.h */,
 				FA6A933B21DD4D3100E05750 /* ApplicationInfoController.m */,
+				FA6A933D21E0D41400E05750 /* ASTableViewCell.h */,
+				FA6A933E21E0D41400E05750 /* ASTableViewCell.m */,
+				FA6A933F21E0D41400E05750 /* ASTableViewCell.xib */,
+				FA6A934221E0DE8100E05750 /* ASSegmentedTableViewCell.h */,
+				FA6A934321E0DE8100E05750 /* ASSegmentedTableViewCell.m */,
+				FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */,
+				FA6A934721E156CE00E05750 /* DatePickerModalConroller.h */,
+				FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */,
 				FA6A932A21DD43DA00E05750 /* Main.storyboard */,
 				FA6A932D21DD43DB00E05750 /* Assets.xcassets */,
 				FA6A932F21DD43DB00E05750 /* LaunchScreen.storyboard */,
@@ -136,6 +157,8 @@
 				FA6A933121DD43DB00E05750 /* LaunchScreen.storyboard in Resources */,
 				FA6A932E21DD43DB00E05750 /* Assets.xcassets in Resources */,
 				FA6A932C21DD43DA00E05750 /* Main.storyboard in Resources */,
+				FA6A934121E0D41400E05750 /* ASTableViewCell.xib in Resources */,
+				FA6A934621E0DE8100E05750 /* ASSegmentedTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6A934521E0DE8100E05750 /* ASSegmentedTableViewCell.m in Sources */,
+				FA6A934921E156CE00E05750 /* DatePickerModalConroller.m in Sources */,
 				FA6A932921DD43DA00E05750 /* ViewController.m in Sources */,
 				FA6A933421DD43DB00E05750 /* main.m in Sources */,
 				FA6A933C21DD4D3100E05750 /* ApplicationInfoController.m in Sources */,
+				FA6A934021E0D41400E05750 /* ASTableViewCell.m in Sources */,
 				FA6A932621DD43DA00E05750 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
