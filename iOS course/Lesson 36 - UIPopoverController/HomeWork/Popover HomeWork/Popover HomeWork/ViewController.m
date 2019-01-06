@@ -11,10 +11,12 @@
 #import "ASTableViewCell.h"
 #import "ASSegmentedTableViewCell.h"
 #import "DatePickerModalConroller.h"
+#import "EducationController.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) NSDate *selectedBirthDate;
+@property (nonatomic, strong) NSString *selectedEducation;
 
 @end
 
@@ -81,6 +83,11 @@
             case 1:
             {
                 cell.mainLabel.text = @"Last Name";
+                cell.isLastNameCell = YES;
+                __weak typeof (ASTableViewCell *) weakCell = cell;
+                cell.firstNameToLastTransitionBlock = ^{
+                    [weakCell.textField becomeFirstResponder];
+                };
             }
                 break;
             case 3:
@@ -115,6 +122,26 @@
             {
                 cell.mainLabel.text = @"Education";
                 cell.isEducationCell = YES;
+                
+                if (self.selectedEducation) {
+                    cell.textField.text = self.selectedEducation;
+                }
+                
+                cell.educationBlock = ^{
+                    
+                    weakSelf.view.alpha = 0.5f;
+                    EducationController *controller = [weakSelf.storyboard instantiateViewControllerWithIdentifier:@"EducationController"];
+                    controller.modalPresentationStyle = UIModalPresentationCustom;
+                    controller.mainView.layer.cornerRadius = 200;
+                    
+                    if (self.selectedEducation) {
+                        controller.passedString = weakSelf.selectedEducation;
+                    }
+                    controller.delegate = self;
+                    
+                    [weakSelf presentViewController:controller animated:YES completion:nil];
+                    
+                };
             }
             default:
                 break;
@@ -129,6 +156,12 @@
 - (void)didFinishPickingData:(NSDate *)selectedDate {
     
     self.selectedBirthDate = selectedDate;
+    [self.tableView reloadData];
+}
+
+- (void)didFinishPickingEducation:(NSString *)selectedString {
+    
+    self.selectedEducation = selectedString;
     [self.tableView reloadData];
 }
 

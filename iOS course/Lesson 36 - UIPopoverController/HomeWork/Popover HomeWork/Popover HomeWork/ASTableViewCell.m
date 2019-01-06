@@ -8,18 +8,18 @@
 
 #import "ASTableViewCell.h"
 
+ NSString * const changeRespondernNotification = @"kChangeRespondernNotification";
+
 @implementation ASTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.textField.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notifciationReceivedAction:) name:changeRespondernNotification object:nil];
     
-    if (self.isEducationCell) {
-        self.textField.returnKeyType = UIReturnKeyDone;
-    } else {
-        self.textField.returnKeyType = UIReturnKeyNext;
-    }
+    self.textField.delegate = self;
+    self.textField.returnKeyType = UIReturnKeyNext;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -33,7 +33,18 @@
     return @"cellId";
 }
 
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - UITextFieldDelegate
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    if (self.isLastNameCell) {
+        self.textField.returnKeyType = UIReturnKeyDone;
+    }
     
     if (self.isEducationCell) {
         
@@ -41,14 +52,39 @@
             self.educationBlock();
         }
         return NO;
+        
     } else if (self.isBirthDateCell) {
         
         if (self.birthDateBlock) {
             self.birthDateBlock();
         }
         return NO;
+        
     } else {
         return YES;
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if (textField.returnKeyType == UIReturnKeyNext) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:(changeRespondernNotification) object:nil];
+    }
+    
+    if (self.isLastNameCell) {
+        
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+#pragma mark - Notifications
+
+- (void)notifciationReceivedAction:(NSNotification *)notification {
+    
+    if (self.isLastNameCell) {
+        [self.textField becomeFirstResponder];
     }
 }
 

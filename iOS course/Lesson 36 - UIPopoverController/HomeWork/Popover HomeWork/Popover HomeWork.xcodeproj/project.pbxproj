@@ -19,6 +19,7 @@
 		FA6A934521E0DE8100E05750 /* ASSegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A934321E0DE8100E05750 /* ASSegmentedTableViewCell.m */; };
 		FA6A934621E0DE8100E05750 /* ASSegmentedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */; };
 		FA6A934921E156CE00E05750 /* DatePickerModalConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */; };
+		FA6A934C21E22F8300E05750 /* EducationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6A934B21E22F8300E05750 /* EducationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASSegmentedTableViewCell.xib; sourceTree = "<group>"; };
 		FA6A934721E156CE00E05750 /* DatePickerModalConroller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerModalConroller.h; sourceTree = "<group>"; };
 		FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerModalConroller.m; sourceTree = "<group>"; };
+		FA6A934A21E22F8300E05750 /* EducationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EducationController.h; sourceTree = "<group>"; };
+		FA6A934B21E22F8300E05750 /* EducationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				FA6A934421E0DE8100E05750 /* ASSegmentedTableViewCell.xib */,
 				FA6A934721E156CE00E05750 /* DatePickerModalConroller.h */,
 				FA6A934821E156CE00E05750 /* DatePickerModalConroller.m */,
+				FA6A934A21E22F8300E05750 /* EducationController.h */,
+				FA6A934B21E22F8300E05750 /* EducationController.m */,
 				FA6A932A21DD43DA00E05750 /* Main.storyboard */,
 				FA6A932D21DD43DB00E05750 /* Assets.xcassets */,
 				FA6A932F21DD43DB00E05750 /* LaunchScreen.storyboard */,
@@ -169,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6A934C21E22F8300E05750 /* EducationController.m in Sources */,
 				FA6A934521E0DE8100E05750 /* ASSegmentedTableViewCell.m in Sources */,
 				FA6A934921E156CE00E05750 /* DatePickerModalConroller.m in Sources */,
 				FA6A932921DD43DA00E05750 /* ViewController.m in Sources */,

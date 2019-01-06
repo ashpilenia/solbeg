@@ -32,6 +32,12 @@
     
 }
 
+- (void)dealloc {
+    NSLog(@"DatePicker controller is deallocated");
+}
+
+#pragma mark - Actions
+
 - (void)backAction {
     
     self.delegate.view.alpha = 1.f;
@@ -57,57 +63,56 @@
     
     if (isInsideBackButton) {
         
-        [UIView animateWithDuration:0.1f animations:^{
-            self.backView.backgroundColor = [UIColor lightGrayColor];
-            self.backView.layer.borderWidth = 3.f;
-            self.backView.layer.borderColor = [[UIColor whiteColor] CGColor];
-        }];
-        
+        [self applyAnimations:self.backView];
         self.isBackPressed = YES;
     }
     
     if (isInsideDoneButton) {
         
-        [UIView animateWithDuration:0.1f animations:^{
-            self.doneView.backgroundColor = [UIColor lightGrayColor];
-            self.doneView.layer.borderWidth = 3.f;
-            self.doneView.layer.borderColor = [[UIColor whiteColor] CGColor];
-        }];
-        
+        [self applyAnimations:self.doneView];
         self.isDonePressed = YES;
     }
-    
-    
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     if (self.isBackPressed) {
         
-        [UIView animateWithDuration:0.3f animations:^{
-            self.backView.backgroundColor = [UIColor blackColor];
-            self.backView.layer.borderWidth = 0;
-            self.isBackPressed = NO;
-        } completion:^(BOOL finished) {
-            [self backAction];
-        }];
-        
+        self.isBackPressed = NO;
+        [self revertAnimations:self.backView];
     }
     
     if (self.isDonePressed) {
         
-        [UIView animateWithDuration:0.3f animations:^{
-            self.doneView.backgroundColor = [UIColor blackColor];
-            self.doneView.layer.borderWidth = 0;
-            self.isDonePressed = NO;
-        } completion:^(BOOL finished) {
-            [self doneAction];
-        }];
+        self.isDonePressed = NO;
+        [self revertAnimations:self.doneView];
     }
     
 }
 
-- (void)dealloc {
-    NSLog(@"DatePicker controller is deallocated");
+- (void)applyAnimations:(UIView *)view {
+    
+    [UIView animateWithDuration:0.1f animations:^{
+        view.backgroundColor = [UIColor lightGrayColor];
+        view.layer.borderWidth = 3.f;
+        view.layer.borderColor = [[UIColor whiteColor] CGColor];
+    }];
 }
+
+- (void)revertAnimations:(UIView *)view {
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        view.backgroundColor = [UIColor blackColor];
+        view.layer.borderWidth = 0;
+        
+    } completion:^(BOOL finished) {
+        
+        if ([view isEqual:self.backView]) {
+            [self backAction];
+        } else {
+            [self doneAction];
+        }
+    }];
+}
+
 @end

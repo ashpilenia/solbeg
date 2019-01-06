@@ -15,6 +15,7 @@
 - (IBAction)infoButtonAction:(UIBarButtonItem *)sender;
 
 - (void)didFinishPickingData:(NSDate *)selectedDate;
+- (void)didFinishPickingEducation:(NSString *)selectedString;
 
 @end
 

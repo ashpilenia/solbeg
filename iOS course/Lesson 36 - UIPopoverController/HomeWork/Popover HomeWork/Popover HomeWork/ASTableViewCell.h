@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isEducationCell;
 @property (nonatomic, assign) BOOL isBirthDateCell;
+@property (nonatomic, assign) BOOL isLastNameCell;
 @property (nonatomic, copy) void (^educationBlock)(void);
 @property (nonatomic, copy) void (^birthDateBlock)(void);
+@property (nonatomic, copy) void (^firstNameToLastTransitionBlock)(void);
 
 
 + (NSString *)reuseIdentifier;

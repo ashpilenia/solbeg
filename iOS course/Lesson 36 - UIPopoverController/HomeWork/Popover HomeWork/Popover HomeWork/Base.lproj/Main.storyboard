@@ -180,5 +180,48 @@
             </objects>
             <point key="canvasLocation" x="1730.4000000000001" y="144.3778110944528"/>
         </scene>
+        <!--Education Controller-->
+        <scene sceneID="PC8-H8-aCD">
+            <objects>
+                <viewController storyboardIdentifier="EducationController" id="AYR-8g-wBI" customClass="EducationController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z77-40-fCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Q7-A5-UBP">
+                                <rect key="frame" x="20" y="50" width="335" height="220"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="duB-pF-jYj">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="220"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="duB-pF-jYj" firstAttribute="leading" secondItem="9Q7-A5-UBP" secondAttribute="leading" id="3bv-Og-gfP"/>
+                                    <constraint firstItem="duB-pF-jYj" firstAttribute="top" secondItem="9Q7-A5-UBP" secondAttribute="top" id="LNd-1K-VdD"/>
+                                    <constraint firstAttribute="bottom" secondItem="duB-pF-jYj" secondAttribute="bottom" id="Q3H-Hj-sXm"/>
+                                    <constraint firstAttribute="trailing" secondItem="duB-pF-jYj" secondAttribute="trailing" id="Vyp-ca-1Pp"/>
+                                    <constraint firstAttribute="height" constant="220" id="taX-b6-KE8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ywi-dw-ZhZ" firstAttribute="trailing" secondItem="9Q7-A5-UBP" secondAttribute="trailing" constant="20" id="G9o-j9-wu9"/>
+                            <constraint firstItem="9Q7-A5-UBP" firstAttribute="leading" secondItem="Ywi-dw-ZhZ" secondAttribute="leading" constant="20" id="R2M-Wc-CsI"/>
+                            <constraint firstItem="9Q7-A5-UBP" firstAttribute="top" secondItem="Ywi-dw-ZhZ" secondAttribute="top" constant="30" id="tD2-Km-fEe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ywi-dw-ZhZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="9Q7-A5-UBP" id="qeG-vH-hV5"/>
+                        <outlet property="tableView" destination="duB-pF-jYj" id="SIE-36-7Di"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4E-eR-v8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517.5999999999999" y="149.77511244377811"/>
+        </scene>
     </scenes>
 </document>
