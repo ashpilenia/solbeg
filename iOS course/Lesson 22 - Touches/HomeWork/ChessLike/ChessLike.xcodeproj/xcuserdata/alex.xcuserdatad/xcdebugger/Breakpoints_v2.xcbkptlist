@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChessLike/ViewController.m"
-            timestampString = "562252316.709308"
+            timestampString = "569374634.781903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "-calculateClosestAvailableView:inView:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChessLike/ViewController.m"
-            timestampString = "562252316.709784"
+            timestampString = "569374634.7823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "-calculateClosestAvailableView:inView:"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "-getCellViewForTouchPoint:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChessLike/ViewController.m"
-            timestampString = "562252316.710055"
+            timestampString = "569374634.782565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "-calculateClosestAvailableView:inView:"
             landmarkType = "7">
          </BreakpointContent>
