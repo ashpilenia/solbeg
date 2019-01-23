@@ -50,6 +50,18 @@ static NSString *identifier = @"Annotation";
   
 }
 
+#pragma mark - Private Methods
+
+- (void)showAlertWithTitile:(NSString *)title andMessage:(NSString *)message {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 #pragma mark - Actions
 
 - (void)actionShowAll:(UIBarButtonItem *)barButton {
@@ -82,6 +94,118 @@ static NSString *identifier = @"Annotation";
     annotation.coordinate = self.mapView.region.center;
     
     [self.mapView addAnnotation:annotation];
+    
+}
+
+- (void)actionRouts:(UIButton *)button {
+    
+    MKAnnotationView *annotationView = [button superAnnotationView];
+    
+    if (!annotationView) {
+        return;
+    }
+    
+    CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
+    
+    MKDirectionsRequest *directionRequest = [[MKDirectionsRequest alloc] init];
+    directionRequest.source = [MKMapItem mapItemForCurrentLocation];
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate];
+    MKMapItem *destination = [[MKMapItem alloc] initWithPlacemark:placemark];
+    directionRequest.destination = destination;
+    
+    directionRequest.transportType = MKDirectionsTransportTypeAutomobile;
+    
+    directionRequest.requestsAlternateRoutes = YES;
+    
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:directionRequest];
+    
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            
+            [self showAlertWithTitile:@"Error" andMessage:[error localizedDescription]];
+            
+        } else if (!response.routes.count) {
+            
+            [self showAlertWithTitile:@"Error" andMessage:@"No routes found"];
+            
+        } else {
+            
+            [self.mapView removeOverlays:[self.mapView overlays]];
+            
+            NSArray *polylinesArray = [response.routes valueForKeyPath:@"polyline"];
+            
+            [self.mapView addOverlays:polylinesArray level:MKOverlayLevelAboveRoads];
+        }
+    }];
+}
+
+- (void)actionDescription:(UIButton *)button {
+    
+    MKAnnotationView *annotationView = [button superAnnotationView];
+    
+    if (!annotationView) {
+        return;
+    }
+    
+    CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    
+    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        NSString *message = nil;
+        
+        if (error) {
+            
+            message = [error localizedDescription];
+            
+        } else {
+            
+            if ([placemarks count] > 0) {
+                
+                CLPlacemark *placeMark = [placemarks firstObject];
+                
+                NSString *name                         = placeMark.name.length ? placeMark.name : @"N/A";
+                NSString *thoroughfare                 = placeMark.thoroughfare.length ? placeMark.thoroughfare : @"N/A";
+                NSString *subThoroughfare              = placeMark.subThoroughfare.length ? placeMark.subThoroughfare : @"N/A";
+                NSString *locality                     = placeMark.locality.length ? placeMark.locality : @"N/A";
+                NSString *subLocality                  = placeMark.subLocality.length ? placeMark.subLocality : @"N/A";
+                NSString *administrativeArea           = placeMark.administrativeArea.length ? placeMark.administrativeArea : @"N/A";
+                NSString *subAdministrativeArea        = placeMark.subAdministrativeArea.length ? placeMark.subAdministrativeArea : @"N/A";
+                NSString *postalCode                   = placeMark.postalCode.length ? placeMark.postalCode : @"N/A";
+                NSString *ISOcountryCode               = placeMark.ISOcountryCode.length ? placeMark.ISOcountryCode : @"N/A";
+                NSString *country                      = placeMark.country.length ? placeMark.country : @"N/A";
+                NSString *inlandWater                  = placeMark.inlandWater.length ? placeMark.inlandWater : @"N/A";
+                NSString *ocean                        = placeMark.ocean.length ? placeMark.ocean : @"N/A";
+                
+                NSDictionary *palceMarkDict = @{
+                                                @"name"                  : name,
+                                                @"thoroughfare"          : thoroughfare,
+                                                @"subThoroughfare"       : subThoroughfare,
+                                                @"locality"              : locality,
+                                                @"subLocality"           : subLocality,
+                                                @"administrativeArea"    : administrativeArea,
+                                                @"subAdministrativeArea" : subAdministrativeArea,
+                                                @"postalCode"            : postalCode,
+                                                @"ISOcountryCode"        : ISOcountryCode,
+                                                @"country"               : country,
+                                                @"inlandWater"           : inlandWater,
+                                                @"ocean"                 : ocean
+                                                };
+                
+                message = [palceMarkDict description];
+            } else {
+                
+                message = @"No Placemarks Found";
+            }
+        }
+        
+        [self showAlertWithTitile:@"Location" andMessage:message];
+    }];
     
 }
 
@@ -139,6 +263,11 @@ static NSString *identifier = @"Annotation";
     
     pin.rightCalloutAccessoryView = descriptionButton;
     
+    UIButton *roadButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    [roadButton addTarget:self action:@selector(actionRouts:) forControlEvents:UIControlEventTouchUpInside];
+    
+    pin.leftCalloutAccessoryView = roadButton;
+    
     return pin;
 }
 
@@ -155,6 +284,19 @@ static NSString *identifier = @"Annotation";
     }
 }
 
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+    
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        
+        MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+        renderer.lineWidth = 2.f;
+        renderer.strokeColor = [UIColor colorWithRed:0 green:0.5f blue:1.f alpha:0.9f];
+        
+        return renderer;
+    }
+    return nil;
+}
+
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -162,55 +304,7 @@ static NSString *identifier = @"Annotation";
     
 }
 
-#pragma mark - Actions
 
-- (void)actionDescription:(UIButton *)button {
-    
-    MKAnnotationView *annotationView = [button superAnnotationView];
-    
-    if (!annotationView) {
-        return;
-    }
-    
-    CLLocationCoordinate2D coordinate = annotationView.annotation.coordinate;
-    
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-    
-    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-    
-    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        
-        NSString *message = nil;
-        
-        if (error) {
-            
-            message = [error localizedDescription];
-            
-        } else {
-            
-            if ([placemarks count] > 0) {
-                
-                CLPlacemark *placeMark = [placemarks firstObject];
-                
-                NSMutableString *tempSting = [NSMutableString stringWithString:placeMark.name];
-                [tempSting appendString:[NSString stringWithFormat:@" %@", placeMark.country]];
-    
-                message = tempSting;
-            } else {
-                
-                message = @"No Placemarks Found";
-            }
-        }
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Location" message:message preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-        [alertController addAction:cancelAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-    }];
-    
-}
 
 
 
