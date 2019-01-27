@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
+typedef NS_ENUM(NSInteger) {
+    female,
+    male
+} genderOptions;
 
 @interface ASStudent : NSObject <MKAnnotation>
 
@@ -19,6 +23,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *lastName;
 @property (nonatomic, strong) NSDate *birthDate;
+@property (nonatomic, assign) genderOptions gender;
 
 - (void)generateTitleAndSubTitle;
 + (NSString *)reuseIdentifier;

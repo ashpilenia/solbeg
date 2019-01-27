@@ -16,6 +16,12 @@
 		FA4D278421F9C5A60086010B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4D278321F9C5A60086010B /* MapKit.framework */; };
 		FAB972C521FCB74A0023F1EB /* Task Description.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB972C421FCB74A0023F1EB /* Task Description.m */; };
 		FAB972C821FCB7D20023F1EB /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB972C721FCB7D20023F1EB /* ASStudent.m */; };
+		FAB972D321FDE48F0023F1EB /* malemale.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB972D221FDE48F0023F1EB /* malemale.png */; };
+		FAB972D521FDE6A60023F1EB /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB972D421FDE6A60023F1EB /* female.png */; };
+		FAB972D821FDF4430023F1EB /* StudentInfoPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB972D721FDF4430023F1EB /* StudentInfoPopupController.m */; };
+		FAB972DB21FDFFC60023F1EB /* NSDateFormatter+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB972DA21FDFFC60023F1EB /* NSDateFormatter+Methods.m */; };
+		FAB972E121FE2C5D0023F1EB /* ASMeeting.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB972E021FE2C5D0023F1EB /* ASMeeting.m */; };
+		FAB972E321FE33510023F1EB /* meeting.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB972E221FE33510023F1EB /* meeting.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,15 @@
 		FAB972C421FCB74A0023F1EB /* Task Description.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Task Description.m"; sourceTree = "<group>"; };
 		FAB972C621FCB7D20023F1EB /* ASStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
 		FAB972C721FCB7D20023F1EB /* ASStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
+		FAB972D221FDE48F0023F1EB /* malemale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malemale.png; path = ../../../../../../Downloads/malemale.png; sourceTree = "<group>"; };
+		FAB972D421FDE6A60023F1EB /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = female.png; path = ../../../../../../Downloads/female.png; sourceTree = "<group>"; };
+		FAB972D621FDF4430023F1EB /* StudentInfoPopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentInfoPopupController.h; sourceTree = "<group>"; };
+		FAB972D721FDF4430023F1EB /* StudentInfoPopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentInfoPopupController.m; sourceTree = "<group>"; };
+		FAB972D921FDFFC60023F1EB /* NSDateFormatter+Methods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Methods.h"; sourceTree = "<group>"; };
+		FAB972DA21FDFFC60023F1EB /* NSDateFormatter+Methods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Methods.m"; sourceTree = "<group>"; };
+		FAB972DF21FE2C5D0023F1EB /* ASMeeting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASMeeting.h; sourceTree = "<group>"; };
+		FAB972E021FE2C5D0023F1EB /* ASMeeting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASMeeting.m; sourceTree = "<group>"; };
+		FAB972E221FE33510023F1EB /* meeting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meeting.png; path = ../../../../../../Downloads/meeting.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +82,19 @@
 		FA4D276B21F8B2510086010B /* Maps HomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				FAB972D121FDE45A0023F1EB /* images */,
 				FA4D276C21F8B2510086010B /* AppDelegate.h */,
 				FA4D276D21F8B2510086010B /* AppDelegate.m */,
 				FA4D276F21F8B2510086010B /* ViewController.h */,
 				FA4D277021F8B2510086010B /* ViewController.m */,
 				FAB972C621FCB7D20023F1EB /* ASStudent.h */,
 				FAB972C721FCB7D20023F1EB /* ASStudent.m */,
+				FAB972DF21FE2C5D0023F1EB /* ASMeeting.h */,
+				FAB972E021FE2C5D0023F1EB /* ASMeeting.m */,
+				FAB972D621FDF4430023F1EB /* StudentInfoPopupController.h */,
+				FAB972D721FDF4430023F1EB /* StudentInfoPopupController.m */,
+				FAB972D921FDFFC60023F1EB /* NSDateFormatter+Methods.h */,
+				FAB972DA21FDFFC60023F1EB /* NSDateFormatter+Methods.m */,
 				FA4D277221F8B2510086010B /* Main.storyboard */,
 				FA4D277521F8B2550086010B /* Assets.xcassets */,
 				FA4D277721F8B2550086010B /* LaunchScreen.storyboard */,
@@ -89,6 +111,16 @@
 				FA4D278321F9C5A60086010B /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAB972D121FDE45A0023F1EB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FAB972E221FE33510023F1EB /* meeting.png */,
+				FAB972D421FDE6A60023F1EB /* female.png */,
+				FAB972D221FDE48F0023F1EB /* malemale.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA4D277921F8B2550086010B /* LaunchScreen.storyboard in Resources */,
+				FAB972E321FE33510023F1EB /* meeting.png in Resources */,
+				FAB972D321FDE48F0023F1EB /* malemale.png in Resources */,
+				FAB972D521FDE6A60023F1EB /* female.png in Resources */,
 				FA4D277621F8B2550086010B /* Assets.xcassets in Resources */,
 				FA4D277421F8B2510086010B /* Main.storyboard in Resources */,
 			);
@@ -163,8 +198,11 @@
 			files = (
 				FAB972C521FCB74A0023F1EB /* Task Description.m in Sources */,
 				FA4D277121F8B2510086010B /* ViewController.m in Sources */,
+				FAB972DB21FDFFC60023F1EB /* NSDateFormatter+Methods.m in Sources */,
+				FAB972E121FE2C5D0023F1EB /* ASMeeting.m in Sources */,
 				FAB972C821FCB7D20023F1EB /* ASStudent.m in Sources */,
 				FA4D277C21F8B2550086010B /* main.m in Sources */,
+				FAB972D821FDF4430023F1EB /* StudentInfoPopupController.m in Sources */,
 				FA4D276E21F8B2510086010B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

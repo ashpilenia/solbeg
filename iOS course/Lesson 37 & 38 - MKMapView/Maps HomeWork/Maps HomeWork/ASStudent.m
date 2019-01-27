@@ -7,6 +7,7 @@
 //
 
 #import "ASStudent.h"
+#import "NSDateFormatter+Methods.h"
 
 @implementation ASStudent
 
@@ -19,8 +20,7 @@
     
     if (self.birthDate) {
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"MMM/dd/yyyy";
+        NSDateFormatter *formatter = [NSDateFormatter uiDateFormatter];
         self.subtitle = [formatter stringFromDate:self.birthDate];
     }
 
