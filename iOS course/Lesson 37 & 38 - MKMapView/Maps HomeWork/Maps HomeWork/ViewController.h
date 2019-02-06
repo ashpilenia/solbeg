@@ -13,6 +13,10 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *statisticView;
+@property (weak, nonatomic) IBOutlet UILabel *fiveKmLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tenKmLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fifteenKmLabel;
 
 @end
 
