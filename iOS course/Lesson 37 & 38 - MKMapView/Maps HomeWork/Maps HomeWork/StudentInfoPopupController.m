@@ -47,6 +47,7 @@ static NSString * const kTableViewReuseIdentifier = @"kTableViewReuseIdentifier"
     [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
     
         self.isFinishedLoading = YES;
+        
         if (!error && placemarks.count) {
             weakSelf.placemark = [placemarks firstObject];
             [weakSelf.tableView reloadData];
