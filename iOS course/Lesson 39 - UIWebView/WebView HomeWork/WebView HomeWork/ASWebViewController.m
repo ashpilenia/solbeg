@@ -9,7 +9,7 @@
 #import "ASWebViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface ASWebViewController ()
+@interface ASWebViewController () <WKNavigationDelegate>
 
 @property (weak, nonatomic) WKWebView *webView;
 
@@ -25,6 +25,13 @@
     [self.view addSubview:webView];
     
     self.webView = webView;
+    
+    self.backButton.enabled = NO;
+    self.forwardButton.enabled = NO;
+    
+    self.webView.navigationDelegate = self;
+    
+    [self.view bringSubviewToFront:self.activityIndicator];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,6 +41,39 @@
     [self.webView loadRequest:request];
 }
 
+#pragma mark - Actions
 
+- (IBAction)backAction:(UIBarButtonItem *)sender {
+    
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
+    }
+}
 
+- (IBAction)forwardAction:(UIBarButtonItem *)sender {
+    
+    if (self.webView.canGoForward) {
+        [self.webView goForward];
+    }
+}
+
+- (IBAction)refreshAction:(UIBarButtonItem *)sender {
+    
+    [self.webView reload];
+}
+
+#pragma mark - WKNavigationDelegate
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+    
+    [self.activityIndicator startAnimating];
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+    
+    self.backButton.enabled    = self.webView.canGoBack    ? YES : NO;
+    self.forwardButton.enabled = self.webView.canGoForward ? YES : NO;
+    
+    [self.activityIndicator stopAnimating];
+}
 @end

@@ -10,6 +10,15 @@
 
 @interface ASWebViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *forwardButton;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (nonatomic, strong) NSURL *passedUrl;
+
+- (IBAction)backAction:(UIBarButtonItem *)sender;
+- (IBAction)forwardAction:(UIBarButtonItem *)sender;
+- (IBAction)refreshAction:(UIBarButtonItem *)sender;
 
 @end
