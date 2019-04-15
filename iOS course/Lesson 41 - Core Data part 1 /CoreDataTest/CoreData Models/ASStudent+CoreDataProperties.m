@@ -2,7 +2,7 @@
 //  ASStudent+CoreDataProperties.m
 //  CoreDataTest
 //
-//  Created by Alex on 3/4/19.
+//  Created by Alex on 3/5/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 //
@@ -19,5 +19,6 @@
 @dynamic firstName;
 @dynamic lastName;
 @dynamic score;
+@dynamic car;
 
 @end

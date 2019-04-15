@@ -2,7 +2,7 @@
 //  ASStudent+CoreDataProperties.h
 //  CoreDataTest
 //
-//  Created by Alex on 3/4/19.
+//  Created by Alex on 3/5/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 //
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *firstName;
 @property (nullable, nonatomic, copy) NSString *lastName;
 @property (nonatomic) double score;
+@property (nullable, nonatomic, retain) ASCar *car;
 
 @end
 

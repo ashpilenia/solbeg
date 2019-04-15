@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ASStudent+CoreDataClass.h"
+#import "ASCar+CoreDataClass.h"
 
 static NSString *firstNames[] = {
     @"Pavel", @"John", @"Alex", @"Eugene", @"Dmitriy",
@@ -17,6 +18,10 @@ static NSString *firstNames[] = {
 static NSString *lastNames[] = {
     @"Pavlov", @"Johnson", @"Alexeev", @"Egorov", @"Dmitriev",
     @"Vasilevskiy", @"Daniiov", @"Artison", @"Bilevich", @"Colinson"
+};
+
+static NSString *carsNames[] = {
+    @"BMW", @"Mazda", @"Toyota", @"Nissan", @"Dodge"
 };
 
 @interface AppDelegate ()
@@ -29,50 +34,68 @@ static NSString *lastNames[] = {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSLog(@"%@",[self.persistentContainer.managedObjectModel entitiesByName]);
-//    NSManagedObject *student = [NSEntityDescription insertNewObjectForEntityForName:@"ASStudent" inManagedObjectContext:self.persistentContainer.viewContext];
-//
-//    [student setValue:@"Alex" forKey:@"firstName"];
-//    [student setValue:@"Shpilenia" forKey:@"lastName"];
-//    [student setValue:[NSDate dateWithTimeIntervalSinceReferenceDate:0] forKey:@"dateOfBirth"];
-//    [student setValue:@(4) forKey:@"score"];
-//
-//    NSError *error = nil;
-//    if (![self.persistentContainer.viewContext save:&error]) {
-//        NSLog(@"%@", [error localizedDescription]);
-//    }
-    
-    ASStudent *newStudent = [self addRandomStudent];
-    NSError *newStudError = nil;
-    [newStudent.managedObjectContext save:&newStudError];
-    
-    if (newStudError) {
-        
-        NSLog(@"Wooops, %@", newStudError.localizedDescription);
+
+    ASStudent *student1 = [self addRandomStudent];
+    ASCar *car1 = [self addRandomCar];
+    student1.car = car1;
+
+    NSError *error = nil;
+    if (![self.persistentContainer.viewContext save:&error]) {
+        NSLog(@"%@", error.localizedDescription);
     }
+
+    [self printAllObjects];
+    
+    
+    return YES;
+}
+
+- (NSArray *)allObjects {
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"ASStudent"
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"ASObject"
                                                    inManagedObjectContext:self.persistentContainer.viewContext];
     
     [request setEntity:description];
-    //[request setResultType:NSDictionaryResultType];
     
     NSError *requestError = nil;
     NSArray *resultArray = [self.persistentContainer.viewContext executeFetchRequest:request error:&requestError];
     
     if (requestError) {
-        NSLog(@"Error: %@", requestError.localizedDescription);
+        NSLog(@"%@", requestError.localizedDescription);
     }
     
-    NSLog(@"Result: %@", resultArray);
+    return resultArray;
     
-    for (ASStudent *student in resultArray) {
-        NSLog(@"%@ %@ - %1.2f", student.firstName, student.lastName, student.score);
+}
+- (void)printAllObjects {
+    
+    NSArray *allObjects = [self allObjects];
+    
+    for (id object in allObjects) {
+        if ([object isKindOfClass:[ASCar class]]) {
+            
+            ASCar *car = (ASCar *)object;
+            NSLog(@"CAR: %@, OWNER: %@ %@", car.model, car.owner.firstName, car.owner.lastName);
+            
+        } else if ([object isKindOfClass:[ASStudent class]]) {
+            
+            ASStudent *student = (ASStudent *)object;
+            NSLog(@"STUDENT: %@ %@, CAR: %@", student.firstName, student.lastName, student.car.model);
+        }
     }
     
-    return YES;
+}
+
+- (void)deleteAllObjects {
+    
+    NSArray *allObjects = [self allObjects];
+    
+    for (id object in allObjects) {
+        [self.persistentContainer.viewContext deleteObject:object];
+    }
+    [self.persistentContainer.viewContext save:nil];
 }
 
 - (ASStudent *)addRandomStudent {
@@ -84,6 +107,14 @@ static NSString *lastNames[] = {
     student.dateOfBirth = [NSDate dateWithTimeIntervalSince1970:60 * 60 * 24 * 365 * arc4random_uniform(31)];
     
     return student;
+}
+
+- (ASCar *)addRandomCar {
+    
+    ASCar *car = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASCar class])
+                                               inManagedObjectContext:self.persistentContainer.viewContext];
+    car.model = carsNames[arc4random_uniform(4)];
+    return car;
 }
 
 

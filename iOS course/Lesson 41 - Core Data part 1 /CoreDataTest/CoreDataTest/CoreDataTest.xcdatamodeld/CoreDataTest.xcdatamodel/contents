@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="ASStudent" representedClassName="ASStudent" syncable="YES">
+    <entity name="ASCar" representedClassName="ASCar" parentEntity="ASObject" syncable="YES">
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="car" inverseEntity="ASStudent" syncable="YES"/>
+    </entity>
+    <entity name="ASObject" representedClassName="ASObject" isAbstract="YES" syncable="YES"/>
+    <entity name="ASStudent" representedClassName="ASStudent" parentEntity="ASObject" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ASCar" inverseName="owner" inverseEntity="ASCar" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ASStudent" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="ASStudent" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="ASCar" positionX="142.4453125" positionY="35.93359375" width="128" height="73"/>
+        <element name="ASObject" positionX="53.4296875" positionY="-143.44140625" width="128" height="43"/>
     </elements>
 </model>
