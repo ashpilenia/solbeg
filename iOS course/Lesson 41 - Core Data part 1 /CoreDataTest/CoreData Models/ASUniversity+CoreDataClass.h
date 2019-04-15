@@ -1,5 +1,5 @@
 //
-//  ASCar+CoreDataClass.h
+//  ASUniversity+CoreDataClass.h
 //  CoreDataTest
 //
 //  Created by Alex on 4/15/19.
@@ -10,14 +10,14 @@
 #import <Foundation/Foundation.h>
 #import "ASObject+CoreDataClass.h"
 
-@class ASStudent;
+@class ASCourse, ASStudent;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ASCar : ASObject
+@interface ASUniversity : ASObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "ASCar+CoreDataProperties.h"
+#import "ASUniversity+CoreDataProperties.h"

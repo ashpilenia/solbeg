@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA9EB78A222EE41000849494 /* ASStudent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB784222EE41000849494 /* ASStudent+CoreDataClass.m */; };
-		FA9EB78B222EE41000849494 /* ASStudent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB785222EE41000849494 /* ASStudent+CoreDataProperties.m */; };
-		FA9EB78C222EE41000849494 /* ASCar+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB788222EE41000849494 /* ASCar+CoreDataClass.m */; };
-		FA9EB78D222EE41000849494 /* ASCar+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB789222EE41000849494 /* ASCar+CoreDataProperties.m */; };
-		FA9EB791222EE45000849494 /* ASObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9EB790222EE45000849494 /* ASObject.m */; };
+		FA4532622264C1BE00ACB356 /* ASObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532582264C1BD00ACB356 /* ASObject+CoreDataClass.m */; };
+		FA4532632264C1BE00ACB356 /* ASObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532592264C1BD00ACB356 /* ASObject+CoreDataProperties.m */; };
+		FA4532642264C1BE00ACB356 /* ASCar+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA45325C2264C1BD00ACB356 /* ASCar+CoreDataClass.m */; };
+		FA4532652264C1BE00ACB356 /* ASCar+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA45325D2264C1BD00ACB356 /* ASCar+CoreDataProperties.m */; };
+		FA45328C2264D6B100ACB356 /* ASStudent+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532822264D6B000ACB356 /* ASStudent+CoreDataClass.m */; };
+		FA45328D2264D6B100ACB356 /* ASStudent+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532832264D6B000ACB356 /* ASStudent+CoreDataProperties.m */; };
+		FA45328E2264D6B100ACB356 /* ASUniversity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532862264D6B100ACB356 /* ASUniversity+CoreDataClass.m */; };
+		FA45328F2264D6B100ACB356 /* ASUniversity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4532872264D6B100ACB356 /* ASUniversity+CoreDataProperties.m */; };
+		FA4532902264D6B100ACB356 /* ASCourse+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA45328A2264D6B100ACB356 /* ASCourse+CoreDataClass.m */; };
+		FA4532912264D6B100ACB356 /* ASCourse+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA45328B2264D6B100ACB356 /* ASCourse+CoreDataProperties.m */; };
 		FACB1BC42224173A0042DA87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB1BC32224173A0042DA87 /* AppDelegate.m */; };
 		FACB1BC72224173A0042DA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FACB1BC62224173A0042DA87 /* ViewController.m */; };
 		FACB1BCA2224173A0042DA87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB1BC82224173A0042DA87 /* Main.storyboard */; };
@@ -22,16 +27,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA9EB782222EE41000849494 /* ASStudent+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASStudent+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FA9EB783222EE41000849494 /* ASStudent+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASStudent+CoreDataClass.h"; sourceTree = "<group>"; };
-		FA9EB784222EE41000849494 /* ASStudent+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASStudent+CoreDataClass.m"; sourceTree = "<group>"; };
-		FA9EB785222EE41000849494 /* ASStudent+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASStudent+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FA9EB786222EE41000849494 /* ASCar+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCar+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FA9EB787222EE41000849494 /* ASCar+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCar+CoreDataClass.h"; sourceTree = "<group>"; };
-		FA9EB788222EE41000849494 /* ASCar+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCar+CoreDataClass.m"; sourceTree = "<group>"; };
-		FA9EB789222EE41000849494 /* ASCar+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCar+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FA9EB78F222EE45000849494 /* ASObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASObject.h; sourceTree = "<group>"; };
-		FA9EB790222EE45000849494 /* ASObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASObject.m; sourceTree = "<group>"; };
+		FA4532562264C1BD00ACB356 /* ASObject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASObject+CoreDataProperties.h"; path = "CoreData Models/ASObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA4532572264C1BD00ACB356 /* ASObject+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASObject+CoreDataClass.h"; path = "CoreData Models/ASObject+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA4532582264C1BD00ACB356 /* ASObject+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASObject+CoreDataClass.m"; path = "CoreData Models/ASObject+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA4532592264C1BD00ACB356 /* ASObject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASObject+CoreDataProperties.m"; path = "CoreData Models/ASObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA45325A2264C1BD00ACB356 /* ASCar+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASCar+CoreDataProperties.h"; path = "CoreData Models/ASCar+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA45325B2264C1BD00ACB356 /* ASCar+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASCar+CoreDataClass.h"; path = "CoreData Models/ASCar+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA45325C2264C1BD00ACB356 /* ASCar+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASCar+CoreDataClass.m"; path = "CoreData Models/ASCar+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA45325D2264C1BD00ACB356 /* ASCar+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASCar+CoreDataProperties.m"; path = "CoreData Models/ASCar+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA4532802264D6B000ACB356 /* ASStudent+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASStudent+CoreDataProperties.h"; path = "CoreData Models/ASStudent+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA4532812264D6B000ACB356 /* ASStudent+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASStudent+CoreDataClass.h"; path = "CoreData Models/ASStudent+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA4532822264D6B000ACB356 /* ASStudent+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASStudent+CoreDataClass.m"; path = "CoreData Models/ASStudent+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA4532832264D6B000ACB356 /* ASStudent+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASStudent+CoreDataProperties.m"; path = "CoreData Models/ASStudent+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA4532842264D6B100ACB356 /* ASUniversity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASUniversity+CoreDataProperties.h"; path = "CoreData Models/ASUniversity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA4532852264D6B100ACB356 /* ASUniversity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASUniversity+CoreDataClass.h"; path = "CoreData Models/ASUniversity+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA4532862264D6B100ACB356 /* ASUniversity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASUniversity+CoreDataClass.m"; path = "CoreData Models/ASUniversity+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA4532872264D6B100ACB356 /* ASUniversity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASUniversity+CoreDataProperties.m"; path = "CoreData Models/ASUniversity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA4532882264D6B100ACB356 /* ASCourse+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASCourse+CoreDataProperties.h"; path = "CoreData Models/ASCourse+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA4532892264D6B100ACB356 /* ASCourse+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ASCourse+CoreDataClass.h"; path = "CoreData Models/ASCourse+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA45328A2264D6B100ACB356 /* ASCourse+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASCourse+CoreDataClass.m"; path = "CoreData Models/ASCourse+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA45328B2264D6B100ACB356 /* ASCourse+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ASCourse+CoreDataProperties.m"; path = "CoreData Models/ASCourse+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FACB1BBF2224173A0042DA87 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACB1BC22224173A0042DA87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FACB1BC32224173A0042DA87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,14 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				FA9EB78E222EE42E00849494 /* Abstract */,
-				FA9EB782222EE41000849494 /* ASStudent+CoreDataProperties.h */,
-				FA9EB783222EE41000849494 /* ASStudent+CoreDataClass.h */,
-				FA9EB784222EE41000849494 /* ASStudent+CoreDataClass.m */,
-				FA9EB785222EE41000849494 /* ASStudent+CoreDataProperties.m */,
-				FA9EB786222EE41000849494 /* ASCar+CoreDataProperties.h */,
-				FA9EB787222EE41000849494 /* ASCar+CoreDataClass.h */,
-				FA9EB788222EE41000849494 /* ASCar+CoreDataClass.m */,
-				FA9EB789222EE41000849494 /* ASCar+CoreDataProperties.m */,
 			);
 			path = "CoreData Models";
 			sourceTree = "<group>";
@@ -75,8 +82,6 @@
 		FA9EB78E222EE42E00849494 /* Abstract */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EB78F222EE45000849494 /* ASObject.h */,
-				FA9EB790222EE45000849494 /* ASObject.m */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -84,6 +89,26 @@
 		FACB1BB62224173A0042DA87 = {
 			isa = PBXGroup;
 			children = (
+				FA4532802264D6B000ACB356 /* ASStudent+CoreDataProperties.h */,
+				FA4532812264D6B000ACB356 /* ASStudent+CoreDataClass.h */,
+				FA4532822264D6B000ACB356 /* ASStudent+CoreDataClass.m */,
+				FA4532832264D6B000ACB356 /* ASStudent+CoreDataProperties.m */,
+				FA4532842264D6B100ACB356 /* ASUniversity+CoreDataProperties.h */,
+				FA4532852264D6B100ACB356 /* ASUniversity+CoreDataClass.h */,
+				FA4532862264D6B100ACB356 /* ASUniversity+CoreDataClass.m */,
+				FA4532872264D6B100ACB356 /* ASUniversity+CoreDataProperties.m */,
+				FA4532882264D6B100ACB356 /* ASCourse+CoreDataProperties.h */,
+				FA4532892264D6B100ACB356 /* ASCourse+CoreDataClass.h */,
+				FA45328A2264D6B100ACB356 /* ASCourse+CoreDataClass.m */,
+				FA45328B2264D6B100ACB356 /* ASCourse+CoreDataProperties.m */,
+				FA4532562264C1BD00ACB356 /* ASObject+CoreDataProperties.h */,
+				FA4532572264C1BD00ACB356 /* ASObject+CoreDataClass.h */,
+				FA4532582264C1BD00ACB356 /* ASObject+CoreDataClass.m */,
+				FA4532592264C1BD00ACB356 /* ASObject+CoreDataProperties.m */,
+				FA45325A2264C1BD00ACB356 /* ASCar+CoreDataProperties.h */,
+				FA45325B2264C1BD00ACB356 /* ASCar+CoreDataClass.h */,
+				FA45325C2264C1BD00ACB356 /* ASCar+CoreDataClass.m */,
+				FA45325D2264C1BD00ACB356 /* ASCar+CoreDataProperties.m */,
 				FA9EB730222D6BC400849494 /* CoreData Models */,
 				FACB1BC12224173A0042DA87 /* CoreDataTest */,
 				FACB1BC02224173A0042DA87 /* Products */,
@@ -185,15 +210,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA9EB78A222EE41000849494 /* ASStudent+CoreDataClass.m in Sources */,
-				FA9EB78C222EE41000849494 /* ASCar+CoreDataClass.m in Sources */,
-				FA9EB78D222EE41000849494 /* ASCar+CoreDataProperties.m in Sources */,
+				FA4532912264D6B100ACB356 /* ASCourse+CoreDataProperties.m in Sources */,
+				FA4532622264C1BE00ACB356 /* ASObject+CoreDataClass.m in Sources */,
+				FA45328E2264D6B100ACB356 /* ASUniversity+CoreDataClass.m in Sources */,
+				FA45328D2264D6B100ACB356 /* ASStudent+CoreDataProperties.m in Sources */,
+				FA45328C2264D6B100ACB356 /* ASStudent+CoreDataClass.m in Sources */,
+				FA4532642264C1BE00ACB356 /* ASCar+CoreDataClass.m in Sources */,
+				FA4532652264C1BE00ACB356 /* ASCar+CoreDataProperties.m in Sources */,
+				FA4532902264D6B100ACB356 /* ASCourse+CoreDataClass.m in Sources */,
 				FACB1BC72224173A0042DA87 /* ViewController.m in Sources */,
 				FACB1BCD2224173A0042DA87 /* CoreDataTest.xcdatamodeld in Sources */,
 				FACB1BD52224173C0042DA87 /* main.m in Sources */,
-				FA9EB791222EE45000849494 /* ASObject.m in Sources */,
+				FA4532632264C1BE00ACB356 /* ASObject+CoreDataProperties.m in Sources */,
 				FACB1BC42224173A0042DA87 /* AppDelegate.m in Sources */,
-				FA9EB78B222EE41000849494 /* ASStudent+CoreDataProperties.m in Sources */,
+				FA45328F2264D6B100ACB356 /* ASUniversity+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="ASCar" representedClassName="ASCar" parentEntity="ASObject" syncable="YES">
         <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="car" inverseEntity="ASStudent" syncable="YES"/>
     </entity>
-    <entity name="ASObject" representedClassName="ASObject" isAbstract="YES" syncable="YES"/>
+    <entity name="ASCourse" representedClassName="ASCourse" parentEntity="ASObject" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="courses" inverseEntity="ASStudent" syncable="YES"/>
+        <relationship name="university" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASUniversity" inverseName="courses" inverseEntity="ASUniversity" syncable="YES"/>
+    </entity>
+    <entity name="ASObject" representedClassName="ASObject" syncable="YES"/>
     <entity name="ASStudent" representedClassName="ASStudent" parentEntity="ASObject" syncable="YES">
         <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="car" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ASCar" inverseName="owner" inverseEntity="ASCar" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASCourse" inverseName="students" inverseEntity="ASCourse" syncable="YES"/>
+        <relationship name="university" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASUniversity" inverseName="studetnts" inverseEntity="ASUniversity" syncable="YES"/>
+    </entity>
+    <entity name="ASUniversity" representedClassName="ASUniversity" parentEntity="ASObject" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ASCourse" inverseName="university" inverseEntity="ASCourse" syncable="YES"/>
+        <relationship name="studetnts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ASStudent" inverseName="university" inverseEntity="ASStudent" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ASStudent" positionX="-54" positionY="-9" width="128" height="118"/>
-        <element name="ASCar" positionX="142.4453125" positionY="35.93359375" width="128" height="73"/>
+        <element name="ASCar" positionX="317.20703125" positionY="27.8046875" width="128" height="73"/>
         <element name="ASObject" positionX="53.4296875" positionY="-143.44140625" width="128" height="43"/>
+        <element name="ASStudent" positionX="109.6171875" positionY="26.07421875" width="128" height="148"/>
+        <element name="ASUniversity" positionX="-324.24609375" positionY="5.7890625" width="128" height="88"/>
+        <element name="ASCourse" positionX="-98.51171875" positionY="218.171875" width="128" height="88"/>
     </elements>
 </model>

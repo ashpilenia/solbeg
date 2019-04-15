@@ -2,15 +2,15 @@
 //  ASStudent+CoreDataClass.h
 //  CoreDataTest
 //
-//  Created by Alex on 3/5/19.
+//  Created by Alex on 4/15/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 //
 
 #import <Foundation/Foundation.h>
-#import "ASObject.h"
+#import "ASObject+CoreDataClass.h"
 
-@class ASCar;
+@class ASCar, ASCourse, ASUniversity;
 
 NS_ASSUME_NONNULL_BEGIN
 

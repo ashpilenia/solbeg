@@ -1,5 +1,5 @@
 //
-//  ASCar+CoreDataClass.m
+//  ASCourse+CoreDataClass.m
 //  CoreDataTest
 //
 //  Created by Alex on 4/15/19.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "ASCar+CoreDataClass.h"
+#import "ASCourse+CoreDataClass.h"
 
-@implementation ASCar
+@implementation ASCourse
 
 @end

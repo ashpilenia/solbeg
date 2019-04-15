@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ASStudent+CoreDataClass.h"
 #import "ASCar+CoreDataClass.h"
+#import "ASUniversity+CoreDataClass.h"
+#import "ASCourse+CoreDataClass.h"
 
 static NSString *firstNames[] = {
     @"Pavel", @"John", @"Alex", @"Eugene", @"Dmitriy",
@@ -17,7 +19,7 @@ static NSString *firstNames[] = {
 
 static NSString *lastNames[] = {
     @"Pavlov", @"Johnson", @"Alexeev", @"Egorov", @"Dmitriev",
-    @"Vasilevskiy", @"Daniiov", @"Artison", @"Bilevich", @"Colinson"
+    @"Vasilevskiy", @"Danilov", @"Artison", @"Bilevich", @"Colinson"
 };
 
 static NSString *carsNames[] = {
@@ -34,10 +36,20 @@ static NSString *carsNames[] = {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self deleteAllObjects];
 
-    ASStudent *student1 = [self addRandomStudent];
-    ASCar *car1 = [self addRandomCar];
-    student1.car = car1;
+    ASUniversity *university = [self addUniversity];
+
+    for (int i = 0; i < 30; i++) {
+
+        ASStudent *student = [self addRandomStudent];
+        if (arc4random_uniform(1000) < 500) {
+            ASCar *car = [self addRandomCar];
+            student.car = car;
+        }
+
+        [university addStudetntsObject:student];
+    }
 
     NSError *error = nil;
     if (![self.persistentContainer.viewContext save:&error]) {
@@ -46,12 +58,30 @@ static NSString *carsNames[] = {
 
     [self printAllObjects];
     
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASUniversity class]) inManagedObjectContext:self.persistentContainer.viewContext];
+//
+//    [request setEntity:description];
+//
+//    NSError *requestError = nil;
+//    NSArray *resultArray = [self.persistentContainer.viewContext executeFetchRequest:request error:&requestError];
+//
+//    if (resultArray.count) {
+//        ASUniversity *object = resultArray.firstObject;
+//
+//        //NSLog(@"University to be deleted: %@", object);
+//
+//        [self.persistentContainer.viewContext deleteObject:object];
+//        [self.persistentContainer.viewContext save:nil];
+//    }
+//
+//    [self printAllObjects];
     
     return YES;
 }
 
 - (NSArray *)allObjects {
-    
+
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     NSEntityDescription *description = [NSEntityDescription entityForName:@"ASObject"
@@ -82,7 +112,12 @@ static NSString *carsNames[] = {
         } else if ([object isKindOfClass:[ASStudent class]]) {
             
             ASStudent *student = (ASStudent *)object;
-            NSLog(@"STUDENT: %@ %@, CAR: %@", student.firstName, student.lastName, student.car.model);
+            NSLog(@"STUDENT: %@ %@, CAR: %@, UNIVERSITY: %@", student.firstName, student.lastName, student.car.model, student.university.name);
+            
+        } else if ([object isKindOfClass:[ASUniversity class]]) {
+            
+            ASUniversity *university = (ASUniversity *)object;
+            NSLog(@"UNIVERSITY: %@ Students: %lu", university.name, (unsigned long)university.studetnts.count);
         }
     }
     
@@ -115,6 +150,14 @@ static NSString *carsNames[] = {
                                                inManagedObjectContext:self.persistentContainer.viewContext];
     car.model = carsNames[arc4random_uniform(4)];
     return car;
+}
+
+- (ASUniversity *)addUniversity {
+    
+    ASUniversity *university = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASUniversity class]) inManagedObjectContext:self.persistentContainer.viewContext];
+    university.name = @"BSU";
+    
+    return university;
 }
 
 
