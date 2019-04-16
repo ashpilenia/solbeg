@@ -8,6 +8,9 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ASStudent" inverseName="courses" inverseEntity="ASStudent" syncable="YES"/>
         <relationship name="university" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASUniversity" inverseName="courses" inverseEntity="ASUniversity" syncable="YES"/>
+        <fetchedProperty name="bestStudents" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="ASStudent" predicateString="score &gt; 3.75 AND $FETCH_SOURCE in courses"/>
+        </fetchedProperty>
     </entity>
     <entity name="ASObject" representedClassName="ASObject" syncable="YES"/>
     <entity name="ASStudent" representedClassName="ASStudent" parentEntity="ASObject" syncable="YES">
@@ -24,11 +27,12 @@
         <relationship name="courses" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ASCourse" inverseName="university" inverseEntity="ASCourse" syncable="YES"/>
         <relationship name="studetnts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ASStudent" inverseName="university" inverseEntity="ASStudent" syncable="YES"/>
     </entity>
+    <fetchRequest name="FetchMidStudents" entity="ASStudent" predicateString="score &gt; 3 AND score &lt; 3.5"/>
     <elements>
         <element name="ASCar" positionX="317.20703125" positionY="27.8046875" width="128" height="73"/>
+        <element name="ASCourse" positionX="-98.51171875" positionY="218.171875" width="128" height="116"/>
         <element name="ASObject" positionX="53.4296875" positionY="-143.44140625" width="128" height="43"/>
         <element name="ASStudent" positionX="109.6171875" positionY="26.07421875" width="128" height="148"/>
         <element name="ASUniversity" positionX="-324.24609375" positionY="5.7890625" width="128" height="88"/>
-        <element name="ASCourse" positionX="-98.51171875" positionY="218.171875" width="128" height="88"/>
     </elements>
 </model>

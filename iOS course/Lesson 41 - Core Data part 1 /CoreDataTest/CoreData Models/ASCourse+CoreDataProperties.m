@@ -18,5 +18,6 @@
 @dynamic name;
 @dynamic university;
 @dynamic students;
+@dynamic bestStudents;
 
 @end

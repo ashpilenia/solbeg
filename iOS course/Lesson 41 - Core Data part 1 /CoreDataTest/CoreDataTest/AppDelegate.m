@@ -36,46 +36,98 @@ static NSString *carsNames[] = {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self deleteAllObjects];
-
-    ASUniversity *university = [self addUniversity];
-
-    for (int i = 0; i < 30; i++) {
-
-        ASStudent *student = [self addRandomStudent];
-        if (arc4random_uniform(1000) < 500) {
-            ASCar *car = [self addRandomCar];
-            student.car = car;
-        }
-
-        [university addStudetntsObject:student];
-    }
-
-    NSError *error = nil;
-    if (![self.persistentContainer.viewContext save:&error]) {
-        NSLog(@"%@", error.localizedDescription);
-    }
-
-    [self printAllObjects];
+//    [self deleteAllObjects];
     
-//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASUniversity class]) inManagedObjectContext:self.persistentContainer.viewContext];
+//    NSArray *courses = @[[self addCourseWithName:@"iOS"],
+//                         [self addCourseWithName:@"Android"],
+//                         [self addCourseWithName:@"SQL"],
+//                         [self addCourseWithName:@"PHP"],
+//                         [self addCourseWithName:@"HTML"]];
 //
-//    [request setEntity:description];
+//    NSSet *coursesSet = [NSSet setWithArray:courses];
 //
-//    NSError *requestError = nil;
-//    NSArray *resultArray = [self.persistentContainer.viewContext executeFetchRequest:request error:&requestError];
+//    ASUniversity *university = [self addUniversity];
+//    [university addCourses:coursesSet];
 //
-//    if (resultArray.count) {
-//        ASUniversity *object = resultArray.firstObject;
+//    for (int i = 0; i < 100; i++) {
 //
-//        //NSLog(@"University to be deleted: %@", object);
+//        ASStudent *student = [self addRandomStudent];
+//        if (arc4random_uniform(1000) < 500) {
+//            ASCar *car = [self addRandomCar];
+//            student.car = car;
+//        }
 //
-//        [self.persistentContainer.viewContext deleteObject:object];
-//        [self.persistentContainer.viewContext save:nil];
+//        [university addStudetntsObject:student];
+//
+//        NSInteger number = arc4random_uniform(4) + 1;
+//
+//        while (student.courses.count < number) {
+//            ASCourse *course = [courses objectAtIndex:arc4random_uniform(5)];
+//            if (![student.courses containsObject:course]) {
+//                [student addCoursesObject:course];
+//            }
+//        }
 //    }
 //
-//    [self printAllObjects];
+//    NSError *error = nil;
+//    if (![self.persistentContainer.viewContext save:&error]) {
+//        NSLog(@"%@", error.localizedDescription);
+//    }
+
+    // [self printAllObjects];
+    
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASCourse class]) inManagedObjectContext:self.persistentContainer.viewContext];
+//
+//    [request setEntity:description];
+    //[request setFetchBatchSize:20];
+    //[request setRelationshipKeyPathsForPrefetching:@[@"courses"]];
+    
+//    NSSortDescriptor *lastNameDescriptior = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+//    NSSortDescriptor *firstNameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+//
+//    [request setSortDescriptors:@[firstNameDescriptor, lastNameDescriptior]];
+    
+//    NSArray *validNames = @[@"Vasiliy", @"Alex", @"John"];
+    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+//                              @"score > 2.0 AND score <= 3.0"
+//                              "AND courses.@count > 2"
+//                              "AND firstName IN %@", validNames];
+    
+//    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+//    [request setSortDescriptors:@[nameDescriptor]];
+    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"@avg.students.score > 3"];
+    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SUBQUERY(students, $c, $c.car.model == 'BMW').@count >= 10"];
+    
+//    [request setPredicate:predicate];
+    
+//    NSFetchRequest *request = [[self.persistentContainer.managedObjectModel fetchRequestTemplateForName:@"FetchMidStudents"] copy];
+//
+//    NSSortDescriptor *lastNameDescriptior = [[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES];
+//    NSSortDescriptor *firstNameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+//
+//    [request setSortDescriptors:@[firstNameDescriptor, lastNameDescriptior]];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASCourse class]) inManagedObjectContext:self.persistentContainer.viewContext];
+    [request setEntity:description];
+    
+
+    NSError *requestError = nil;
+    NSArray *resultArray = [self.persistentContainer.viewContext executeFetchRequest:request error:&requestError];
+    
+    for (ASCourse *course in resultArray) {
+        
+        NSLog(@"COURSE NAME: %@", course.name);
+        NSLog(@"BEST STUDENTS:");
+        [self printArray:course.bestStudents];
+        
+    }
+    
+    //[self printArray:resultArray];
     
     return YES;
 }
@@ -103,7 +155,12 @@ static NSString *carsNames[] = {
     
     NSArray *allObjects = [self allObjects];
     
-    for (id object in allObjects) {
+    [self printArray:allObjects];
+}
+
+- (void)printArray:(NSArray *)array {
+    
+    for (id object in array) {
         if ([object isKindOfClass:[ASCar class]]) {
             
             ASCar *car = (ASCar *)object;
@@ -112,15 +169,21 @@ static NSString *carsNames[] = {
         } else if ([object isKindOfClass:[ASStudent class]]) {
             
             ASStudent *student = (ASStudent *)object;
-            NSLog(@"STUDENT: %@ %@, CAR: %@, UNIVERSITY: %@", student.firstName, student.lastName, student.car.model, student.university.name);
+            NSLog(@"STUDENT: %@ %@, SCORE: %1.2f, COURSES: %ld", student.firstName, student.lastName, student.score, student.courses.count);
             
         } else if ([object isKindOfClass:[ASUniversity class]]) {
             
             ASUniversity *university = (ASUniversity *)object;
-            NSLog(@"UNIVERSITY: %@ Students: %lu", university.name, (unsigned long)university.studetnts.count);
+            NSLog(@"UNIVERSITY: %@ STUDENTS: %lu", university.name, (unsigned long)university.studetnts.count);
+            
+        } else if ([object isKindOfClass:[ASCourse class]]) {
+            
+            ASCourse *course = (ASCourse *)object;
+            NSLog(@"COURSE: %@ STUDENTS: %lu", course.name, (unsigned long)course.students.count);
         }
     }
     
+    NSLog(@"COUNT = %ld", array.count);
 }
 
 - (void)deleteAllObjects {
@@ -136,7 +199,7 @@ static NSString *carsNames[] = {
 - (ASStudent *)addRandomStudent {
     
     ASStudent *student = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASStudent class]) inManagedObjectContext:self.persistentContainer.viewContext];
-    student.score = (float)arc4random_uniform(201)/200.f + 2.f;
+    student.score = (float)arc4random_uniform(201)/100.f + 2.f;
     student.firstName = firstNames[arc4random_uniform(9)];
     student.lastName = lastNames[arc4random_uniform(9)];
     student.dateOfBirth = [NSDate dateWithTimeIntervalSince1970:60 * 60 * 24 * 365 * arc4random_uniform(31)];
@@ -158,6 +221,15 @@ static NSString *carsNames[] = {
     university.name = @"BSU";
     
     return university;
+}
+
+- (ASCourse *)addCourseWithName:(NSString *)name {
+    
+    ASCourse *course = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASCourse class]) inManagedObjectContext:self.persistentContainer.viewContext];
+    course.name = name;
+    
+    return course;
+    
 }
 
 
