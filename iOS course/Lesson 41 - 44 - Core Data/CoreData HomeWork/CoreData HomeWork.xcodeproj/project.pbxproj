@@ -28,6 +28,7 @@
 		FA0A2E3A227087DB00AFC209 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E37227087DB00AFC209 /* avatar.png */; };
 		FA0A2E3C2270924100AFC209 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E3B2270924100AFC209 /* logo.png */; };
 		FA0A2E3F227092CD00AFC209 /* ASLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */; };
+		FA0A2E472270A00200AFC209 /* ASEditUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E462270A00200AFC209 /* ASEditUserController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,8 @@
 		FA0A2E3B2270924100AFC209 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		FA0A2E3D227092CD00AFC209 /* ASLogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASLogoViewController.h; sourceTree = "<group>"; };
 		FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASLogoViewController.m; sourceTree = "<group>"; };
+		FA0A2E452270A00200AFC209 /* ASEditUserController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASEditUserController.h; sourceTree = "<group>"; };
+		FA0A2E462270A00200AFC209 /* ASEditUserController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASEditUserController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,7 @@
 		FA0A2E33227064B600AFC209 /* subControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA0A2E4422709FDA00AFC209 /* edit user */,
 				FA0A2E30227064B100AFC209 /* ASUsersControllers.h */,
 				FA0A2E31227064B100AFC209 /* ASUsersControllers.m */,
 			);
@@ -158,6 +162,15 @@
 				FA0A2E36227087DB00AFC209 /* open-book.png */,
 			);
 			path = assets;
+			sourceTree = "<group>";
+		};
+		FA0A2E4422709FDA00AFC209 /* edit user */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2E452270A00200AFC209 /* ASEditUserController.h */,
+				FA0A2E462270A00200AFC209 /* ASEditUserController.m */,
+			);
+			path = "edit user";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +251,7 @@
 				FA0A2D8D226A0F7700AFC209 /* CoreData_HomeWork.xcdatamodeld in Sources */,
 				FA0A2D9D226A114A00AFC209 /* ASCoreDataManager.m in Sources */,
 				FA0A2DE1226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m in Sources */,
+				FA0A2E472270A00200AFC209 /* ASEditUserController.m in Sources */,
 				FA0A2E2B2270607300AFC209 /* ASUser+CoreDataProperties.m in Sources */,
 				FA0A2E32227064B100AFC209 /* ASUsersControllers.m in Sources */,
 				FA0A2E2E2270607300AFC209 /* ASCourse+CoreDataClass.m in Sources */,

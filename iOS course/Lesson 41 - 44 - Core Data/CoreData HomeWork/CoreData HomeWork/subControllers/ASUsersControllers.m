@@ -9,6 +9,7 @@
 #import "ASUsersControllers.h"
 #import "ASCoreDataManager.h"
 #import "ASUser+CoreDataClass.h"
+#import "ASEditUserController.h"
 
 static NSString * const kCellReuseId = @"CellReuseId";
 
@@ -25,6 +26,8 @@ static NSString * const kCellReuseId = @"CellReuseId";
     
     self.navigationItem.title = @"USERS";
     
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUserAction:)];
+    self.navigationItem.rightBarButtonItem = barButton;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -90,6 +93,15 @@ static NSString * const kCellReuseId = @"CellReuseId";
     ASUser *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Courses Attended: %ld", user.coursesAttended.count];
+}
+
+
+#pragma mark - Actions
+
+- (void)addUserAction:(UIBarButtonItem *)sender {
+    
+    ASEditUserController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASEditUserController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
