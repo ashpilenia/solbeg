@@ -8,8 +8,19 @@
 
 #import "ASCoreDataManager.h"
 #import <CoreData/CoreData.h>
+#import "ASUser+CoreDataClass.h"
+#import "ASCourse+CoreDataClass.h"
+#import "ASEntity+CoreDataClass.h"
 
 @implementation ASCoreDataManager
+
+static NSString *firstNames[] = {@"Alex", @"Dmitriy", @"Daniil", @"Artem", @"Vasiliy",
+    @"Oleg", @"Pvael", @"Ergey", @"Petr", @"Bernard"
+};
+
+static NSString *lastNames[] = {@"Alexeev", @"Dmitriev", @"Danilov", @"Lojinskiy", @"Vasilevskiy",
+    @"Chjen", @"Pvlovich", @"Karpov", @"Petrashkevich", @"Johnson"
+};
 
 + (ASCoreDataManager *)sharedManager {
     
@@ -21,6 +32,108 @@
     
     return manager;
 }
+
+#pragma mark - Manage Mocking Data
+
+- (void)fillDataBaseWithMockingData {
+    
+    NSArray *coursesArray = @[[self createCourseWithName:@"PHP"],
+                              [self createCourseWithName:@"JavaScript"],
+                              [self createCourseWithName:@"HTML"],
+                              [self createCourseWithName:@"CSS"],
+                              [self createCourseWithName:@"SQL"]];
+    
+    NSMutableArray *usersArray = [NSMutableArray array];
+    for (int i = 0; i < 25; i++) {
+        
+        ASUser *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASUser class]) inManagedObjectContext:self.persistentContainer.viewContext];
+        
+        user.firstName = firstNames[arc4random_uniform(9)];
+        user.lastName = lastNames[arc4random_uniform(9)];
+        
+        NSInteger coursesAttendedNumber = arc4random_uniform(4) + 1;
+        
+        while (user.coursesAttended.count < coursesAttendedNumber) {
+            ASCourse *course = [coursesArray objectAtIndex:arc4random_uniform(5)];
+            if (![user.coursesAttended containsObject:course]) {
+                [user addCoursesAttendedObject:course];
+            }
+        }
+        
+        [usersArray addObject:user];
+    }
+    [self setupTeachersRelationsForUsers:usersArray andCourses:coursesArray];
+    
+    NSError *error = nil;
+    if (![self.persistentContainer.viewContext save:&error]) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+    
+}
+
+- (void)setupTeachersRelationsForUsers:(NSArray *)usersArray andCourses:(NSArray *)coursesArray {
+    
+    for (ASCourse *course in coursesArray) {
+        ASUser *randomUser = [usersArray objectAtIndex:arc4random_uniform(24)];
+        course.teacher = randomUser;
+    }
+}
+
+- (ASCourse *)createCourseWithName:(NSString *)name {
+    
+    ASCourse *course = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASCourse class]) inManagedObjectContext:self.persistentContainer.viewContext];
+    course.name = name;
+    
+    return course;
+}
+
+- (void)printAllObjectsFromArray:(NSArray *)array {
+    
+    for (NSManagedObject *object in array) {
+        if ([object isKindOfClass:[ASUser class]]) {
+            ASUser *user = (ASUser *)object;
+            NSLog(@"USER: %@ %@ ATTENDED:%ld, LEAD:%ld",user.firstName, user.lastName, user.coursesAttended.count, user.coursesLead.count);
+        } else if ([object isKindOfClass:[ASCourse class]]) {
+            ASCourse *course = (ASCourse *)object;
+            NSLog(@"COURSE: %@, STUDENTS:%ld, TEACHER: %@ %@", course.name, course.students.count, course.teacher.firstName, course.teacher.lastName);
+        } else {
+            NSLog(@"Unexpected object class: %@", [object class]);
+        }
+    }
+}
+
+- (NSArray *)allObject {
+    
+    //NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([ASEntity class])];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASEntity class]) inManagedObjectContext:self.persistentContainer.viewContext];
+    [request setEntity:description];
+    
+    NSError *error = nil;
+    NSArray *resultArray = [self.persistentContainer.viewContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+    return resultArray;
+}
+
+- (void)showAllObjecrs {
+    [self printAllObjectsFromArray:[self allObject]];
+}
+
+- (void)dropDataBase {
+    
+    NSArray *allObjects = [self allObject];
+    for (ASEntity *object in allObjects) {
+        [self.persistentContainer.viewContext deleteObject:object];
+    }
+    NSError *error = nil;
+    if (![self.persistentContainer.viewContext save:&error]) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}
+
+
 
 #pragma mark - Core Data stack
 

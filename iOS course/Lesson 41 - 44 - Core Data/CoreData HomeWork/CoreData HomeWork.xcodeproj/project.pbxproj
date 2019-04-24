@@ -15,11 +15,19 @@
 		FA0A2D92226A0F7A00AFC209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2D90226A0F7A00AFC209 /* LaunchScreen.storyboard */; };
 		FA0A2D95226A0F7A00AFC209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2D94226A0F7A00AFC209 /* main.m */; };
 		FA0A2D9D226A114A00AFC209 /* ASCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2D9C226A114A00AFC209 /* ASCoreDataManager.m */; };
-		FA0A2DB3226A1B8300AFC209 /* ASUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2DAD226A1B8300AFC209 /* ASUser+CoreDataClass.m */; };
-		FA0A2DB4226A1B8300AFC209 /* ASUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2DAE226A1B8300AFC209 /* ASUser+CoreDataProperties.m */; };
-		FA0A2DB5226A1B8300AFC209 /* ASCourse+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2DB1226A1B8300AFC209 /* ASCourse+CoreDataClass.m */; };
-		FA0A2DB6226A1B8300AFC209 /* ASCourse+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2DB2226A1B8300AFC209 /* ASCourse+CoreDataProperties.m */; };
 		FA0A2DE1226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */; };
+		FA0A2E2A2270607300AFC209 /* ASUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E202270607300AFC209 /* ASUser+CoreDataClass.m */; };
+		FA0A2E2B2270607300AFC209 /* ASUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E212270607300AFC209 /* ASUser+CoreDataProperties.m */; };
+		FA0A2E2C2270607300AFC209 /* ASEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E242270607300AFC209 /* ASEntity+CoreDataClass.m */; };
+		FA0A2E2D2270607300AFC209 /* ASEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E252270607300AFC209 /* ASEntity+CoreDataProperties.m */; };
+		FA0A2E2E2270607300AFC209 /* ASCourse+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E282270607300AFC209 /* ASCourse+CoreDataClass.m */; };
+		FA0A2E2F2270607300AFC209 /* ASCourse+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E292270607300AFC209 /* ASCourse+CoreDataProperties.m */; };
+		FA0A2E32227064B100AFC209 /* ASUsersControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E31227064B100AFC209 /* ASUsersControllers.m */; };
+		FA0A2E38227087DB00AFC209 /* employee.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E35227087DB00AFC209 /* employee.png */; };
+		FA0A2E39227087DB00AFC209 /* open-book.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E36227087DB00AFC209 /* open-book.png */; };
+		FA0A2E3A227087DB00AFC209 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E37227087DB00AFC209 /* avatar.png */; };
+		FA0A2E3C2270924100AFC209 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2E3B2270924100AFC209 /* logo.png */; };
+		FA0A2E3F227092CD00AFC209 /* ASLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,16 +44,28 @@
 		FA0A2D94226A0F7A00AFC209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA0A2D9B226A114A00AFC209 /* ASCoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCoreDataManager.h; sourceTree = "<group>"; };
 		FA0A2D9C226A114A00AFC209 /* ASCoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCoreDataManager.m; sourceTree = "<group>"; };
-		FA0A2DAB226A1B8300AFC209 /* ASUser+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASUser+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FA0A2DAC226A1B8300AFC209 /* ASUser+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASUser+CoreDataClass.h"; sourceTree = "<group>"; };
-		FA0A2DAD226A1B8300AFC209 /* ASUser+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASUser+CoreDataClass.m"; sourceTree = "<group>"; };
-		FA0A2DAE226A1B8300AFC209 /* ASUser+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASUser+CoreDataProperties.m"; sourceTree = "<group>"; };
-		FA0A2DAF226A1B8300AFC209 /* ASCourse+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCourse+CoreDataProperties.h"; sourceTree = "<group>"; };
-		FA0A2DB0226A1B8300AFC209 /* ASCourse+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCourse+CoreDataClass.h"; sourceTree = "<group>"; };
-		FA0A2DB1226A1B8300AFC209 /* ASCourse+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCourse+CoreDataClass.m"; sourceTree = "<group>"; };
-		FA0A2DB2226A1B8300AFC209 /* ASCourse+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCourse+CoreDataProperties.m"; sourceTree = "<group>"; };
 		FA0A2DDF226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASAbstractCoreDataTableViewController.h; sourceTree = "<group>"; };
 		FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASAbstractCoreDataTableViewController.m; sourceTree = "<group>"; };
+		FA0A2E1E2270607300AFC209 /* ASUser+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA0A2E1F2270607300AFC209 /* ASUser+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA0A2E202270607300AFC209 /* ASUser+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA0A2E212270607300AFC209 /* ASUser+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA0A2E222270607300AFC209 /* ASEntity+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA0A2E232270607300AFC209 /* ASEntity+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA0A2E242270607300AFC209 /* ASEntity+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA0A2E252270607300AFC209 /* ASEntity+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA0A2E262270607300AFC209 /* ASCourse+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCourse+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FA0A2E272270607300AFC209 /* ASCourse+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASCourse+CoreDataClass.h"; sourceTree = "<group>"; };
+		FA0A2E282270607300AFC209 /* ASCourse+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCourse+CoreDataClass.m"; sourceTree = "<group>"; };
+		FA0A2E292270607300AFC209 /* ASCourse+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASCourse+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FA0A2E30227064B100AFC209 /* ASUsersControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASUsersControllers.h; sourceTree = "<group>"; };
+		FA0A2E31227064B100AFC209 /* ASUsersControllers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUsersControllers.m; sourceTree = "<group>"; };
+		FA0A2E35227087DB00AFC209 /* employee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = employee.png; path = "CoreData HomeWork/images/employee.png"; sourceTree = SOURCE_ROOT; };
+		FA0A2E36227087DB00AFC209 /* open-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "open-book.png"; path = "CoreData HomeWork/images/open-book.png"; sourceTree = SOURCE_ROOT; };
+		FA0A2E37227087DB00AFC209 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = "CoreData HomeWork/images/avatar.png"; sourceTree = SOURCE_ROOT; };
+		FA0A2E3B2270924100AFC209 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		FA0A2E3D227092CD00AFC209 /* ASLogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASLogoViewController.h; sourceTree = "<group>"; };
+		FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASLogoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,15 +98,19 @@
 		FA0A2D81226A0F7700AFC209 /* CoreData HomeWork */ = {
 			isa = PBXGroup;
 			children = (
+				FA0A2E34227087B800AFC209 /* assets */,
+				FA0A2DDF226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.h */,
+				FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */,
+				FA0A2E33227064B600AFC209 /* subControllers */,
 				FA0A2DAA226A1A8700AFC209 /* CoreData Models */,
 				FA0A2D82226A0F7700AFC209 /* AppDelegate.h */,
 				FA0A2D83226A0F7700AFC209 /* AppDelegate.m */,
-				FA0A2DDF226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.h */,
-				FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */,
 				FA0A2D85226A0F7700AFC209 /* ViewController.h */,
 				FA0A2D86226A0F7700AFC209 /* ViewController.m */,
 				FA0A2D9B226A114A00AFC209 /* ASCoreDataManager.h */,
 				FA0A2D9C226A114A00AFC209 /* ASCoreDataManager.m */,
+				FA0A2E3D227092CD00AFC209 /* ASLogoViewController.h */,
+				FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */,
 				FA0A2D88226A0F7700AFC209 /* Main.storyboard */,
 				FA0A2D8E226A0F7A00AFC209 /* Assets.xcassets */,
 				FA0A2D90226A0F7A00AFC209 /* LaunchScreen.storyboard */,
@@ -100,16 +124,40 @@
 		FA0A2DAA226A1A8700AFC209 /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA0A2DAB226A1B8300AFC209 /* ASUser+CoreDataProperties.h */,
-				FA0A2DAC226A1B8300AFC209 /* ASUser+CoreDataClass.h */,
-				FA0A2DAD226A1B8300AFC209 /* ASUser+CoreDataClass.m */,
-				FA0A2DAE226A1B8300AFC209 /* ASUser+CoreDataProperties.m */,
-				FA0A2DAF226A1B8300AFC209 /* ASCourse+CoreDataProperties.h */,
-				FA0A2DB0226A1B8300AFC209 /* ASCourse+CoreDataClass.h */,
-				FA0A2DB1226A1B8300AFC209 /* ASCourse+CoreDataClass.m */,
-				FA0A2DB2226A1B8300AFC209 /* ASCourse+CoreDataProperties.m */,
+				FA0A2E1E2270607300AFC209 /* ASUser+CoreDataProperties.h */,
+				FA0A2E1F2270607300AFC209 /* ASUser+CoreDataClass.h */,
+				FA0A2E202270607300AFC209 /* ASUser+CoreDataClass.m */,
+				FA0A2E212270607300AFC209 /* ASUser+CoreDataProperties.m */,
+				FA0A2E222270607300AFC209 /* ASEntity+CoreDataProperties.h */,
+				FA0A2E232270607300AFC209 /* ASEntity+CoreDataClass.h */,
+				FA0A2E242270607300AFC209 /* ASEntity+CoreDataClass.m */,
+				FA0A2E252270607300AFC209 /* ASEntity+CoreDataProperties.m */,
+				FA0A2E262270607300AFC209 /* ASCourse+CoreDataProperties.h */,
+				FA0A2E272270607300AFC209 /* ASCourse+CoreDataClass.h */,
+				FA0A2E282270607300AFC209 /* ASCourse+CoreDataClass.m */,
+				FA0A2E292270607300AFC209 /* ASCourse+CoreDataProperties.m */,
 			);
 			path = "CoreData Models";
+			sourceTree = "<group>";
+		};
+		FA0A2E33227064B600AFC209 /* subControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2E30227064B100AFC209 /* ASUsersControllers.h */,
+				FA0A2E31227064B100AFC209 /* ASUsersControllers.m */,
+			);
+			path = subControllers;
+			sourceTree = "<group>";
+		};
+		FA0A2E34227087B800AFC209 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2E37227087DB00AFC209 /* avatar.png */,
+				FA0A2E3B2270924100AFC209 /* logo.png */,
+				FA0A2E35227087DB00AFC209 /* employee.png */,
+				FA0A2E36227087DB00AFC209 /* open-book.png */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +217,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0A2E3A227087DB00AFC209 /* avatar.png in Resources */,
 				FA0A2D92226A0F7A00AFC209 /* LaunchScreen.storyboard in Resources */,
 				FA0A2D8F226A0F7A00AFC209 /* Assets.xcassets in Resources */,
 				FA0A2D8A226A0F7700AFC209 /* Main.storyboard in Resources */,
+				FA0A2E3C2270924100AFC209 /* logo.png in Resources */,
+				FA0A2E38227087DB00AFC209 /* employee.png in Resources */,
+				FA0A2E39227087DB00AFC209 /* open-book.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,16 +234,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0A2E2A2270607300AFC209 /* ASUser+CoreDataClass.m in Sources */,
 				FA0A2D8D226A0F7700AFC209 /* CoreData_HomeWork.xcdatamodeld in Sources */,
 				FA0A2D9D226A114A00AFC209 /* ASCoreDataManager.m in Sources */,
 				FA0A2DE1226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m in Sources */,
-				FA0A2DB4226A1B8300AFC209 /* ASUser+CoreDataProperties.m in Sources */,
-				FA0A2DB3226A1B8300AFC209 /* ASUser+CoreDataClass.m in Sources */,
-				FA0A2DB5226A1B8300AFC209 /* ASCourse+CoreDataClass.m in Sources */,
-				FA0A2DB6226A1B8300AFC209 /* ASCourse+CoreDataProperties.m in Sources */,
+				FA0A2E2B2270607300AFC209 /* ASUser+CoreDataProperties.m in Sources */,
+				FA0A2E32227064B100AFC209 /* ASUsersControllers.m in Sources */,
+				FA0A2E2E2270607300AFC209 /* ASCourse+CoreDataClass.m in Sources */,
+				FA0A2E2C2270607300AFC209 /* ASEntity+CoreDataClass.m in Sources */,
 				FA0A2D87226A0F7700AFC209 /* ViewController.m in Sources */,
+				FA0A2E2F2270607300AFC209 /* ASCourse+CoreDataProperties.m in Sources */,
 				FA0A2D95226A0F7A00AFC209 /* main.m in Sources */,
+				FA0A2E2D2270607300AFC209 /* ASEntity+CoreDataProperties.m in Sources */,
 				FA0A2D84226A0F7700AFC209 /* AppDelegate.m in Sources */,
+				FA0A2E3F227092CD00AFC209 /* ASLogoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

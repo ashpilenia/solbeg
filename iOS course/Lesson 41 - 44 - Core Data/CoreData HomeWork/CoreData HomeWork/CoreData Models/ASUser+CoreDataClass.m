@@ -2,7 +2,7 @@
 //  ASUser+CoreDataClass.m
 //  CoreData HomeWork
 //
-//  Created by Alex on 4/19/19.
+//  Created by Alex on 4/24/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 //

@@ -17,6 +17,9 @@
 + (ASCoreDataManager *)sharedManager;
 
 - (void)saveContext;
+- (void)fillDataBaseWithMockingData;
+- (void)showAllObjecrs;
+- (void)dropDataBase;
 
 @end
 

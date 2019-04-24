@@ -1,5 +1,5 @@
 //
-//  ASCourse+CoreDataClass.h
+//  ASEntity+CoreDataProperties.h
 //  CoreData HomeWork
 //
 //  Created by Alex on 4/24/19.
@@ -7,17 +7,16 @@
 //
 //
 
-#import <Foundation/Foundation.h>
 #import "ASEntity+CoreDataClass.h"
 
-@class ASUser;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ASCourse : ASEntity
+@interface ASEntity (CoreDataProperties)
+
++ (NSFetchRequest<ASEntity *> *)fetchRequest;
+
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#import "ASCourse+CoreDataProperties.h"

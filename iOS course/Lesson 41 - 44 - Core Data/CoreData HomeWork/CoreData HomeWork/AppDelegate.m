@@ -17,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+//    [[ASCoreDataManager sharedManager] fillDataBaseWithMockingData];
+//    [[ASCoreDataManager sharedManager] dropDataBase];
+    [[ASCoreDataManager sharedManager] showAllObjecrs];
+    
     return YES;
 }
 

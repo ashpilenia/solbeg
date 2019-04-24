@@ -2,7 +2,7 @@
 //  ASUser+CoreDataProperties.h
 //  CoreData HomeWork
 //
-//  Created by Alex on 4/19/19.
+//  Created by Alex on 4/24/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 //
@@ -16,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<ASUser *> *)fetchRequest;
 
+@property (nullable, nonatomic, copy) NSString *email;
 @property (nullable, nonatomic, copy) NSString *firstName;
 @property (nullable, nonatomic, copy) NSString *lastName;
-@property (nullable, nonatomic, copy) NSString *email;
 @property (nullable, nonatomic, retain) NSSet<ASCourse *> *coursesAttended;
 @property (nullable, nonatomic, retain) NSSet<ASCourse *> *coursesLead;
 

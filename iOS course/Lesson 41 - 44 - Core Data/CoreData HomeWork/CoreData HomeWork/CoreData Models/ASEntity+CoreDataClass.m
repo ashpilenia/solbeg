@@ -1,5 +1,5 @@
 //
-//  ASCourse+CoreDataClass.m
+//  ASEntity+CoreDataClass.m
 //  CoreData HomeWork
 //
 //  Created by Alex on 4/24/19.
@@ -7,8 +7,8 @@
 //
 //
 
-#import "ASCourse+CoreDataClass.h"
+#import "ASEntity+CoreDataClass.h"
 
-@implementation ASCourse
+@implementation ASEntity
 
 @end
