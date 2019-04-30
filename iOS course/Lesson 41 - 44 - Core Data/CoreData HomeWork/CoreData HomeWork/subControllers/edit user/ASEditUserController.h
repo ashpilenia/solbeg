@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ASUser;
+
 @interface ASEditUserController : UITableViewController
+
+@property (nonatomic, assign) BOOL isReadOnly;
+@property (nonatomic, strong) ASUser *user;
 
 @end

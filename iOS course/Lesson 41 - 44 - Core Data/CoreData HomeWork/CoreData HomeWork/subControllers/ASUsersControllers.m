@@ -10,6 +10,7 @@
 #import "ASCoreDataManager.h"
 #import "ASUser+CoreDataClass.h"
 #import "ASEditUserController.h"
+#import "UIColor+CustomColors.h"
 
 static NSString * const kCellReuseId = @"CellReuseId";
 
@@ -27,6 +28,7 @@ static NSString * const kCellReuseId = @"CellReuseId";
     self.navigationItem.title = @"USERS";
     
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUserAction:)];
+    barButton.tintColor = [UIColor mainColor];
     self.navigationItem.rightBarButtonItem = barButton;
 }
 
@@ -101,6 +103,7 @@ static NSString * const kCellReuseId = @"CellReuseId";
 - (void)addUserAction:(UIBarButtonItem *)sender {
     
     ASEditUserController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASEditUserController"];
+    vc.isReadOnly = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
