@@ -39,7 +39,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     if (self.user) {
+        
         self.navigationItem.title = @"EDIT USER";
+        
+        self.firstName = self.user.firstName;
+        self.lastName = self.user.lastName;
+        self.email = self.user.email;
+        
     } else {
         self.navigationItem.title = @"ADD USER";
     }
@@ -65,6 +71,7 @@
                 cell.textField.placeholder = @"Enter first name...";
                 cell.textField.tag = 0;
                 cell.textField.returnKeyType = UIReturnKeyNext;
+                cell.textField.text = self.user ? self.user.firstName : nil;
             }
             break;
             
@@ -74,6 +81,7 @@
                 cell.textField.placeholder = @"Enter last name...";
                 cell.textField.tag = 1;
                 cell.textField.returnKeyType = UIReturnKeyNext;
+                cell.textField.text = self.user ? self.user.lastName : nil;
             }
             break;
             
@@ -83,6 +91,7 @@
                 cell.textField.placeholder = @"Enter email...";
                 cell.textField.tag = 2;
                 cell.textField.returnKeyType = UIReturnKeyDone;
+                cell.textField.text = self.user ? self.user.email : nil;
             }
             break;
             
@@ -92,9 +101,7 @@
                 cell.textField.hidden = YES;
                 cell.textLabel.text = @"DONE";
                 cell.textLabel.textAlignment = NSTextAlignmentCenter;
-                cell.textLabel.textColor = [UIColor blueColor];
-                cell.layer.borderWidth = 0.3;
-                cell.layer.borderColor = [UIColor blueColor].CGColor;
+                cell.textLabel.textColor = [UIColor mainColor];
             }
             break;
             
@@ -112,7 +119,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 3) {
         
-        ASUser *user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASUser class]) inManagedObjectContext:[ASCoreDataManager sharedManager].persistentContainer.viewContext];
+        ASUser *user = self.user;
+        if (!user) {
+            user = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ASUser class]) inManagedObjectContext:[ASCoreDataManager sharedManager].persistentContainer.viewContext];
+        }
         
         user.firstName = self.firstName;
         user.lastName = self.lastName;

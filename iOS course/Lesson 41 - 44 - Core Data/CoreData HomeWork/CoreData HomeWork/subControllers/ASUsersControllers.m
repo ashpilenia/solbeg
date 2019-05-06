@@ -97,6 +97,14 @@ static NSString * const kCellReuseId = @"CellReuseId";
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Courses Attended: %ld", user.coursesAttended.count];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ASEditUserController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASEditUserController"];
+    vc.isReadOnly = NO;
+    vc.user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 #pragma mark - Actions
 
