@@ -12,7 +12,7 @@
 
 @interface ASEditUserController : UITableViewController
 
-@property (nonatomic, assign) BOOL isReadOnly;
 @property (nonatomic, strong) ASUser *user;
+@property (nonatomic, assign) BOOL isReadOnly;
 
 @end

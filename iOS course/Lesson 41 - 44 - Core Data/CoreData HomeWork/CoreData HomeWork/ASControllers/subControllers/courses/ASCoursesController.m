@@ -1,33 +1,33 @@
 //
-//  ASUsersControllers.m
+//  ASCoursesController.m
 //  CoreData HomeWork
 //
-//  Created by Alex on 4/24/19.
+//  Created by Alex on 5/6/19.
 //  Copyright © 2019 Alex Shpilenia. All rights reserved.
 //
 
-#import "ASUsersControllers.h"
+#import "ASCoursesController.h"
 #import "ASCoreDataManager.h"
-#import "ASUser+CoreDataClass.h"
-#import "ASEditUserController.h"
+#import "ASCourse+CoreDataClass.h"
 #import "UIColor+CustomColors.h"
+#import "ASEditCourseController.h"
 
-static NSString * const kCellReuseId = @"CellReuseId";
+static NSString * const kCellCourseReuseId = @"CellCourseReuseId";
 
-@interface ASUsersControllers ()
+@interface ASCoursesController ()
 
 @end
 
-@implementation ASUsersControllers
+@implementation ASCoursesController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"USERS";
+    self.navigationItem.title = @"COURSES";
     
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUserAction:)];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCourseAction:)];
     barButton.tintColor = [UIColor mainColor];
     self.navigationItem.rightBarButtonItem = barButton;
 }
@@ -36,24 +36,24 @@ static NSString * const kCellReuseId = @"CellReuseId";
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASUser class]) inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *description = [NSEntityDescription entityForName:NSStringFromClass([ASCourse class]) inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:description];
-
+    
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
-
+    
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
-
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
-
+    
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     aFetchedResultsController.delegate = self;
-
+    
     NSError *error = nil;
     if (![aFetchedResultsController performFetch:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -61,7 +61,7 @@ static NSString * const kCellReuseId = @"CellReuseId";
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
-
+    
     _fetchedResultsController = aFetchedResultsController;
     return _fetchedResultsController;
 }
@@ -83,38 +83,39 @@ static NSString * const kCellReuseId = @"CellReuseId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReuseId];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellCourseReuseId];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCellReuseId];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCellCourseReuseId];
     }
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    ASUser *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Courses Attended: %ld", user.coursesAttended.count];
+    ASCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", course.name];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Students Subscribed: %ld", course.students.count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ASEditUserController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASEditUserController"];
-    vc.isReadOnly = NO;
-    vc.user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ASEditCourseController *vc = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASEditCourseController class])];
+    vc.course = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 
 #pragma mark - Actions
 
-- (void)addUserAction:(UIBarButtonItem *)sender {
+- (void)addCourseAction:(UIBarButtonItem *)sender {
     
-    ASEditUserController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ASEditUserController"];
-    vc.isReadOnly = NO;
+    ASEditCourseController *vc = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASEditCourseController class])];
+    
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
-
 
 
 @end

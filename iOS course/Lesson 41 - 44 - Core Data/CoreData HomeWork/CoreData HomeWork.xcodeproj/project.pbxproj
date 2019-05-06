@@ -31,6 +31,9 @@
 		FA170A5B22787E7C0075752A /* ASUserDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A5922787E7C0075752A /* ASUserDetailCell.m */; };
 		FA170A5C22787E7C0075752A /* ASUserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA170A5A22787E7C0075752A /* ASUserDetailCell.xib */; };
 		FA170A5F2278A1E60075752A /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A5E2278A1E60075752A /* UIColor+CustomColors.m */; };
+		FA170A6622806BB10075752A /* ASCoursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6522806BB10075752A /* ASCoursesController.m */; };
+		FA170A6922806EF30075752A /* ASEditCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6822806EF30075752A /* ASEditCourseController.m */; };
+		FA170A6C228094200075752A /* ASSelectionPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6B228094200075752A /* ASSelectionPopoverController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,12 @@
 		FA170A5A22787E7C0075752A /* ASUserDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASUserDetailCell.xib; sourceTree = "<group>"; };
 		FA170A5D2278A1E60075752A /* UIColor+CustomColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		FA170A5E2278A1E60075752A /* UIColor+CustomColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		FA170A6422806BB10075752A /* ASCoursesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCoursesController.h; sourceTree = "<group>"; };
+		FA170A6522806BB10075752A /* ASCoursesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCoursesController.m; sourceTree = "<group>"; };
+		FA170A6722806EF30075752A /* ASEditCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASEditCourseController.h; sourceTree = "<group>"; };
+		FA170A6822806EF30075752A /* ASEditCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASEditCourseController.m; sourceTree = "<group>"; };
+		FA170A6A228094200075752A /* ASSelectionPopoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSelectionPopoverController.h; sourceTree = "<group>"; };
+		FA170A6B228094200075752A /* ASSelectionPopoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSelectionPopoverController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,20 +115,13 @@
 		FA0A2D81226A0F7700AFC209 /* CoreData HomeWork */ = {
 			isa = PBXGroup;
 			children = (
-				FA0A2DDF226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.h */,
-				FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */,
+				FA170A62228069BD0075752A /* extensions */,
+				FA170A61228069820075752A /* CoreData Stack */,
+				FA170A60228069290075752A /* ASControllers */,
+				FA0A2E34227087B800AFC209 /* assets */,
 				FA0A2D82226A0F7700AFC209 /* AppDelegate.h */,
 				FA0A2D83226A0F7700AFC209 /* AppDelegate.m */,
-				FA0A2D9B226A114A00AFC209 /* ASCoreDataManager.h */,
-				FA0A2D9C226A114A00AFC209 /* ASCoreDataManager.m */,
-				FA0A2E3D227092CD00AFC209 /* ASLogoViewController.h */,
-				FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */,
-				FA170A5D2278A1E60075752A /* UIColor+CustomColors.h */,
-				FA170A5E2278A1E60075752A /* UIColor+CustomColors.m */,
 				FA0A2D88226A0F7700AFC209 /* Main.storyboard */,
-				FA0A2E33227064B600AFC209 /* subControllers */,
-				FA0A2DAA226A1A8700AFC209 /* CoreData Models */,
-				FA0A2E34227087B800AFC209 /* assets */,
 				FA0A2D8E226A0F7A00AFC209 /* Assets.xcassets */,
 				FA0A2D90226A0F7A00AFC209 /* LaunchScreen.storyboard */,
 				FA0A2D93226A0F7A00AFC209 /* Info.plist */,
@@ -151,9 +153,8 @@
 		FA0A2E33227064B600AFC209 /* subControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA0A2E4422709FDA00AFC209 /* edit user */,
-				FA0A2E30227064B100AFC209 /* ASUsersControllers.h */,
-				FA0A2E31227064B100AFC209 /* ASUsersControllers.m */,
+				FA170A63228069FD0075752A /* courses */,
+				FA0A2E4422709FDA00AFC209 /* users */,
 			);
 			path = subControllers;
 			sourceTree = "<group>";
@@ -169,14 +170,16 @@
 			path = assets;
 			sourceTree = "<group>";
 		};
-		FA0A2E4422709FDA00AFC209 /* edit user */ = {
+		FA0A2E4422709FDA00AFC209 /* users */ = {
 			isa = PBXGroup;
 			children = (
-				FA170A5722787E570075752A /* cells */,
+				FA0A2E30227064B100AFC209 /* ASUsersControllers.h */,
+				FA0A2E31227064B100AFC209 /* ASUsersControllers.m */,
 				FA0A2E452270A00200AFC209 /* ASEditUserController.h */,
 				FA0A2E462270A00200AFC209 /* ASEditUserController.m */,
+				FA170A5722787E570075752A /* cells */,
 			);
-			path = "edit user";
+			path = users;
 			sourceTree = "<group>";
 		};
 		FA170A5722787E570075752A /* cells */ = {
@@ -187,6 +190,50 @@
 				FA170A5A22787E7C0075752A /* ASUserDetailCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		FA170A60228069290075752A /* ASControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2E33227064B600AFC209 /* subControllers */,
+				FA0A2DDF226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.h */,
+				FA0A2DE0226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m */,
+				FA0A2E3D227092CD00AFC209 /* ASLogoViewController.h */,
+				FA0A2E3E227092CD00AFC209 /* ASLogoViewController.m */,
+				FA170A6A228094200075752A /* ASSelectionPopoverController.h */,
+				FA170A6B228094200075752A /* ASSelectionPopoverController.m */,
+			);
+			path = ASControllers;
+			sourceTree = "<group>";
+		};
+		FA170A61228069820075752A /* CoreData Stack */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2D9B226A114A00AFC209 /* ASCoreDataManager.h */,
+				FA0A2D9C226A114A00AFC209 /* ASCoreDataManager.m */,
+				FA0A2DAA226A1A8700AFC209 /* CoreData Models */,
+			);
+			path = "CoreData Stack";
+			sourceTree = "<group>";
+		};
+		FA170A62228069BD0075752A /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA170A5D2278A1E60075752A /* UIColor+CustomColors.h */,
+				FA170A5E2278A1E60075752A /* UIColor+CustomColors.m */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		FA170A63228069FD0075752A /* courses */ = {
+			isa = PBXGroup;
+			children = (
+				FA170A6422806BB10075752A /* ASCoursesController.h */,
+				FA170A6522806BB10075752A /* ASCoursesController.m */,
+				FA170A6722806EF30075752A /* ASEditCourseController.h */,
+				FA170A6822806EF30075752A /* ASEditCourseController.m */,
+			);
+			path = courses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +313,7 @@
 			files = (
 				FA0A2E2A2270607300AFC209 /* ASUser+CoreDataClass.m in Sources */,
 				FA0A2D8D226A0F7700AFC209 /* CoreData_HomeWork.xcdatamodeld in Sources */,
+				FA170A6922806EF30075752A /* ASEditCourseController.m in Sources */,
 				FA0A2D9D226A114A00AFC209 /* ASCoreDataManager.m in Sources */,
 				FA0A2DE1226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m in Sources */,
 				FA0A2E472270A00200AFC209 /* ASEditUserController.m in Sources */,
@@ -276,10 +324,12 @@
 				FA0A2E2C2270607300AFC209 /* ASEntity+CoreDataClass.m in Sources */,
 				FA0A2E2F2270607300AFC209 /* ASCourse+CoreDataProperties.m in Sources */,
 				FA0A2D95226A0F7A00AFC209 /* main.m in Sources */,
+				FA170A6622806BB10075752A /* ASCoursesController.m in Sources */,
 				FA0A2E2D2270607300AFC209 /* ASEntity+CoreDataProperties.m in Sources */,
 				FA0A2D84226A0F7700AFC209 /* AppDelegate.m in Sources */,
 				FA0A2E3F227092CD00AFC209 /* ASLogoViewController.m in Sources */,
 				FA170A5B22787E7C0075752A /* ASUserDetailCell.m in Sources */,
+				FA170A6C228094200075752A /* ASSelectionPopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

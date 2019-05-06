@@ -32,15 +32,13 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"BACK" style:UIBarButtonItemStylePlain target:self action:@selector(goBack:)];
     backItem.tintColor = [UIColor mainColor];
     self.navigationItem.leftBarButtonItem = backItem;
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     if (self.user) {
         
-        self.navigationItem.title = @"EDIT USER";
+        self.navigationItem.title = self.isReadOnly ? @"USER PROFILE" : @"EDIT USER";
         
         self.firstName = self.user.firstName;
         self.lastName = self.user.lastName;
@@ -54,21 +52,21 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.isReadOnly ? 3 : 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ASUserDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:[ASUserDetailCell reuseIdentifier]            forIndexPath:indexPath];
     
-    cell.textField.enabled = self.isReadOnly ? NO : YES;
     cell.textField.delegate = self;
+    cell.textField.enabled = self.isReadOnly ? NO : YES;
     
     switch (indexPath.row) {
         case 0:
             {
                 cell.nameLabel.text = @"First Name:";
-                cell.textField.placeholder = @"Enter first name...";
+                cell.textField.placeholder = self.isReadOnly ? nil : @"Enter first name...";
                 cell.textField.tag = 0;
                 cell.textField.returnKeyType = UIReturnKeyNext;
                 cell.textField.text = self.user ? self.user.firstName : nil;
@@ -78,7 +76,7 @@
         case 1:
             {
                 cell.nameLabel.text = @"Last Name:";
-                cell.textField.placeholder = @"Enter last name...";
+                cell.textField.placeholder = self.isReadOnly ? nil : @"Enter last name...";
                 cell.textField.tag = 1;
                 cell.textField.returnKeyType = UIReturnKeyNext;
                 cell.textField.text = self.user ? self.user.lastName : nil;
@@ -88,7 +86,7 @@
         case 2:
             {
                 cell.nameLabel.text = @"Email:";
-                cell.textField.placeholder = @"Enter email...";
+                cell.textField.placeholder = self.isReadOnly ? nil : @"Enter email...";
                 cell.textField.tag = 2;
                 cell.textField.returnKeyType = UIReturnKeyDone;
                 cell.textField.text = self.user ? self.user.email : nil;
@@ -132,9 +130,9 @@
         if (![[ASCoreDataManager sharedManager].persistentContainer.viewContext save:&error]) {
             NSLog(@"%@", error.localizedDescription);
         }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITextFieldDelegate
