@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
 
 @property (nonatomic, strong) NSArray *optionsArray;
 @property (nonatomic, strong) NSArray *selectedValues;

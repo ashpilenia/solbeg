@@ -263,6 +263,25 @@
                                     <constraint firstAttribute="bottom" secondItem="SXu-Jg-pKm" secondAttribute="bottom" id="wqz-HB-MZU"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-aR-fQ2">
+                                <rect key="frame" x="80" y="568" width="254" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVE CHANGES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx6-OL-U8i">
+                                        <rect key="frame" x="15" y="5" width="224" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WCy-pJ-hXe"/>
+                                    <constraint firstAttribute="trailing" secondItem="bx6-OL-U8i" secondAttribute="trailing" constant="15" id="otK-NB-VOD"/>
+                                    <constraint firstItem="bx6-OL-U8i" firstAttribute="leading" secondItem="JfW-aR-fQ2" secondAttribute="leading" constant="15" id="sm8-u6-e63"/>
+                                    <constraint firstItem="bx6-OL-U8i" firstAttribute="top" secondItem="JfW-aR-fQ2" secondAttribute="top" constant="5" id="uF4-Ig-p7e"/>
+                                    <constraint firstAttribute="bottom" secondItem="bx6-OL-U8i" secondAttribute="bottom" constant="5" id="xo3-DV-Tu3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -270,10 +289,14 @@
                             <constraint firstItem="Qse-fQ-O7E" firstAttribute="leading" secondItem="5NF-sb-FaI" secondAttribute="leading" constant="80" id="6iz-dY-4N3"/>
                             <constraint firstItem="5NF-sb-FaI" firstAttribute="trailing" secondItem="Qse-fQ-O7E" secondAttribute="trailing" constant="80" id="8LC-G2-kig"/>
                             <constraint firstItem="5NF-sb-FaI" firstAttribute="bottom" secondItem="Qse-fQ-O7E" secondAttribute="bottom" constant="300" id="ccO-W4-wAt"/>
+                            <constraint firstItem="JfW-aR-fQ2" firstAttribute="centerX" secondItem="SXu-Jg-pKm" secondAttribute="centerX" id="dIL-Rg-AQr"/>
+                            <constraint firstItem="JfW-aR-fQ2" firstAttribute="width" secondItem="SXu-Jg-pKm" secondAttribute="width" id="fY4-lC-8j0"/>
+                            <constraint firstItem="JfW-aR-fQ2" firstAttribute="top" secondItem="Qse-fQ-O7E" secondAttribute="bottom" constant="6" id="xPP-G7-CeY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5NF-sb-FaI"/>
                     </view>
                     <connections>
+                        <outlet property="buttonView" destination="JfW-aR-fQ2" id="Gjt-9g-tCO"/>
                         <outlet property="mainView" destination="Qse-fQ-O7E" id="ANT-Cu-3TE"/>
                         <outlet property="tableView" destination="SXu-Jg-pKm" id="Rqb-3p-YK8"/>
                     </connections>

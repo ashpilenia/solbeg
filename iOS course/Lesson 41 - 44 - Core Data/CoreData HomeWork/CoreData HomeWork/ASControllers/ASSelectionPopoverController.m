@@ -8,6 +8,7 @@
 
 #import "ASSelectionPopoverController.h"
 #import "ASUser+CoreDataClass.h"
+#import "UIColor+CustomColors.h"
 
 static NSString * const kCellOptionReuseId = @"CellOptionReuseId";
 
@@ -29,6 +30,17 @@ static NSString * const kCellOptionReuseId = @"CellOptionReuseId";
     self.mainView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.mainView.layer.borderWidth = 3.f;
     self.tableView.layer.cornerRadius = 10;
+    
+    self.buttonView.backgroundColor = [UIColor mainColor];
+    self.buttonView.layer.cornerRadius = 10.f;
+    self.buttonView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.buttonView.layer.borderWidth = 1.5f;
+    
+    UITapGestureRecognizer *recognier = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                action:@selector(saveAction:)];
+    
+    [self.buttonView addGestureRecognizer:recognier];
+    
 }
 
 #pragma mark - UITableViewDataSource
@@ -46,6 +58,7 @@ static NSString * const kCellOptionReuseId = @"CellOptionReuseId";
         
         ASUser *user = [self.optionsArray objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
+        cell.accessoryType = UITableViewCellAccessoryNone;
         if ([self.selectedValues containsObject:user]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
@@ -54,14 +67,54 @@ static NSString * const kCellOptionReuseId = @"CellOptionReuseId";
     return cell;
 }
 
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self.delegate processSelectedValues:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.selectedValues];
+    ASUser *user = [self.optionsArray objectAtIndex:indexPath.row];
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [tempArray removeObject:user];
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        if (!self.isMultipleSelectionAllowed) {
+            if (self.selectedValues.count) {
+                ASUser *previousSelection = [self.selectedValues firstObject];
+                NSInteger index = [self.optionsArray indexOfObject:previousSelection];
+                NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
+                
+                UITableViewCell *cellForUpdate = [self.tableView cellForRowAtIndexPath:path];
+                cellForUpdate.accessoryType = UITableViewCellAccessoryNone;
+            }
+            
+            [tempArray removeAllObjects];
+            
+        }
+        [tempArray addObject:user];
+    }
+    
+    self.selectedValues = tempArray;
+}
+
+#pragma mark - Actions
+
+- (void)saveAction:(UITapGestureRecognizer *)sender {
+    
+    self.buttonView.backgroundColor = [UIColor whiteColor];
+    
+    [UIView animateWithDuration:0.3f animations:^{
+        self.buttonView.backgroundColor = [UIColor mainColor];
+    } completion:^(BOOL finished) {
+        [self.delegate processSelectedValues:self.selectedValues];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
 }
 
 

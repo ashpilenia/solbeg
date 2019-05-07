@@ -218,6 +218,7 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
         
         ASSelectionPopoverController *popover = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASSelectionPopoverController class])];
         
+        popover.isMultipleSelectionAllowed = YES;
         popover.optionsArray = allStudents;
         popover.selectedValues = subscribedStudents;
         popover.delegate = self;
