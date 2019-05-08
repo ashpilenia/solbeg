@@ -11,7 +11,7 @@
 @protocol ASselectionPtotocol <NSObject>
 
 @required
-- (void)processSelectedValues:(NSArray *)values;
+- (void)processSelectedValues:(NSArray *)values forTeacher:(BOOL)isTeacher;
 
 @end
 

@@ -111,7 +111,7 @@ static NSString * const kCellOptionReuseId = @"CellOptionReuseId";
     [UIView animateWithDuration:0.3f animations:^{
         self.buttonView.backgroundColor = [UIColor mainColor];
     } completion:^(BOOL finished) {
-        [self.delegate processSelectedValues:self.selectedValues];
+        [self.delegate processSelectedValues:self.selectedValues forTeacher:!self.isMultipleSelectionAllowed];
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     

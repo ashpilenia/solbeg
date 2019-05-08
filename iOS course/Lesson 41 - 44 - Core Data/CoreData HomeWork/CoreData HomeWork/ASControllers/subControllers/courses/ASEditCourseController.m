@@ -109,7 +109,11 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
                 cell.textField.placeholder = @"Enter course name...";
                 cell.textField.tag = 0;
                 cell.textField.returnKeyType = UIReturnKeyNext;
-                cell.textField.text = self.course ? self.course.name : nil;
+                if (self.course) {
+                    cell.textField.text = self.course.name;
+                } else {
+                    cell.textField.text = self.courseName ? self.courseName : nil;
+                }
             }
                 break;
                 
@@ -119,7 +123,11 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
                 cell.textField.placeholder = @"Enter course subject...";
                 cell.textField.tag = 1;
                 cell.textField.returnKeyType = UIReturnKeyNext;
-                cell.textField.text = self.course ? self.course.subject : nil;
+                if (self.course) {
+                    cell.textField.text = self.course.subject;
+                } else {
+                    cell.textField.text = self.courseSubject ? self.courseSubject : nil;
+                }
             }
                 break;
                 
@@ -129,18 +137,29 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
                 cell.textField.placeholder = @"Enter course branch...";
                 cell.textField.tag = 2;
                 cell.textField.returnKeyType = UIReturnKeyDone;
-                cell.textField.text = self.course ? self.course.branch : nil;
+                if (self.course) {
+                    cell.textField.text = self.course.branch;
+                } else {
+                    cell.textField.text = self.courseBranch ? self.courseBranch : nil;
+                }
             }
                 break;
                 
             case 3:
             {
                 cell.nameLabel.text = @"Teacher:";
-                cell.textField.placeholder = @"Currenlty in development";
                 cell.textField.tag = 3;
-                cell.textField.enabled = NO;
-                cell.textField.text = self.course.teacher ? [NSString stringWithFormat:@"%@ %@",
-                                                     self.course.teacher.firstName, self.course.teacher.lastName] : nil;
+                cell.textField.textColor = [UIColor mainColor];
+                
+                if (self.course.teacher) {
+                    cell.textField.text = [NSString stringWithFormat:@"%@ %@", self.course.teacher.firstName, self.course.teacher.lastName];
+                } else {
+                    cell.textField.text = self.teacher ? [NSString stringWithFormat:@"%@ %@", self.teacher.firstName, self.teacher.lastName] : @"Select a teacher";
+                }
+                
+                UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                             action:@selector(selectTeacherAction:)];
+                [cell.textField addGestureRecognizer:tapGesture];
             }
                 break;
                 
@@ -213,21 +232,7 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
         
     } else if (indexPath.row == 0 && indexPath.section == 1) {
         
-        NSArray *subscribedStudents = [self.course.students allObjects];
-        NSArray *allStudents = [self loadAllUsers];
-        
-        ASSelectionPopoverController *popover = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASSelectionPopoverController class])];
-        
-        popover.isMultipleSelectionAllowed = YES;
-        popover.optionsArray = allStudents;
-        popover.selectedValues = subscribedStudents;
-        popover.delegate = self;
-        
-        self.view.alpha = 0.5f;
-        popover.modalPresentationStyle = UIModalPresentationCustom;
-        
-        [self.navigationController presentViewController:popover animated:YES completion:nil];
-        
+        [self invokeSelectionPopoverWithMultipleSelections:YES];
         
     } else if (indexPath.section) {
         
@@ -358,6 +363,11 @@ replacementString:(NSString *)string {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)selectTeacherAction:(UITapGestureRecognizer *)sender {
+    
+    [self invokeSelectionPopoverWithMultipleSelections:NO];
+}
+
 #pragma mark - Core Data
 
 - (ASCourse *)reloadCurrentCourse {
@@ -406,9 +416,52 @@ replacementString:(NSString *)string {
 
 #pragma mark - ASselectionPtotocol
 
-- (void)processSelectedValues:(NSArray *)values {
+- (void)processSelectedValues:(NSArray *)values forTeacher:(BOOL)isTeacher {
     
     self.view.alpha = 1.f;
+    
+    if (isTeacher) {
+        if (self.course) {
+            self.course.teacher = values.firstObject;
+        } else {
+            self.teacher = values.firstObject;
+        }
+    } else {
+        self.course.students = [NSSet setWithArray:values];
+    }
+    
+    NSError *error = nil;
+    if (![[ASCoreDataManager sharedManager].persistentContainer.viewContext save:&error]) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+    
+    [self setupInitialConfig];
+    [self.tableView reloadData];
+    
+}
+
+#pragma mark - Private Methods
+
+- (void)invokeSelectionPopoverWithMultipleSelections:(BOOL)allowed {
+    
+    NSArray *subscribedStudents = [self.course.students allObjects];
+    NSArray *allStudents = [self loadAllUsers];
+    
+    ASSelectionPopoverController *popover = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASSelectionPopoverController class])];
+    
+    popover.isMultipleSelectionAllowed = allowed;
+    popover.optionsArray = allStudents;
+    if (allowed) {
+        popover.selectedValues = subscribedStudents;
+    } else {
+        popover.selectedValues = self.teacher ? @[self.teacher] : nil;
+    }
+    popover.delegate = self;
+    
+    self.view.alpha = 0.5f;
+    popover.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self.navigationController presentViewController:popover animated:YES completion:nil];
     
 }
 
