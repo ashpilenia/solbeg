@@ -48,6 +48,8 @@ static NSString * const kStudentCellReuseId = @"StudentCellReuseId";
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [super viewWillAppear:animated];
+    
     if (self.course) {
         self.navigationItem.title = @"EDIT COURSE";
     } else {
@@ -450,7 +452,7 @@ replacementString:(NSString *)string {
     ASSelectionPopoverController *popover = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([ASSelectionPopoverController class])];
     
     popover.isMultipleSelectionAllowed = allowed;
-    popover.optionsArray = allStudents;
+    popover.optionsArray = [self sortStudentsArray:allStudents];
     if (allowed) {
         popover.selectedValues = subscribedStudents;
     } else {
@@ -463,6 +465,16 @@ replacementString:(NSString *)string {
     
     [self.navigationController presentViewController:popover animated:YES completion:nil];
     
+}
+
+- (NSArray *)sortStudentsArray:(NSArray <ASUser *> *)array {
+    
+    NSSortDescriptor *nameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES];
+    NSSortDescriptor *lastNameDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:YES];
+    
+    NSArray *retArray = [array sortedArrayUsingDescriptors:@[nameDescriptor, lastNameDescriptor]];
+    
+    return retArray;
 }
 
 

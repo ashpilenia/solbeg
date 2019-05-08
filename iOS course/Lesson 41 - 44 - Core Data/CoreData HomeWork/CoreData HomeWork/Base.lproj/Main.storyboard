@@ -173,7 +173,7 @@
         <!--Root View Controller-->
         <scene sceneID="HHM-Km-QcM">
             <objects>
-                <tableViewController id="4ro-QA-xqX" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ASTeachersController" id="4ro-QA-xqX" customClass="ASTeachersController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GeT-rB-WW6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

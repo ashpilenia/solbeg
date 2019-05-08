@@ -34,6 +34,7 @@
 		FA170A6622806BB10075752A /* ASCoursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6522806BB10075752A /* ASCoursesController.m */; };
 		FA170A6922806EF30075752A /* ASEditCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6822806EF30075752A /* ASEditCourseController.m */; };
 		FA170A6C228094200075752A /* ASSelectionPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6B228094200075752A /* ASSelectionPopoverController.m */; };
+		FA170A702283111C0075752A /* ASTeachersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A6F2283111C0075752A /* ASTeachersController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,8 @@
 		FA170A6822806EF30075752A /* ASEditCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASEditCourseController.m; sourceTree = "<group>"; };
 		FA170A6A228094200075752A /* ASSelectionPopoverController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSelectionPopoverController.h; sourceTree = "<group>"; };
 		FA170A6B228094200075752A /* ASSelectionPopoverController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSelectionPopoverController.m; sourceTree = "<group>"; };
+		FA170A6E2283111C0075752A /* ASTeachersController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTeachersController.h; sourceTree = "<group>"; };
+		FA170A6F2283111C0075752A /* ASTeachersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTeachersController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +156,7 @@
 		FA0A2E33227064B600AFC209 /* subControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA170A6D228310ED0075752A /* teachers */,
 				FA170A63228069FD0075752A /* courses */,
 				FA0A2E4422709FDA00AFC209 /* users */,
 			);
@@ -236,6 +240,15 @@
 			path = courses;
 			sourceTree = "<group>";
 		};
+		FA170A6D228310ED0075752A /* teachers */ = {
+			isa = PBXGroup;
+			children = (
+				FA170A6E2283111C0075752A /* ASTeachersController.h */,
+				FA170A6F2283111C0075752A /* ASTeachersController.m */,
+			);
+			path = teachers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,6 +328,7 @@
 				FA0A2D8D226A0F7700AFC209 /* CoreData_HomeWork.xcdatamodeld in Sources */,
 				FA170A6922806EF30075752A /* ASEditCourseController.m in Sources */,
 				FA0A2D9D226A114A00AFC209 /* ASCoreDataManager.m in Sources */,
+				FA170A702283111C0075752A /* ASTeachersController.m in Sources */,
 				FA0A2DE1226A1C3300AFC209 /* ASAbstractCoreDataTableViewController.m in Sources */,
 				FA0A2E472270A00200AFC209 /* ASEditUserController.m in Sources */,
 				FA0A2E2B2270607300AFC209 /* ASUser+CoreDataProperties.m in Sources */,
