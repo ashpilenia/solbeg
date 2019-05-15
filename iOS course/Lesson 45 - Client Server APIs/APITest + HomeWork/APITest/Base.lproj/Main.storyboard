@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Friends-->
+        <!--MY FRIENDS-->
         <scene sceneID="29b-Uy-pqh">
             <objects>
                 <tableViewController storyboardIdentifier="ViewController" id="DIr-md-y5a" customClass="ViewController" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="DIr-md-y5a" id="Csd-QN-C24"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Friends" id="86l-Sc-Xu7"/>
+                    <navigationItem key="navigationItem" title="MY FRIENDS" id="86l-Sc-Xu7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiL-gB-rcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

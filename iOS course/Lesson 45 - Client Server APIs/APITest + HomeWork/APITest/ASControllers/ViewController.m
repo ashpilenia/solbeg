@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "ASServerManager.h"
+#import "ASUser.h"
+#import "UIImageView+AFNetworking.h"
+#import "ASUserDetailsController.h"
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSMutableArray *friendsArray;
+@property (nonatomic, strong) NSMutableArray<ASUser *> *friendsArray;
 
 @end
 
@@ -31,21 +34,18 @@ static NSInteger friendsInRequest = 5;
 
 - (void)getFriendsFromServer {
     
-    [[ASServerManager sharedManager] getFriendsWithOffset:self.friendsArray.count count:20 onSuccess:^(NSArray *friends) {
+    [[ASServerManager sharedManager] getFriendsWithOffset:self.friendsArray.count count:friendsInRequest onSuccess:^(NSArray *friends) {
         
         [self.friendsArray addObjectsFromArray:friends];
-        
-        //[self.tableView reloadData];
         
         NSMutableArray *newPaths = [NSMutableArray array];
         for (int i = (int)self.friendsArray.count - (int)friends.count; i < self.friendsArray.count; i++) {
             [newPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
         }
-        
+
         [self.tableView beginUpdates];
         [self.tableView insertRowsAtIndexPaths:newPaths withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView endUpdates];
-        
         
         
     } onFailure:^(NSError *error, NSInteger code) {
@@ -71,12 +71,29 @@ static NSInteger friendsInRequest = 5;
     if (indexPath.row == self.friendsArray.count) {
         
         cell.textLabel.text = @"LOAD MORE";
+        cell.imageView.image = nil;
         
     } else {
         
         if (self.friendsArray.count) {
-            NSDictionary *friend = [self.friendsArray objectAtIndex:indexPath.row];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [friend objectForKey:@"first_name"], [friend objectForKey:@"last_name"]];
+            ASUser *friend = [self.friendsArray objectAtIndex:indexPath.row];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.firstName, friend.lastName];
+            
+            __weak UITableViewCell *weakCell = cell;
+            
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:friend.imageUrl];
+            [cell.imageView setImageWithURLRequest:urlRequest
+                                  placeholderImage:nil
+                                           success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+                                               
+                                               weakCell.imageView.image = image;
+                                               [weakCell layoutSubviews];
+            }
+                                           failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                                               
+                                               NSLog(@"%@", error.localizedDescription);
+            }];
+            
         }
     }
     
@@ -88,11 +105,21 @@ static NSInteger friendsInRequest = 5;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (indexPath.row == self.friendsArray.count) {
+        
         [self getFriendsFromServer];
+        
+    } else {
+        
+        ASUser *user = [self.friendsArray objectAtIndex:indexPath.row];
+        ASUserDetailsController *vc = [[ASUserDetailsController alloc] initWithUser:user];
+        
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 

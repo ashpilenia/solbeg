@@ -15,6 +15,23 @@
 		FA0A2D6A2268C1A400AFC209 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0A2D682268C1A400AFC209 /* LaunchScreen.storyboard */; };
 		FA0A2D6D2268C1A400AFC209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2D6C2268C1A400AFC209 /* main.m */; };
 		FA0A2D752268CF2900AFC209 /* ASServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A2D742268CF2900AFC209 /* ASServerManager.m */; };
+		FA170A732285A53A0075752A /* ASUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A722285A53A0075752A /* ASUser.m */; };
+		FA170A7C2285CA970075752A /* ASUserDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A7A2285CA970075752A /* ASUserDetailsController.m */; };
+		FA170A7D2285CA970075752A /* ASUserDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA170A7B2285CA970075752A /* ASUserDetailsController.xib */; };
+		FA170A822285D5AE0075752A /* ASPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A802285D5AE0075752A /* ASPhotoCell.m */; };
+		FA170A832285D5AE0075752A /* ASPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA170A812285D5AE0075752A /* ASPhotoCell.xib */; };
+		FA170A872285D6760075752A /* ASTwoButtonsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A852285D6760075752A /* ASTwoButtonsCell.m */; };
+		FA170A882285D6760075752A /* ASTwoButtonsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA170A862285D6760075752A /* ASTwoButtonsCell.xib */; };
+		FA170A8C2285D6870075752A /* ASSingleButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA170A8A2285D6870075752A /* ASSingleButtonCell.m */; };
+		FA170A8D2285D6870075752A /* ASSingleButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA170A8B2285D6870075752A /* ASSingleButtonCell.xib */; };
+		FAA0374A228B0AB0006E2ACD /* ASSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03749228B0AB0006E2ACD /* ASSubscription.m */; };
+		FAA0374D228B0ABC006E2ACD /* ASFollower.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0374C228B0ABC006E2ACD /* ASFollower.m */; };
+		FAA03751228C1E07006E2ACD /* ASSubscribersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0374F228C1E07006E2ACD /* ASSubscribersController.m */; };
+		FAA03752228C1E07006E2ACD /* ASSubscribersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA03750228C1E07006E2ACD /* ASSubscribersController.xib */; };
+		FAA03756228C1E21006E2ACD /* ASFollowersController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03754228C1E21006E2ACD /* ASFollowersController.m */; };
+		FAA03757228C1E21006E2ACD /* ASFollowersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA03755228C1E21006E2ACD /* ASFollowersController.xib */; };
+		FAA0375B228C36EA006E2ACD /* ASWallController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03759228C36EA006E2ACD /* ASWallController.m */; };
+		FAA0375C228C36EA006E2ACD /* ASWallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0375A228C36EA006E2ACD /* ASWallController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +50,33 @@
 		FA0A2D6C2268C1A400AFC209 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA0A2D732268CF2900AFC209 /* ASServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASServerManager.h; sourceTree = "<group>"; };
 		FA0A2D742268CF2900AFC209 /* ASServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASServerManager.m; sourceTree = "<group>"; };
+		FA170A712285A53A0075752A /* ASUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASUser.h; sourceTree = "<group>"; };
+		FA170A722285A53A0075752A /* ASUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUser.m; sourceTree = "<group>"; };
+		FA170A792285CA970075752A /* ASUserDetailsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASUserDetailsController.h; sourceTree = "<group>"; };
+		FA170A7A2285CA970075752A /* ASUserDetailsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUserDetailsController.m; sourceTree = "<group>"; };
+		FA170A7B2285CA970075752A /* ASUserDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASUserDetailsController.xib; sourceTree = "<group>"; };
+		FA170A7F2285D5AE0075752A /* ASPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPhotoCell.h; sourceTree = "<group>"; };
+		FA170A802285D5AE0075752A /* ASPhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASPhotoCell.m; sourceTree = "<group>"; };
+		FA170A812285D5AE0075752A /* ASPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASPhotoCell.xib; sourceTree = "<group>"; };
+		FA170A842285D6760075752A /* ASTwoButtonsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTwoButtonsCell.h; sourceTree = "<group>"; };
+		FA170A852285D6760075752A /* ASTwoButtonsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTwoButtonsCell.m; sourceTree = "<group>"; };
+		FA170A862285D6760075752A /* ASTwoButtonsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASTwoButtonsCell.xib; sourceTree = "<group>"; };
+		FA170A892285D6870075752A /* ASSingleButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSingleButtonCell.h; sourceTree = "<group>"; };
+		FA170A8A2285D6870075752A /* ASSingleButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSingleButtonCell.m; sourceTree = "<group>"; };
+		FA170A8B2285D6870075752A /* ASSingleButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASSingleButtonCell.xib; sourceTree = "<group>"; };
+		FAA03748228B0AB0006E2ACD /* ASSubscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSubscription.h; sourceTree = "<group>"; };
+		FAA03749228B0AB0006E2ACD /* ASSubscription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSubscription.m; sourceTree = "<group>"; };
+		FAA0374B228B0ABC006E2ACD /* ASFollower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASFollower.h; sourceTree = "<group>"; };
+		FAA0374C228B0ABC006E2ACD /* ASFollower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASFollower.m; sourceTree = "<group>"; };
+		FAA0374E228C1E07006E2ACD /* ASSubscribersController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSubscribersController.h; sourceTree = "<group>"; };
+		FAA0374F228C1E07006E2ACD /* ASSubscribersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSubscribersController.m; sourceTree = "<group>"; };
+		FAA03750228C1E07006E2ACD /* ASSubscribersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASSubscribersController.xib; sourceTree = "<group>"; };
+		FAA03753228C1E21006E2ACD /* ASFollowersController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASFollowersController.h; sourceTree = "<group>"; };
+		FAA03754228C1E21006E2ACD /* ASFollowersController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASFollowersController.m; sourceTree = "<group>"; };
+		FAA03755228C1E21006E2ACD /* ASFollowersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASFollowersController.xib; sourceTree = "<group>"; };
+		FAA03758228C36EA006E2ACD /* ASWallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASWallController.h; sourceTree = "<group>"; };
+		FAA03759228C36EA006E2ACD /* ASWallController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASWallController.m; sourceTree = "<group>"; };
+		FAA0375A228C36EA006E2ACD /* ASWallController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASWallController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +129,12 @@
 		FA0A2D5C2268C1A200AFC209 /* APITest */ = {
 			isa = PBXGroup;
 			children = (
+				FAA03747228ACAA9006E2ACD /* API */,
+				FAA03746228ACA81006E2ACD /* ASControllers */,
+				FAA03745228ACA72006E2ACD /* Models */,
+				FA170A7E2285D5050075752A /* cells */,
 				FA0A2D5D2268C1A200AFC209 /* AppDelegate.h */,
 				FA0A2D5E2268C1A200AFC209 /* AppDelegate.m */,
-				FA0A2D602268C1A200AFC209 /* ViewController.h */,
-				FA0A2D612268C1A200AFC209 /* ViewController.m */,
-				FA0A2D732268CF2900AFC209 /* ASServerManager.h */,
-				FA0A2D742268CF2900AFC209 /* ASServerManager.m */,
 				FA0A2D632268C1A200AFC209 /* Main.storyboard */,
 				FA0A2D662268C1A400AFC209 /* Assets.xcassets */,
 				FA0A2D682268C1A400AFC209 /* LaunchScreen.storyboard */,
@@ -98,6 +142,65 @@
 				FA0A2D6C2268C1A400AFC209 /* main.m */,
 			);
 			path = APITest;
+			sourceTree = "<group>";
+		};
+		FA170A7E2285D5050075752A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA170A7F2285D5AE0075752A /* ASPhotoCell.h */,
+				FA170A802285D5AE0075752A /* ASPhotoCell.m */,
+				FA170A812285D5AE0075752A /* ASPhotoCell.xib */,
+				FA170A842285D6760075752A /* ASTwoButtonsCell.h */,
+				FA170A852285D6760075752A /* ASTwoButtonsCell.m */,
+				FA170A862285D6760075752A /* ASTwoButtonsCell.xib */,
+				FA170A892285D6870075752A /* ASSingleButtonCell.h */,
+				FA170A8A2285D6870075752A /* ASSingleButtonCell.m */,
+				FA170A8B2285D6870075752A /* ASSingleButtonCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		FAA03745228ACA72006E2ACD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA170A712285A53A0075752A /* ASUser.h */,
+				FA170A722285A53A0075752A /* ASUser.m */,
+				FAA03748228B0AB0006E2ACD /* ASSubscription.h */,
+				FAA03749228B0AB0006E2ACD /* ASSubscription.m */,
+				FAA0374B228B0ABC006E2ACD /* ASFollower.h */,
+				FAA0374C228B0ABC006E2ACD /* ASFollower.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAA03746228ACA81006E2ACD /* ASControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2D602268C1A200AFC209 /* ViewController.h */,
+				FA0A2D612268C1A200AFC209 /* ViewController.m */,
+				FA170A792285CA970075752A /* ASUserDetailsController.h */,
+				FA170A7A2285CA970075752A /* ASUserDetailsController.m */,
+				FA170A7B2285CA970075752A /* ASUserDetailsController.xib */,
+				FAA0374E228C1E07006E2ACD /* ASSubscribersController.h */,
+				FAA0374F228C1E07006E2ACD /* ASSubscribersController.m */,
+				FAA03750228C1E07006E2ACD /* ASSubscribersController.xib */,
+				FAA03753228C1E21006E2ACD /* ASFollowersController.h */,
+				FAA03754228C1E21006E2ACD /* ASFollowersController.m */,
+				FAA03755228C1E21006E2ACD /* ASFollowersController.xib */,
+				FAA03758228C36EA006E2ACD /* ASWallController.h */,
+				FAA03759228C36EA006E2ACD /* ASWallController.m */,
+				FAA0375A228C36EA006E2ACD /* ASWallController.xib */,
+			);
+			path = ASControllers;
+			sourceTree = "<group>";
+		};
+		FAA03747228ACAA9006E2ACD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A2D732268CF2900AFC209 /* ASServerManager.h */,
+				FA0A2D742268CF2900AFC209 /* ASServerManager.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +261,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA03757228C1E21006E2ACD /* ASFollowersController.xib in Resources */,
+				FA170A8D2285D6870075752A /* ASSingleButtonCell.xib in Resources */,
 				FA0A2D6A2268C1A400AFC209 /* LaunchScreen.storyboard in Resources */,
+				FA170A7D2285CA970075752A /* ASUserDetailsController.xib in Resources */,
+				FAA03752228C1E07006E2ACD /* ASSubscribersController.xib in Resources */,
+				FA170A882285D6760075752A /* ASTwoButtonsCell.xib in Resources */,
 				FA0A2D672268C1A400AFC209 /* Assets.xcassets in Resources */,
+				FAA0375C228C36EA006E2ACD /* ASWallController.xib in Resources */,
+				FA170A832285D5AE0075752A /* ASPhotoCell.xib in Resources */,
 				FA0A2D652268C1A200AFC209 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,8 +308,18 @@
 			files = (
 				FA0A2D622268C1A200AFC209 /* ViewController.m in Sources */,
 				FA0A2D6D2268C1A400AFC209 /* main.m in Sources */,
+				FA170A872285D6760075752A /* ASTwoButtonsCell.m in Sources */,
+				FAA03756228C1E21006E2ACD /* ASFollowersController.m in Sources */,
 				FA0A2D752268CF2900AFC209 /* ASServerManager.m in Sources */,
+				FA170A822285D5AE0075752A /* ASPhotoCell.m in Sources */,
+				FA170A7C2285CA970075752A /* ASUserDetailsController.m in Sources */,
+				FAA0375B228C36EA006E2ACD /* ASWallController.m in Sources */,
 				FA0A2D5F2268C1A200AFC209 /* AppDelegate.m in Sources */,
+				FAA03751228C1E07006E2ACD /* ASSubscribersController.m in Sources */,
+				FA170A8C2285D6870075752A /* ASSingleButtonCell.m in Sources */,
+				FAA0374A228B0AB0006E2ACD /* ASSubscription.m in Sources */,
+				FAA0374D228B0ABC006E2ACD /* ASFollower.m in Sources */,
+				FA170A732285A53A0075752A /* ASUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
