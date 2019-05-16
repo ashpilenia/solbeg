@@ -12,6 +12,8 @@
 
 @interface ASWallController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) ASUser *user;
 
 - (instancetype)initWithUser:(ASUser *)user;

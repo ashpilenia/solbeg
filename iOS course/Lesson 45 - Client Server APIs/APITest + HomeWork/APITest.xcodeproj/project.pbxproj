@@ -32,6 +32,8 @@
 		FAA03757228C1E21006E2ACD /* ASFollowersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA03755228C1E21006E2ACD /* ASFollowersController.xib */; };
 		FAA0375B228C36EA006E2ACD /* ASWallController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03759228C36EA006E2ACD /* ASWallController.m */; };
 		FAA0375C228C36EA006E2ACD /* ASWallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0375A228C36EA006E2ACD /* ASWallController.xib */; };
+		FAA03760228DA07F006E2ACD /* ASWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0375E228DA07F006E2ACD /* ASWallCell.m */; };
+		FAA03761228DA07F006E2ACD /* ASWallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0375F228DA07F006E2ACD /* ASWallCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,9 @@
 		FAA03758228C36EA006E2ACD /* ASWallController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASWallController.h; sourceTree = "<group>"; };
 		FAA03759228C36EA006E2ACD /* ASWallController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASWallController.m; sourceTree = "<group>"; };
 		FAA0375A228C36EA006E2ACD /* ASWallController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASWallController.xib; sourceTree = "<group>"; };
+		FAA0375D228DA07F006E2ACD /* ASWallCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASWallCell.h; sourceTree = "<group>"; };
+		FAA0375E228DA07F006E2ACD /* ASWallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASWallCell.m; sourceTree = "<group>"; };
+		FAA0375F228DA07F006E2ACD /* ASWallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASWallCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +161,9 @@
 				FA170A892285D6870075752A /* ASSingleButtonCell.h */,
 				FA170A8A2285D6870075752A /* ASSingleButtonCell.m */,
 				FA170A8B2285D6870075752A /* ASSingleButtonCell.xib */,
+				FAA0375D228DA07F006E2ACD /* ASWallCell.h */,
+				FAA0375E228DA07F006E2ACD /* ASWallCell.m */,
+				FAA0375F228DA07F006E2ACD /* ASWallCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA03761228DA07F006E2ACD /* ASWallCell.xib in Resources */,
 				FAA03757228C1E21006E2ACD /* ASFollowersController.xib in Resources */,
 				FA170A8D2285D6870075752A /* ASSingleButtonCell.xib in Resources */,
 				FA0A2D6A2268C1A400AFC209 /* LaunchScreen.storyboard in Resources */,
@@ -308,6 +317,7 @@
 			files = (
 				FA0A2D622268C1A200AFC209 /* ViewController.m in Sources */,
 				FA0A2D6D2268C1A400AFC209 /* main.m in Sources */,
+				FAA03760228DA07F006E2ACD /* ASWallCell.m in Sources */,
 				FA170A872285D6760075752A /* ASTwoButtonsCell.m in Sources */,
 				FAA03756228C1E21006E2ACD /* ASFollowersController.m in Sources */,
 				FA0A2D752268CF2900AFC209 /* ASServerManager.m in Sources */,
