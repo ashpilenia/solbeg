@@ -11,6 +11,7 @@
 #import "ASUser.h"
 #import "ASSubscription.h"
 #import "ASFollower.h"
+#import "ASWallItem.h"
 
 @interface ASServerManager ()
 
@@ -221,8 +222,18 @@ static NSString * const version = @"5.95";
                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
                          NSLog(@"%@", responseObject);
+                         
+                         NSMutableArray *parsedWallItems = [NSMutableArray array];
+                         NSArray *itemsArray = [responseObject valueForKeyPath:@"response.items"];
+                         
+                         for (NSDictionary *dict in itemsArray) {
+                             ASWallItem *item = [[ASWallItem alloc] initWithServerResponse:dict];
+                             [parsedWallItems addObject:item];
+                         }
+                             
+                             
                          if (successBlock) {
-                             successBlock(nil);
+                             successBlock(parsedWallItems);
                          }
     }
                      failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

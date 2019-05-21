@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) ASUser *user;
+@property (nonatomic, strong) NSArray *itemsArray;
 
 - (instancetype)initWithUser:(ASUser *)user;
 

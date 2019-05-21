@@ -34,6 +34,12 @@
 		FAA0375C228C36EA006E2ACD /* ASWallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0375A228C36EA006E2ACD /* ASWallController.xib */; };
 		FAA03760228DA07F006E2ACD /* ASWallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0375E228DA07F006E2ACD /* ASWallCell.m */; };
 		FAA03761228DA07F006E2ACD /* ASWallCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0375F228DA07F006E2ACD /* ASWallCell.xib */; };
+		FAA03768228ECF3B006E2ACD /* ASImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA03766228ECF3B006E2ACD /* ASImageCell.m */; };
+		FAA03769228ECF3B006E2ACD /* ASImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA03767228ECF3B006E2ACD /* ASImageCell.xib */; };
+		FAA0376C228ECFB4006E2ACD /* ASWallItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0376B228ECFB4006E2ACD /* ASWallItem.m */; };
+		FAA0376F2292EEA7006E2ACD /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0376E2292EEA7006E2ACD /* like.png */; };
+		FAA037712292EFF9006E2ACD /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA037702292EFF9006E2ACD /* eye.png */; };
+		FAA037732292F00B006E2ACD /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA037722292F00B006E2ACD /* reply.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +88,14 @@
 		FAA0375D228DA07F006E2ACD /* ASWallCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASWallCell.h; sourceTree = "<group>"; };
 		FAA0375E228DA07F006E2ACD /* ASWallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASWallCell.m; sourceTree = "<group>"; };
 		FAA0375F228DA07F006E2ACD /* ASWallCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASWallCell.xib; sourceTree = "<group>"; };
+		FAA03765228ECF3B006E2ACD /* ASImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASImageCell.h; sourceTree = "<group>"; };
+		FAA03766228ECF3B006E2ACD /* ASImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASImageCell.m; sourceTree = "<group>"; };
+		FAA03767228ECF3B006E2ACD /* ASImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASImageCell.xib; sourceTree = "<group>"; };
+		FAA0376A228ECFB4006E2ACD /* ASWallItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASWallItem.h; sourceTree = "<group>"; };
+		FAA0376B228ECFB4006E2ACD /* ASWallItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASWallItem.m; sourceTree = "<group>"; };
+		FAA0376E2292EEA7006E2ACD /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		FAA037702292EFF9006E2ACD /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
+		FAA037722292F00B006E2ACD /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +148,7 @@
 		FA0A2D5C2268C1A200AFC209 /* APITest */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0376D2292EE7C006E2ACD /* images */,
 				FAA03747228ACAA9006E2ACD /* API */,
 				FAA03746228ACA81006E2ACD /* ASControllers */,
 				FAA03745228ACA72006E2ACD /* Models */,
@@ -164,6 +179,9 @@
 				FAA0375D228DA07F006E2ACD /* ASWallCell.h */,
 				FAA0375E228DA07F006E2ACD /* ASWallCell.m */,
 				FAA0375F228DA07F006E2ACD /* ASWallCell.xib */,
+				FAA03765228ECF3B006E2ACD /* ASImageCell.h */,
+				FAA03766228ECF3B006E2ACD /* ASImageCell.m */,
+				FAA03767228ECF3B006E2ACD /* ASImageCell.xib */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -177,6 +195,8 @@
 				FAA03749228B0AB0006E2ACD /* ASSubscription.m */,
 				FAA0374B228B0ABC006E2ACD /* ASFollower.h */,
 				FAA0374C228B0ABC006E2ACD /* ASFollower.m */,
+				FAA0376A228ECFB4006E2ACD /* ASWallItem.h */,
+				FAA0376B228ECFB4006E2ACD /* ASWallItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +229,16 @@
 				FA0A2D742268CF2900AFC209 /* ASServerManager.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FAA0376D2292EE7C006E2ACD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FAA037722292F00B006E2ACD /* reply.png */,
+				FAA037702292EFF9006E2ACD /* eye.png */,
+				FAA0376E2292EEA7006E2ACD /* like.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,14 +300,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA03761228DA07F006E2ACD /* ASWallCell.xib in Resources */,
+				FAA037732292F00B006E2ACD /* reply.png in Resources */,
 				FAA03757228C1E21006E2ACD /* ASFollowersController.xib in Resources */,
 				FA170A8D2285D6870075752A /* ASSingleButtonCell.xib in Resources */,
+				FAA03769228ECF3B006E2ACD /* ASImageCell.xib in Resources */,
 				FA0A2D6A2268C1A400AFC209 /* LaunchScreen.storyboard in Resources */,
 				FA170A7D2285CA970075752A /* ASUserDetailsController.xib in Resources */,
 				FAA03752228C1E07006E2ACD /* ASSubscribersController.xib in Resources */,
 				FA170A882285D6760075752A /* ASTwoButtonsCell.xib in Resources */,
 				FA0A2D672268C1A400AFC209 /* Assets.xcassets in Resources */,
 				FAA0375C228C36EA006E2ACD /* ASWallController.xib in Resources */,
+				FAA0376F2292EEA7006E2ACD /* like.png in Resources */,
+				FAA037712292EFF9006E2ACD /* eye.png in Resources */,
 				FA170A832285D5AE0075752A /* ASPhotoCell.xib in Resources */,
 				FA0A2D652268C1A200AFC209 /* Main.storyboard in Resources */,
 			);
@@ -321,6 +355,7 @@
 				FA170A872285D6760075752A /* ASTwoButtonsCell.m in Sources */,
 				FAA03756228C1E21006E2ACD /* ASFollowersController.m in Sources */,
 				FA0A2D752268CF2900AFC209 /* ASServerManager.m in Sources */,
+				FAA0376C228ECFB4006E2ACD /* ASWallItem.m in Sources */,
 				FA170A822285D5AE0075752A /* ASPhotoCell.m in Sources */,
 				FA170A7C2285CA970075752A /* ASUserDetailsController.m in Sources */,
 				FAA0375B228C36EA006E2ACD /* ASWallController.m in Sources */,
@@ -330,6 +365,7 @@
 				FAA0374A228B0AB0006E2ACD /* ASSubscription.m in Sources */,
 				FAA0374D228B0ABC006E2ACD /* ASFollower.m in Sources */,
 				FA170A732285A53A0075752A /* ASUser.m in Sources */,
+				FAA03768228ECF3B006E2ACD /* ASImageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
