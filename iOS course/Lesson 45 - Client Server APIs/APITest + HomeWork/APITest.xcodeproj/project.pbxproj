@@ -40,6 +40,7 @@
 		FAA0376F2292EEA7006E2ACD /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0376E2292EEA7006E2ACD /* like.png */; };
 		FAA037712292EFF9006E2ACD /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA037702292EFF9006E2ACD /* eye.png */; };
 		FAA037732292F00B006E2ACD /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA037722292F00B006E2ACD /* reply.png */; };
+		FADFEA1C229455EC005516E8 /* ASGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA1B229455EC005516E8 /* ASGroup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,8 @@
 		FAA0376E2292EEA7006E2ACD /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		FAA037702292EFF9006E2ACD /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
 		FAA037722292F00B006E2ACD /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		FADFEA1A229455EC005516E8 /* ASGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASGroup.h; sourceTree = "<group>"; };
+		FADFEA1B229455EC005516E8 /* ASGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +200,8 @@
 				FAA0374C228B0ABC006E2ACD /* ASFollower.m */,
 				FAA0376A228ECFB4006E2ACD /* ASWallItem.h */,
 				FAA0376B228ECFB4006E2ACD /* ASWallItem.m */,
+				FADFEA1A229455EC005516E8 /* ASGroup.h */,
+				FADFEA1B229455EC005516E8 /* ASGroup.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 				FAA0376C228ECFB4006E2ACD /* ASWallItem.m in Sources */,
 				FA170A822285D5AE0075752A /* ASPhotoCell.m in Sources */,
 				FA170A7C2285CA970075752A /* ASUserDetailsController.m in Sources */,
+				FADFEA1C229455EC005516E8 /* ASGroup.m in Sources */,
 				FAA0375B228C36EA006E2ACD /* ASWallController.m in Sources */,
 				FA0A2D5F2268C1A200AFC209 /* AppDelegate.m in Sources */,
 				FAA03751228C1E07006E2ACD /* ASSubscribersController.m in Sources */,

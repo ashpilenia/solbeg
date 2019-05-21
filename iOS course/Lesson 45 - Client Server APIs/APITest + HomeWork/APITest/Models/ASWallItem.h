@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASGroup.h"
 
 @interface ASWallItem : NSObject
 
@@ -16,6 +17,9 @@
 @property (nonatomic, strong) NSNumber *reposts;
 @property (nonatomic, strong) NSNumber *views;
 @property (nonatomic, assign) BOOL isRepost;
+@property (nonatomic, assign) BOOL isUsingGroup;
+@property (nonatomic, strong) ASGroup *repostGroup;
+@property (nonatomic, strong) NSNumber *ownerId;
 
 - (instancetype)initWithServerResponse:(NSDictionary *)response;
 

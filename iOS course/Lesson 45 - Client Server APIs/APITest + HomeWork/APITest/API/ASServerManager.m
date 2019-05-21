@@ -224,10 +224,26 @@ static NSString * const version = @"5.95";
                          NSLog(@"%@", responseObject);
                          
                          NSMutableArray *parsedWallItems = [NSMutableArray array];
+                         NSMutableArray *parsedGroups = [NSMutableArray array];
+                         
                          NSArray *itemsArray = [responseObject valueForKeyPath:@"response.items"];
+                         NSArray *groupsArray = [responseObject valueForKeyPath:@"response.groups"];
+                         
+                         for (NSDictionary *dict in groupsArray) {
+                             ASGroup *group = [[ASGroup alloc] initWithServerResponse:dict];
+                             [parsedGroups addObject:group];
+                         }
+                         
                          
                          for (NSDictionary *dict in itemsArray) {
                              ASWallItem *item = [[ASWallItem alloc] initWithServerResponse:dict];
+                             if (item.isUsingGroup) {
+                                 for (ASGroup *group in parsedGroups) {
+                                     if ([group.identifier isEqualToNumber:item.ownerId]) {
+                                         item.repostGroup = group;
+                                     }
+                                 }
+                             }
                              [parsedWallItems addObject:item];
                          }
                              

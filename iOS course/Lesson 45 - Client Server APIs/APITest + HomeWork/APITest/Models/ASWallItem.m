@@ -18,6 +18,14 @@
         self.isRepost = NO;
         if ([[response valueForKeyPath:@"copy_history"] count]) {
             self.isRepost = YES;
+            NSNumber *ownerId = [(NSArray *)[response valueForKeyPath:@"copy_history.owner_id"] firstObject];
+            if ([ownerId integerValue] < 0) {
+                self.isUsingGroup = YES;
+                NSInteger owner = [ownerId integerValue];
+                ownerId = [NSNumber numberWithInteger:owner *(-1)];
+            }
+        
+            self.ownerId = ownerId;
         }
         
         NSArray *attachmentsArray = self.isRepost ? [response valueForKeyPath:@"copy_history.attachments"] : [response valueForKey:@"attachments"];
@@ -38,6 +46,8 @@
         } else {
             self.views = @(0);
         }
+        
+        
         
     }
     return self;

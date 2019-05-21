@@ -11,6 +11,7 @@
 #import "ASUser.h"
 #import "ASWallCell.h"
 #import "ASWallItem.h"
+#import "ASGroup.h"
 
 @interface ASWallController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -70,15 +71,34 @@
     cell.headerLabel.text = [NSString stringWithFormat:@"%@ %@", self.user.firstName, self.user.lastName];
     //mocking
     
-    cell.repostLabel.text = @"CHTO ZA HUYNYA?";
-    
-//    cell.repostView.hidden = YES;
-//    cell.mainTextTopConstraint.constant = 2.f;
-    //
+    if (item.isUsingGroup) {
+        
+        cell.repostLabel.text = item.repostGroup.name;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            NSData *data = [NSData dataWithContentsOfURL:item.repostGroup.photoUrl];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                cell.repostAvatarView.image = [UIImage imageWithData:data];
+            });
+        });
+
+        cell.repostView.hidden = NO;
+        cell.mainTextTopConstraint.constant = 42.f;
+    } else {
+        cell.repostView.hidden = YES;
+        cell.mainTextTopConstraint.constant = 2.f;
+    }
     
     cell.textHeightConstraint.constant = [self mesureTextHeightForText:cell.mainTextLabel.text];
     
     cell.tableViewHeightConstraint.constant = 305 * item.attachmentsArray.count;
+    
+    if (!cell.mainTextLabel.text.length && !cell.imagesArray.count) {
+        NSString *apologies = @"The post data has been missing. Apologies from the API team.";
+        cell.mainTextLabel.text = apologies;
+        item.text = apologies;
+        
+    }
     
     return cell;
     
@@ -89,7 +109,7 @@
     ASWallItem *item = [self.itemsArray objectAtIndex:indexPath.row];
     CGFloat textHeight = [self mesureTextHeightForText:item.text];
     CGFloat tableViewHeight = item.attachmentsArray.count * 305.f;
-    CGFloat repostHeight = item.isRepost ? 40.f : 0;
+    CGFloat repostHeight = item.isUsingGroup ? 40.f : 0;
     
     return textHeight + tableViewHeight + repostHeight + 120.f;
 }
