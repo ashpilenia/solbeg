@@ -30,6 +30,14 @@ static NSInteger postsInRequest = 20;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ASWallGroupCell class]) bundle:nil]
          forCellReuseIdentifier:[ASWallGroupCell reuseIdentifier]];
     
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(refreshWall) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    
+    UIBarButtonItem *addPostItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                 target:self
+                                                                                 action:@selector(addPostAction:)];
+    [self.navigationItem setRightBarButtonItem:addPostItem];
 }
 
 #pragma mark - UITableViewDataSource
@@ -72,6 +80,35 @@ static NSInteger postsInRequest = 20;
     return retCell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == self.postsArray.count) {
+        
+        return 44.f;
+        
+    } else {
+        
+        ASWallItem *item = [self.postsArray objectAtIndex:indexPath.row];
+        return [ASWallGroupCell heightForText:item.text];
+    }
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == self.postsArray.count) {
+        
+        [self getPostsFromServer];
+        
+    }
+    
+    
+}
+
 #pragma mark - API
 
 - (void)getPostsFromServer {
@@ -93,26 +130,50 @@ static NSInteger postsInRequest = 20;
                                              [self.tableView beginUpdates];
                                              [self.tableView insertRowsAtIndexPaths:newPaths withRowAnimation:UITableViewRowAnimationFade];
                                              [self.tableView endUpdates];
-    }
+                                         }
                                          onFailure:^(NSError *error, NSInteger code) {
                                              
                                              NSLog(@"Error = %@, code = %ld", error.localizedDescription, error.code);
-    }];
+                                         }];
 }
 
-#pragma mark - UITableViewDelegate
+- (void)refreshWall {
+    
+    NSNumber *iOSGroupId = @(58860049);
+    
+    NSInteger refreshCount = MAX(postsInRequest, self.postsArray.count);
+    
+    [[ASServerManager sharedManager] loadGroupWall:iOSGroupId
+                                        withOffset:@(0)
+                                             count:@(refreshCount)
+                                         onSuccess:^(NSArray *parsedObjects) {
+                                             
+                                             [self.postsArray removeAllObjects];
+                                             [self.postsArray addObjectsFromArray:parsedObjects];
+                                             
+                                             [self.tableView reloadData];
+                                             
+                                             [self.refreshControl endRefreshing];
+                                         }
+                                         onFailure:^(NSError *error, NSInteger code) {
+                                             
+                                             NSLog(@"Error = %@, code = %ld", error.localizedDescription, error.code);
+                                         }];
+}
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)addPostAction:(UIBarButtonItem *)sender {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSNumber *iOSGroupId = @(58860049);
     
-    if (indexPath.row == self.postsArray.count) {
-        
-        [self getPostsFromServer];
-        
-    }
-    
-    
+    [[ASServerManager sharedManager] postText:@"API Test"
+                                  onGroupWall:iOSGroupId onSuccess:^(NSArray *parsedObjects) {
+                                      
+                                      [self refreshWall];
+                                      
+                                  } onFailure:^(NSError *error, NSInteger code) {
+                                      
+                                      NSLog(@"Error = %@, code = %ld", error.localizedDescription, error.code);
+                                  }];
 }
 
 

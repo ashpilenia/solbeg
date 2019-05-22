@@ -382,6 +382,42 @@ static NSString * const version = @"5.95";
     
 }
 
+- (void)postText:(NSString *)text
+     onGroupWall:(NSNumber *)groupID
+       onSuccess:(successBlock)success
+       onFailure:(failureBlock)failure {
+    
+    NSString *stringId = [NSString stringWithFormat:@"%@", groupID];
+    if (![stringId hasPrefix:@"-"]) {
+        stringId = [@"-" stringByAppendingString:stringId];
+    }
+    
+    NSDictionary *params = @{
+                             @"owner_id"     : stringId,
+                             @"message"         : text,
+                             @"access_token" : self.token.token,
+                             @"v"            : version
+                             };
+    
+    [self.sessionManager POST:@"wall.post"
+                  parameters:params
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+                         
+                         NSLog(@"%@", responseObject);
+                         
+                         if (success) {
+                             success(responseObject);
+                         }
+                     }
+                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         
+                         if (failure) {
+                             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                             failure(error, httpResponse.statusCode);
+                         }
+                     }];
+}
+
 - (NSString *)serviceKey {
     
     return @"aa6fc259aa6fc259aa6fc25928aa05d275aaa6faa6fc259f6d7432f20428dbe90f96c51";

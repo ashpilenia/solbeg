@@ -48,6 +48,11 @@ typedef void(^failureBlock)(NSError *error, NSInteger code);
             onSuccess:(successBlock)successBlock
             onFailure:(failureBlock)failureBlock;
 
+- (void)postText:(NSString *)text
+     onGroupWall:(NSNumber *)groupID
+       onSuccess:(successBlock)success
+       onFailure:(failureBlock)failure;
+
 - (NSString *)serviceKey;
 
 

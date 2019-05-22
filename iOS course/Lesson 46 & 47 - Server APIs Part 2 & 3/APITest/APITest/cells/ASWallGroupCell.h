@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *postTextLabel;
 
 + (NSString *)reuseIdentifier;
++ (CGFloat)heightForText:(NSString *)text;
 
 @end
 
