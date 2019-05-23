@@ -127,7 +127,7 @@
                                                       onFailure:^(NSError *error) {}];
 }
 
-- (void)loadPhotosOnServer:(NSURL *)serverUrl andImage:(UIImage *)image {
+- (void)loadPhotosOnServer:(NSString *)serverUrl andImage:(UIImage *)image {
     
     [[ASSessionManager sharedManager] uploadImageForURL:serverUrl
                                               withImage:image

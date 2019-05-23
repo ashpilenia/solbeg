@@ -205,10 +205,9 @@ static NSString * const version = @"5.95";
                          NSLog(@"%@",responseObject);
                          
                          NSString *urlString = [responseObject valueForKeyPath:@"response.upload_url"];
-                         NSURL *uploadUrl = [NSURL URLWithString:urlString];
                          
                          if (successBlock) {
-                             successBlock(@[uploadUrl]);
+                             successBlock(@[urlString]);
                          }
                          
                      }
@@ -220,21 +219,24 @@ static NSString * const version = @"5.95";
 }
 
 
-- (void)uploadImageForURL:(NSURL *)url
+- (void)uploadImageForURL:(NSString *)url
                 withImage:(UIImage *)image
                 onSuccess:(successBlock)successBlock
                 onFailure:(failureBlock)failureBlock {
     
-    AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] init];
-    [sessionManager POST:url.absoluteString
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [sessionManager POST:url
               parameters:nil
 constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     
     NSData *data = UIImageJPEGRepresentation(image, 0.5f);
-    [formData appendPartWithFileData:data name:@"testImage" fileName:@"file1" mimeType:@"image/jpeg"];
+    [formData appendPartWithFileData:data name:@"file1" fileName:@"file1.png" mimeType:@"image/jpeg"];
     }
                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
                      
+                     NSLog(@"%@", responseObject);
                      NSLog(@"NE VERU");
     }
                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
