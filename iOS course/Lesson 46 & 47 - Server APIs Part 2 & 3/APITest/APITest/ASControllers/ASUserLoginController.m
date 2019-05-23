@@ -44,8 +44,8 @@
     "redirect_uri=https://oauth.vk.com/blank.html&"
     "scope=139286&"
     "response_type=token&"
-    "v=5.95&"
-    "revoke=1";
+    "v=5.95";
+    //"revoke=1";
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];

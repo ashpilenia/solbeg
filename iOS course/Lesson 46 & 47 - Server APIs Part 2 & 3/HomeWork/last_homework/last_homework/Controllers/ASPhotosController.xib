@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ASPhotosController">
+            <connections>
+                <outlet property="addPhotoButton" destination="XoB-Av-KZB" id="I37-4A-X85"/>
+                <outlet property="collectionView" destination="MIU-15-gKc" id="Mwp-HW-djC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoB-Av-KZB">
+                    <rect key="frame" x="15" y="54" width="384" height="35"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="cKb-Fp-6Pq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <state key="normal" title="ADD PHOTO">
+                        <color key="titleColor" red="0.62350947700000003" green="0.95619828770000004" blue="0.98056789339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="addPhotoAction:" destination="-1" eventType="touchUpInside" id="jF0-Oo-PbI"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MIU-15-gKc">
+                    <rect key="frame" x="0.0" y="97" width="414" height="765"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k5s-EY-G95">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XoB-Av-KZB" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="0gs-jO-wuw"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="MIU-15-gKc" secondAttribute="bottom" id="Oae-IH-qcn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="MIU-15-gKc" secondAttribute="trailing" id="Tj7-nW-fFd"/>
+                <constraint firstItem="MIU-15-gKc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="YqP-Gf-hI0"/>
+                <constraint firstItem="MIU-15-gKc" firstAttribute="top" secondItem="XoB-Av-KZB" secondAttribute="bottom" constant="8" id="bst-J3-CJT"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="XoB-Av-KZB" secondAttribute="trailing" constant="15" id="rep-cC-MAA"/>
+                <constraint firstItem="XoB-Av-KZB" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="tSF-i2-Q8J"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>
