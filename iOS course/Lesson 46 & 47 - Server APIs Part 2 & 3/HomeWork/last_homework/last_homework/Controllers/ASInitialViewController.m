@@ -10,6 +10,7 @@
 #import "ASLoginController.h"
 #import "ASSessionManager.h"
 #import "ASAlbumsController.h"
+#import "ASVideosController.h"
 
 @interface ASInitialViewController ()
 
@@ -38,6 +39,7 @@
                                                                                 action:@selector(videosAction:)];
     
     [self.photosView addGestureRecognizer:photosTap];
+    [self.videosView addGestureRecognizer:videoTap];
     
 }
 
@@ -46,9 +48,17 @@
     [super viewWillAppear:animated];
     
     if (!self.isFirstAppearance) {
+        
         self.isFirstAppearance = YES;
         
+        self.photosView.hidden = YES;
+        self.videosView.hidden = YES;
+        
         [self login];
+    } else {
+        self.photosView.hidden = NO;
+        self.videosView.hidden = NO;
+        
     }
     
 }
@@ -69,5 +79,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)videosAction:(UITapGestureRecognizer *)sender {
+    
+    ASVideosController *vc = [[ASVideosController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

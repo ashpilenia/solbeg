@@ -27,6 +27,11 @@
 		FADFEA7422970D5F005516E8 /* ASPhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA7222970D5F005516E8 /* ASPhotosController.m */; };
 		FADFEA7522970D5F005516E8 /* ASPhotosController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADFEA7322970D5F005516E8 /* ASPhotosController.xib */; };
 		FADFEA78229710B3005516E8 /* ASPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA77229710B3005516E8 /* ASPhoto.m */; };
+		FADFEA7B22975D06005516E8 /* ASServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA7A22975D06005516E8 /* ASServerResponse.m */; };
+		FADFEA7F2297E87D005516E8 /* ASVideosController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA7D2297E87D005516E8 /* ASVideosController.m */; };
+		FADFEA802297E87D005516E8 /* ASVideosController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADFEA7E2297E87D005516E8 /* ASVideosController.xib */; };
+		FADFEA832297EC11005516E8 /* ASVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA822297EC11005516E8 /* ASVideo.m */; };
+		FADFEA8B2298106E005516E8 /* ASVIdeoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADFEA8A2298106E005516E8 /* ASVIdeoPlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,15 @@
 		FADFEA7322970D5F005516E8 /* ASPhotosController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASPhotosController.xib; sourceTree = "<group>"; };
 		FADFEA76229710B3005516E8 /* ASPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPhoto.h; sourceTree = "<group>"; };
 		FADFEA77229710B3005516E8 /* ASPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASPhoto.m; sourceTree = "<group>"; };
+		FADFEA7922975D06005516E8 /* ASServerResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASServerResponse.h; sourceTree = "<group>"; };
+		FADFEA7A22975D06005516E8 /* ASServerResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASServerResponse.m; sourceTree = "<group>"; };
+		FADFEA7C2297E87D005516E8 /* ASVideosController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVideosController.h; sourceTree = "<group>"; };
+		FADFEA7D2297E87D005516E8 /* ASVideosController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVideosController.m; sourceTree = "<group>"; };
+		FADFEA7E2297E87D005516E8 /* ASVideosController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASVideosController.xib; sourceTree = "<group>"; };
+		FADFEA812297EC11005516E8 /* ASVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVideo.h; sourceTree = "<group>"; };
+		FADFEA822297EC11005516E8 /* ASVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVideo.m; sourceTree = "<group>"; };
+		FADFEA892298106E005516E8 /* ASVIdeoPlayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVIdeoPlayerController.h; sourceTree = "<group>"; };
+		FADFEA8A2298106E005516E8 /* ASVIdeoPlayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVIdeoPlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +161,11 @@
 				FADFEA7122970D5F005516E8 /* ASPhotosController.h */,
 				FADFEA7222970D5F005516E8 /* ASPhotosController.m */,
 				FADFEA7322970D5F005516E8 /* ASPhotosController.xib */,
+				FADFEA7C2297E87D005516E8 /* ASVideosController.h */,
+				FADFEA7D2297E87D005516E8 /* ASVideosController.m */,
+				FADFEA7E2297E87D005516E8 /* ASVideosController.xib */,
+				FADFEA892298106E005516E8 /* ASVIdeoPlayerController.h */,
+				FADFEA8A2298106E005516E8 /* ASVIdeoPlayerController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +181,10 @@
 				FADFEA692296F932005516E8 /* ASAlbum.m */,
 				FADFEA76229710B3005516E8 /* ASPhoto.h */,
 				FADFEA77229710B3005516E8 /* ASPhoto.m */,
+				FADFEA7922975D06005516E8 /* ASServerResponse.h */,
+				FADFEA7A22975D06005516E8 /* ASServerResponse.m */,
+				FADFEA812297EC11005516E8 /* ASVideo.h */,
+				FADFEA822297EC11005516E8 /* ASVideo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +268,7 @@
 			files = (
 				FADFEA462296CFE5005516E8 /* LaunchScreen.storyboard in Resources */,
 				FADFEA432296CFE5005516E8 /* Assets.xcassets in Resources */,
+				FADFEA802297E87D005516E8 /* ASVideosController.xib in Resources */,
 				FADFEA702296FC5D005516E8 /* ASImageCollectionCell.xib in Resources */,
 				FADFEA412296CFE3005516E8 /* Main.storyboard in Resources */,
 				FADFEA7522970D5F005516E8 /* ASPhotosController.xib in Resources */,
@@ -284,11 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADFEA8B2298106E005516E8 /* ASVIdeoPlayerController.m in Sources */,
 				FADFEA6A2296F932005516E8 /* ASAlbum.m in Sources */,
 				FADFEA5B2296DC28005516E8 /* ASToken.m in Sources */,
+				FADFEA7B22975D06005516E8 /* ASServerResponse.m in Sources */,
 				FADFEA492296CFE5005516E8 /* main.m in Sources */,
 				FADFEA7422970D5F005516E8 /* ASPhotosController.m in Sources */,
 				FADFEA5F2296E058005516E8 /* ASSessionManager.m in Sources */,
+				FADFEA832297EC11005516E8 /* ASVideo.m in Sources */,
 				FADFEA662296F403005516E8 /* ASAlbumsController.m in Sources */,
 				FADFEA78229710B3005516E8 /* ASPhoto.m in Sources */,
 				FADFEA622296E2B2005516E8 /* ASUser.m in Sources */,
@@ -296,6 +323,7 @@
 				FADFEA6F2296FC5D005516E8 /* ASImageCollectionCell.m in Sources */,
 				FADFEA3B2296CFE3005516E8 /* AppDelegate.m in Sources */,
 				FADFEA552296D3D3005516E8 /* ASLoginController.m in Sources */,
+				FADFEA7F2297E87D005516E8 /* ASVideosController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@ typedef void(^failureBlock)(NSError *error);
 @class ASUser;
 @class ASAlbum;
 @class UIImage;
+@class ASServerResponse;
 
 @interface ASSessionManager : NSObject
 
@@ -40,6 +41,15 @@ typedef void(^failureBlock)(NSError *error);
                 withImage:(UIImage *)image
                 onSuccess:(successBlock)successBlock
                 onFailure:(failureBlock)failureBlock;
+
+- (void)saveUploadedImageForServerResponse:(ASServerResponse *)response
+                                   inAlbum:(NSString *)albumID
+                                 onSuccess:(successBlock)successBlock
+                                 onFailure:(failureBlock)failureBlock;
+
+- (void)getVideosForId:(NSString *)ownerID
+             onSuccess:(successBlock)successBlock
+             onFailure:(failureBlock)failureBlock;
 
 @end
 

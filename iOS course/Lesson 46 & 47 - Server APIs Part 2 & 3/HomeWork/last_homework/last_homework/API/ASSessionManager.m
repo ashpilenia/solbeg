@@ -14,6 +14,8 @@
 #import "ASUser.h"
 #import "ASAlbum.h"
 #import "ASPhoto.h"
+#import "ASServerResponse.h"
+#import "ASVideo.h"
 
 @interface ASSessionManager ()
 
@@ -155,7 +157,7 @@ static NSString * const version = @"5.95";
                              @"owner_id"     : album.ownerID,
                              @"album_id"     : album.identifier,
                              //@"photo_sizes"  : @"YES",
-                             @"rev"          : @"0",
+                             @"rev"          : @"1",
                              @"access_token" : self.accessToken.token,
                              @"v"            : version
                              };
@@ -237,16 +239,89 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
                      
                      NSLog(@"%@", responseObject);
-                     NSLog(@"NE VERU");
+                     ASServerResponse *response = [[ASServerResponse alloc] initWithServerResponse:responseObject];
+                     
+                     if (successBlock) {
+                         successBlock(@[response]);
+                     }
     }
                  failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                      
-                     NSLog(@"VERU");
+                     failureBlock(error);
     }];
     
     
 
 }
+
+- (void)saveUploadedImageForServerResponse:(ASServerResponse *)response
+                                   inAlbum:(NSString *)albumID
+                                 onSuccess:(successBlock)successBlock
+                                 onFailure:(failureBlock)failureBlock {
+    
+    NSString *iosGroupId = @"58860049";
+    NSDictionary *params = @{
+                             @"group_id"     : iosGroupId,
+                             @"album_id"     : albumID,
+                             @"server"       : response.server,
+                             @"photos_list"  : response.photoList,
+                             @"hash"         : response.hashValue,
+                             @"access_token" : self.accessToken.token,
+                             @"v"            : version
+                             };
+    [self.sessionManager GET:@"photos.save"
+                  parameters:params
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+                         
+                         NSLog(@"%@", responseObject);
+                         if (successBlock) {
+                             successBlock(nil);
+                         }
+                     }
+                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         
+                         if (failureBlock) {
+                             failureBlock(error);
+                         }
+                     }];
+}
+
+- (void)getVideosForId:(NSString *)ownerID
+             onSuccess:(successBlock)successBlock
+             onFailure:(failureBlock)failureBlock {
+    
+    NSDictionary *params = @{
+                             @"owner_id"     : ownerID,
+                             @"access_token" : self.accessToken.token,
+                             @"v"            : version
+                             };
+    
+    [self.sessionManager GET:@"video.get"
+                  parameters:params
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+                         
+                         NSLog(@"%@",responseObject);
+                         
+                         NSArray *itemsArray = [responseObject valueForKeyPath:@"response.items"];
+                         NSMutableArray *parsedArray = [NSMutableArray array];
+                         
+                         for (NSDictionary *dict in itemsArray) {
+                             ASVideo *video = [[ASVideo alloc] initWithServerResponse:dict];
+                             [parsedArray addObject:video];
+                         }
+                         
+                         if (successBlock) {
+                             successBlock(parsedArray);
+                         }
+                         
+                     }
+                     failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         
+                         NSLog(@"%@",error.localizedDescription);
+                     }];
+    
+}
+
 
 
 @end

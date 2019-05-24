@@ -11,6 +11,7 @@
 #import "ASPhoto.h"
 #import "ASImageCollectionCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "ASServerResponse.h"
 
 @interface ASPhotosController () <UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -133,11 +134,37 @@
                                               withImage:image
                                               onSuccess:^(NSArray *parsedObjects) {
         
-    }
+                                                  [self savePhotowithServerResponse:parsedObjects.firstObject];
+                                              }
                                               onFailure:^(NSError *error) {
-        
-    }];
+                                                  NSLog(@"%@", error.localizedDescription);
+                                              }];
 }
+
+- (void)savePhotowithServerResponse:(ASServerResponse *)response {
+    
+    [[ASSessionManager sharedManager] saveUploadedImageForServerResponse:response
+                                                                 inAlbum:self.parentAlbum.identifier
+                                                               onSuccess:^(NSArray *parsedObjects) {
+                                                                   
+                                                                   UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"The image has been saved." message:nil preferredStyle:UIAlertControllerStyleAlert];
+                                                                   
+                                                                   UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                                       
+                                                                       [self loadPhotos];
+                                                                   }];
+                                                                   
+                                                                   [controller addAction:okAction];
+                                                                   [self presentViewController:controller animated:YES completion:nil];
+                                                                
+                                                               }
+                                                               onFailure:^(NSError *error) {
+                                                                   
+                                                                   NSLog(@"%@", error.localizedDescription);
+                                                               }];
+}
+
+
 
 #pragma mark - UIImagePickerControllerDelegate
 
