@@ -49,15 +49,13 @@
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [webView loadRequest:request];
     
-
-    
 }
 
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    NSLog(@"%@", navigationAction.request.URL);
+    NSLog(@"%@ ", navigationAction.request.URL);
     decisionHandler(WKNavigationActionPolicyAllow);
     
 }
