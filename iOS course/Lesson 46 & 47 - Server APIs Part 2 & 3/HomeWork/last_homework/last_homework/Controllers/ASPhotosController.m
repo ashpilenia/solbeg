@@ -130,7 +130,8 @@
 
 - (void)loadPhotosOnServer:(NSString *)serverUrl andImage:(UIImage *)image {
     
-    [[ASSessionManager sharedManager] uploadImageForURL:serverUrl
+    NSURL *url = [NSURL URLWithString:serverUrl];
+    [[ASSessionManager sharedManager] uploadImageForURL:url
                                               withImage:image
                                               onSuccess:^(NSArray *parsedObjects) {
         
