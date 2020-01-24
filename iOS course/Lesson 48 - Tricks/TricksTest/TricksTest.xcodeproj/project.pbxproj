@@ -10,12 +10,20 @@
 		ED6D0D92234E290D00E53F1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0D91234E290D00E53F1C /* AppDelegate.m */; };
 		ED6D0D98234E290D00E53F1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0D97234E290D00E53F1C /* ViewController.m */; };
 		ED6D0D9B234E290D00E53F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D99234E290D00E53F1C /* Main.storyboard */; };
-		ED6D0D9D234E291100E53F1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D9C234E291100E53F1C /* Assets.xcassets */; };
 		ED6D0DA0234E291100E53F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D9E234E291100E53F1C /* LaunchScreen.storyboard */; };
 		ED6D0DA3234E291100E53F1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DA2234E291100E53F1C /* main.m */; };
 		ED6D0DAD234E291100E53F1C /* TricksTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DAC234E291100E53F1C /* TricksTestTests.m */; };
 		ED6D0DB8234E291200E53F1C /* TricksTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DB7234E291200E53F1C /* TricksTestUITests.m */; };
 		ED6D0DC7234E296100E53F1C /* ASUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DC6234E296100E53F1C /* ASUtils.m */; };
+		ED80F5CC23D9F5EE0088DDCA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0D97234E290D00E53F1C /* ViewController.m */; };
+		ED80F5CD23D9F5EE0088DDCA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0D91234E290D00E53F1C /* AppDelegate.m */; };
+		ED80F5CE23D9F5EE0088DDCA /* ASUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DC6234E296100E53F1C /* ASUtils.m */; };
+		ED80F5CF23D9F5EE0088DDCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6D0DA2234E291100E53F1C /* main.m */; };
+		ED80F5D223D9F5EE0088DDCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D9E234E291100E53F1C /* LaunchScreen.storyboard */; };
+		ED80F5D423D9F5EE0088DDCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D99234E290D00E53F1C /* Main.storyboard */; };
+		ED80F5EE23D9FC240088DDCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6D0D9C234E291100E53F1C /* Assets.xcassets */; };
+		ED80F5F023DB363C0088DDCA /* square.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED80F5EF23DB363C0088DDCA /* square.jpg */; };
+		ED80F5F223DB36620088DDCA /* square.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED80F5F123DB36620088DDCA /* square.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,10 @@
 		ED6D0DB9234E291200E53F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED6D0DC5234E296100E53F1C /* ASUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASUtils.h; sourceTree = "<group>"; };
 		ED6D0DC6234E296100E53F1C /* ASUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASUtils.m; sourceTree = "<group>"; };
+		ED80F5D923D9F5EE0088DDCA /* TricksTest 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TricksTest 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED80F5DA23D9F5EF0088DDCA /* TricksTest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TricksTest copy-Info.plist"; path = "/Users/alexshpilenia/iOS Course/iOS course/Lesson 48 - Tricks/TricksTest/TricksTest copy-Info.plist"; sourceTree = "<absolute>"; };
+		ED80F5EF23DB363C0088DDCA /* square.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = square.jpg; sourceTree = "<group>"; };
+		ED80F5F123DB36620088DDCA /* square.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = square.jpg; path = "project B/square.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ED6D0DB0234E291100E53F1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED80F5D023D9F5EE0088DDCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,6 +116,7 @@
 				ED6D0D8D234E290D00E53F1C /* TricksTest.app */,
 				ED6D0DA8234E291100E53F1C /* TricksTestTests.xctest */,
 				ED6D0DB3234E291100E53F1C /* TricksTestUITests.xctest */,
+				ED80F5D923D9F5EE0088DDCA /* TricksTest 2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +134,9 @@
 				ED6D0D9C234E291100E53F1C /* Assets.xcassets */,
 				ED6D0D9E234E291100E53F1C /* LaunchScreen.storyboard */,
 				ED6D0DA1234E291100E53F1C /* Info.plist */,
+				ED80F5DA23D9F5EF0088DDCA /* TricksTest copy-Info.plist */,
+				ED80F5EF23DB363C0088DDCA /* square.jpg */,
+				ED80F5F123DB36620088DDCA /* square.jpg */,
 				ED6D0DA2234E291100E53F1C /* main.m */,
 			);
 			path = TricksTest;
@@ -193,6 +216,23 @@
 			productReference = ED6D0DB3234E291100E53F1C /* TricksTestUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		ED80F5CA23D9F5EE0088DDCA /* TricksTest 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED80F5D523D9F5EE0088DDCA /* Build configuration list for PBXNativeTarget "TricksTest 2" */;
+			buildPhases = (
+				ED80F5CB23D9F5EE0088DDCA /* Sources */,
+				ED80F5D023D9F5EE0088DDCA /* Frameworks */,
+				ED80F5D123D9F5EE0088DDCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TricksTest 2";
+			productName = TricksTest;
+			productReference = ED80F5D923D9F5EE0088DDCA /* TricksTest 2.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +269,7 @@
 			projectRoot = "";
 			targets = (
 				ED6D0D8C234E290D00E53F1C /* TricksTest */,
+				ED80F5CA23D9F5EE0088DDCA /* TricksTest 2 */,
 				ED6D0DA7234E291100E53F1C /* TricksTestTests */,
 				ED6D0DB2234E291100E53F1C /* TricksTestUITests */,
 			);
@@ -241,7 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6D0DA0234E291100E53F1C /* LaunchScreen.storyboard in Resources */,
-				ED6D0D9D234E291100E53F1C /* Assets.xcassets in Resources */,
+				ED80F5F023DB363C0088DDCA /* square.jpg in Resources */,
+				ED80F5EE23D9FC240088DDCA /* Assets.xcassets in Resources */,
 				ED6D0D9B234E290D00E53F1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +299,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED80F5D123D9F5EE0088DDCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED80F5D223D9F5EE0088DDCA /* LaunchScreen.storyboard in Resources */,
+				ED80F5F223DB36620088DDCA /* square.jpg in Resources */,
+				ED80F5D423D9F5EE0088DDCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +339,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6D0DB8234E291200E53F1C /* TricksTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED80F5CB23D9F5EE0088DDCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED80F5CC23D9F5EE0088DDCA /* ViewController.m in Sources */,
+				ED80F5CD23D9F5EE0088DDCA /* AppDelegate.m in Sources */,
+				ED80F5CE23D9F5EE0088DDCA /* ASUtils.m in Sources */,
+				ED80F5CF23D9F5EE0088DDCA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +504,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"LOGS_ENABLED=1",
+					PROJECT_A,
+				);
 				INFOPLIST_FILE = TricksTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,6 +614,170 @@
 			};
 			name = Release;
 		};
+		ED80F5C623D9EE7A0088DDCA /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		ED80F5C723D9EE7A0088DDCA /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				INFOPLIST_FILE = TricksTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = AppStore;
+		};
+		ED80F5C823D9EE7A0088DDCA /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				INFOPLIST_FILE = TricksTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TricksTest.app/TricksTest";
+			};
+			name = AppStore;
+		};
+		ED80F5C923D9EE7A0088DDCA /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				INFOPLIST_FILE = TricksTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TricksTest;
+			};
+			name = AppStore;
+		};
+		ED80F5D623D9F5EE0088DDCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"LOGS_ENABLED=1",
+					PROJECT_B,
+				);
+				INFOPLIST_FILE = "TricksTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED80F5D723D9F5EE0088DDCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				INFOPLIST_FILE = "TricksTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ED80F5D823D9F5EE0088DDCA /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2T6VZWB5BP;
+				INFOPLIST_FILE = "TricksTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AS.TricksTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = AppStore;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +786,7 @@
 			buildConfigurations = (
 				ED6D0DBA234E291200E53F1C /* Debug */,
 				ED6D0DBB234E291200E53F1C /* Release */,
+				ED80F5C623D9EE7A0088DDCA /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -562,6 +796,7 @@
 			buildConfigurations = (
 				ED6D0DBD234E291200E53F1C /* Debug */,
 				ED6D0DBE234E291200E53F1C /* Release */,
+				ED80F5C723D9EE7A0088DDCA /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -571,6 +806,7 @@
 			buildConfigurations = (
 				ED6D0DC0234E291200E53F1C /* Debug */,
 				ED6D0DC1234E291200E53F1C /* Release */,
+				ED80F5C823D9EE7A0088DDCA /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -580,6 +816,17 @@
 			buildConfigurations = (
 				ED6D0DC3234E291200E53F1C /* Debug */,
 				ED6D0DC4234E291200E53F1C /* Release */,
+				ED80F5C923D9EE7A0088DDCA /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED80F5D523D9F5EE0088DDCA /* Build configuration list for PBXNativeTarget "TricksTest 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED80F5D623D9F5EE0088DDCA /* Debug */,
+				ED80F5D723D9F5EE0088DDCA /* Release */,
+				ED80F5D823D9F5EE0088DDCA /* AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

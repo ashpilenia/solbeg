@@ -10,6 +10,7 @@
 #import "ASUtils.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewTest;
 
 @end
 
@@ -17,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImage *image = [UIImage imageNamed:@"square.jpg"];
+    self.imageViewTest.image = image;
     
 #ifdef PRODUCTION_BUILD
     
@@ -47,7 +51,21 @@
     }
     
 #endif
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:ASLogNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        
+        self.consoleTextView.text = [NSString stringWithFormat:@"%@\n%@", self.consoleTextView.text, [note.userInfo objectForKey:ASLogNotificationTextUserInfoKey]];
+    }];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+#pragma mark - Actions
+
+- (IBAction)actionTest:(UIButton *)sender {
+    
+    ASLog(@"Action test");
+}
 @end

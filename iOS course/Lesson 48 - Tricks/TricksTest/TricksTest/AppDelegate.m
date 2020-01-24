@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ASUtils.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+#ifdef PROJECT_A
+    [[UIButton appearance] setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+#elif PROJECT_B
+    [[UIButton appearance] setTitleColor:[UIColor greenColor] forState:(UIControlStateNormal)];
+#endif
+    
     return YES;
 }
 

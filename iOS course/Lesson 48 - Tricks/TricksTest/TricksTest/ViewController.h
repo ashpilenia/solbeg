@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *consoleTextView;
+
+- (IBAction)actionTest:(UIButton *)sender;
 
 @end
 

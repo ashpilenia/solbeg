@@ -9,6 +9,9 @@
 #import "ASUtils.h"
 #import <UIKit/UIKit.h>
 
+NSString * const ASLogNotification = @"com.ashpilenia.ASLogNotification";
+NSString * const ASLogNotificationTextUserInfoKey = @"com.ashpilenia.ASLogNotificationTextUserInfoKey";
+
 NSString *fancyDateStringFromDate(NSDate *date) {
     
     static NSDateFormatter *formatter = nil;
@@ -51,6 +54,14 @@ void ASLog(NSString *format, ...) {
     
     NSLogv(format, argumentList);
     
+#if LOGS_NOTIFICATION_ENABLED
+    NSString *log = [[NSString alloc] initWithFormat:format arguments:argumentList];
+    
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:ASLogNotification
+                                                        object:nil
+                                                      userInfo:@{ASLogNotificationTextUserInfoKey : log}];
+#endif
     va_end(argumentList);
 #endif
 
